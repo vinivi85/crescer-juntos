@@ -2,6 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#c9856a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Crescer Juntos">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crescer Juntos</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -1332,6 +1340,73 @@ function saveChildProfile(){
   document.querySelector('.greeting h2').innerHTML=`Olá, <span id="greetName">Família</span> 🌸`;
   closeModal('editcrianca');
 }
+</script>
+
+<div id="installBanner" style="display:none;position:fixed;bottom:96px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:480px;background:linear-gradient(135deg,#c9856a,#a05a4a);border-radius:16px;padding:14px 16px;z-index:300;box-shadow:0 8px 28px rgba(100,60,40,.3);display:flex;align-items:center;gap:12px;">
+  <span style="font-size:1.6rem">📲</span>
+  <div style="flex:1">
+    <p style="color:white;font-family:Nunito,sans-serif;font-size:.85rem;font-weight:900;margin:0">Instalar Crescer Juntos</p>
+    <p style="color:rgba(255,255,255,.8);font-family:Nunito,sans-serif;font-size:.72rem;margin:2px 0 0">Adicionar à tela inicial como app</p>
+  </div>
+  <button onclick="installApp()" style="background:white;border:none;border-radius:10px;padding:8px 14px;font-family:Nunito,sans-serif;font-size:.78rem;font-weight:900;color:#c9856a;cursor:pointer;">Instalar</button>
+  <button onclick="document.getElementById('installBanner').style.display='none'" style="background:rgba(255,255,255,.2);border:none;border-radius:8px;width:28px;height:28px;color:white;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</button>
+</div>
+
+<script>
+// ── SERVICE WORKER ──
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('[SW] Registered:', reg.scope))
+      .catch(err => console.log('[SW] Error:', err));
+  });
+}
+
+// ── PWA INSTALL PROMPT ──
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const banner = document.getElementById('installBanner');
+  if (banner) banner.style.display = 'flex';
+});
+
+function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(choice => {
+    if (choice.outcome === 'accepted') {
+      console.log('[PWA] Installed!');
+      document.getElementById('installBanner').style.display = 'none';
+    }
+    deferredPrompt = null;
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  document.getElementById('installBanner').style.display = 'none';
+  deferredPrompt = null;
+});
+
+// ── OFFLINE INDICATOR ──
+function updateOnlineStatus() {
+  const isOnline = navigator.onLine;
+  let indicator = document.getElementById('offlineIndicator');
+  if (!isOnline) {
+    if (!indicator) {
+      indicator = document.createElement('div');
+      indicator.id = 'offlineIndicator';
+      indicator.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#e57373;color:white;text-align:center;padding:6px;font-family:Nunito,sans-serif;font-size:.75rem;font-weight:800;z-index:999;';
+      indicator.textContent = '📵 Sem conexão — registros salvos localmente';
+      document.body.appendChild(indicator);
+    }
+  } else {
+    if (indicator) indicator.remove();
+  }
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus();
 </script>
 </body>
 </html>
