@@ -2,1411 +2,1091 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#c9856a">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7c6fcd">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Crescer Juntos">
-<meta name="mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crescer Juntos</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 :root{
-  --cream:#fdf8f3;--warm-white:#fffcf9;--blush:#f4e0d9;--dusty-rose:#e8c4b8;
-  --terracotta:#c9856a;--deep-rose:#a05a4a;--sage:#b5c4b1;--deep-sage:#7a9e76;
-  --sky:#c5dbe8;--soft-blue:#8fb8d1;--gold:#d4a853;--gold-bg:#faecd4;
-  --purple:#9b8ec4;--light-purple:#ede9f8;
-  --text-dark:#3a2e2a;--text-mid:#6b5a54;--text-light:#9b8880;
-  --shadow:rgba(100,60,40,0.10);--radius:20px;--radius-sm:12px;
+  --bg:#f5f0ff;
+  --bg2:#efe8ff;
+  --white:#ffffff;
+  --purple:#6c5ce7;
+  --purple-dark:#5a4bd1;
+  --purple-light:#ede9ff;
+  --green:#00b894;
+  --green-dark:#00a381;
+  --blue:#74b9ff;
+  --orange:#fdcb6e;
+  --orange-dark:#e17055;
+  --red:#ff7675;
+  --text:#1a1a2e;
+  --text2:#555577;
+  --text3:#888899;
+  --border:#e8e0ff;
+  --shadow:rgba(108,92,231,0.12);
+  --r:16px;--r-sm:12px;--r-xs:8px;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text-dark);min-height:100vh;overflow-x:hidden;}
-.bg-blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;}
-.blob-1{width:500px;height:500px;background:var(--blush);top:-100px;left:-150px;}
-.blob-2{width:400px;height:400px;background:var(--sky);bottom:-100px;right:-100px;}
-.blob-3{width:300px;height:300px;background:var(--sage);top:40%;left:60%;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;max-width:430px;margin:0 auto;}
+
+/* ══ ONBOARDING ══ */
+#onboarding{position:fixed;inset:0;z-index:1000;background:var(--bg);max-width:430px;margin:0 auto;}
+.ob-slides{display:flex;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1);}
+.ob-slide{min-width:100%;height:100%;display:flex;flex-direction:column;align-items:center;padding:60px 28px 40px;position:relative;overflow:hidden;}
+.ob-slide::before{content:'';position:absolute;inset:0;border-radius:0;}
+
+/* Slide backgrounds */
+.ob-s1{background:linear-gradient(160deg,#f0ebff 0%,#e8e0ff 50%,#fce4ec 100%);}
+.ob-s2{background:linear-gradient(160deg,#e8f5e9 0%,#e0f7fa 50%,#e8eaf6 100%);}
+.ob-s3{background:linear-gradient(160deg,#fff8e1 0%,#fce4ec 50%,#f3e5f5 100%);}
+.ob-s4{background:linear-gradient(160deg,#e8eaf6 0%,#e3f2fd 50%,#e8f5e9 100%);}
+
+.ob-title{font-size:2rem;font-weight:900;color:var(--text);text-align:center;line-height:1.15;margin-bottom:10px;z-index:1;}
+.ob-sub{font-size:.95rem;color:var(--text2);text-align:center;font-weight:500;margin-bottom:32px;line-height:1.5;z-index:1;}
+.ob-phone{width:200px;height:340px;background:white;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.15);overflow:hidden;position:relative;z-index:1;margin-bottom:28px;flex-shrink:0;}
+.ob-phone-inner{padding:16px 12px;}
+
+/* Phone mockup content - slide 1 */
+.ob-metrics{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;}
+.ob-metric{background:white;border-radius:10px;padding:8px;border:1px solid #f0f0f0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.ob-metric-icon{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-bottom:4px;}
+.ic-green{background:#e8f5e9;}.ic-purple{background:#ede9ff;}.ic-blue{background:#e3f2fd;}.ic-orange{background:#fff8e1;}
+.ob-metric-val{font-size:.95rem;font-weight:800;color:var(--text);}
+.ob-metric-lbl{font-size:.55rem;font-weight:600;color:var(--text3);text-transform:uppercase;}
+.ob-metric-trend{font-size:.55rem;font-weight:700;color:#00b894;}
+.ob-insight{background:white;border-radius:10px;padding:8px 10px;display:flex;align-items:center;gap:7px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:10px;}
+.ob-insight p{font-size:.65rem;font-weight:600;color:var(--text);line-height:1.3;}
+.ob-insight span{font-weight:800;color:#00b894;}
+.ob-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.ob-action-btn{border-radius:10px;padding:10px 8px;color:white;font-size:.65rem;font-weight:700;}
+.ob-action-btn.purple{background:var(--purple);}
+.ob-action-btn.green{background:var(--green);}
+.ob-action-btn .act-title{font-size:.72rem;font-weight:800;margin-bottom:2px;}
+
+/* Floating badges */
+.ob-badges{display:flex;flex-direction:column;gap:10px;align-items:flex-start;width:100%;z-index:1;}
+.ob-badge{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:24px;font-size:.82rem;font-weight:700;color:white;box-shadow:0 4px 16px rgba(0,0,0,.15);}
+.badge-red{background:#ff6b6b;}
+.badge-purple{background:#a29bfe;}
+.badge-teal{background:#00cec9;}
+
+.ob-dots{display:flex;gap:7px;margin-bottom:24px;z-index:1;}
+.ob-dot{width:8px;height:8px;border-radius:50%;background:rgba(108,92,231,.25);transition:all .3s;}
+.ob-dot.active{background:var(--purple);width:24px;border-radius:4px;}
+
+.ob-btn-primary{width:100%;padding:17px;background:var(--purple);border:none;border-radius:var(--r);color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;z-index:1;box-shadow:0 6px 20px rgba(108,92,231,.35);transition:transform .15s;}
+.ob-btn-primary:active{transform:scale(.97);}
+.ob-btn-skip{background:none;border:none;color:var(--text3);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;margin-top:12px;z-index:1;padding:8px;}
+
+/* Review entries phone content */
+.re-header{font-size:.75rem;font-weight:800;color:var(--text);margin-bottom:6px;}
+.re-sub{font-size:.55rem;color:var(--text3);margin-bottom:8px;}
+.re-item{display:flex;align-items:center;gap:7px;padding:7px 0;border-bottom:1px solid #f5f5f5;}
+.re-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.re-text h4{font-size:.6rem;font-weight:700;color:var(--text);}
+.re-text p{font-size:.52rem;color:var(--text3);}
+.re-check{width:16px;height:16px;background:var(--purple);border-radius:50%;margin-left:auto;display:flex;align-items:center;justify-content:center;color:white;font-size:.5rem;flex-shrink:0;}
+
+/* ══ MAIN APP ══ */
+#app{display:none;min-height:100vh;padding-bottom:80px;}
 
 /* PAGES */
-.page{display:none;position:relative;z-index:1;max-width:520px;margin:0 auto;padding:0 0 90px;min-height:100vh;animation:fadeIn .25s ease;}
+.page{display:none;animation:fadeUp .25s ease;}
 .page.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-/* HEADER */
-header{padding:28px 20px 16px;display:flex;align-items:center;justify-content:space-between;}
-.logo-area h1{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:500;color:var(--deep-rose);line-height:1.1;}
-.logo-area h1 span{font-style:italic;color:var(--terracotta);}
-.logo-area p{font-size:.72rem;color:var(--text-light);font-weight:600;margin-top:2px;letter-spacing:.04em;}
-.hdr-right{display:flex;gap:8px;align-items:center;}
-.avatar-btn{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--dusty-rose),var(--terracotta));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 14px var(--shadow);transition:transform .2s;}
-.avatar-btn:hover{transform:scale(1.07);}
-.page-header{padding:24px 20px 14px;display:flex;align-items:center;gap:10px;}
-.page-header h2{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;color:var(--deep-rose);}
-.page-header .ph-icon{font-size:1.5rem;}
-.section-title{font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);padding:0 20px;margin-bottom:10px;}
+/* ══ HOME PAGE ══ */
+.home-header{padding:20px 20px 0;display:flex;align-items:center;justify-content:space-between;}
+.home-child-selector{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.hcs-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;background:linear-gradient(135deg,var(--purple),#a29bfe);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.hcs-info h3{font-size:1rem;font-weight:800;color:var(--text);}
+.hcs-info p{font-size:.72rem;color:var(--text3);font-weight:500;}
+.hcs-chevron{font-size:.7rem;color:var(--text3);margin-left:2px;}
+.header-settings{width:36px;height:36px;background:white;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 2px 10px var(--shadow);}
 
-/* GREETING */
-.greeting{padding:0 20px 20px;}
-.greeting h2{font-size:1.45rem;font-weight:900;color:var(--text-dark);line-height:1.25;}
-.greeting h2 span{color:var(--terracotta);}
-.greeting p{font-size:.85rem;color:var(--text-mid);margin-top:3px;font-weight:600;}
+/* INSIGHT BANNER */
+.insight-banner{margin:16px 20px 0;background:white;border-radius:var(--r);padding:14px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 16px var(--shadow);}
+.ib-icon{font-size:1.4rem;}
+.ib-text{font-size:.88rem;font-weight:600;color:var(--text);line-height:1.4;}
+.ib-text strong{color:var(--green);font-weight:800;}
 
-/* CHILD CARD */
-.child-card{margin:0 20px 20px;background:white;border-radius:var(--radius);padding:18px;box-shadow:0 6px 28px var(--shadow);display:flex;align-items:center;gap:14px;position:relative;overflow:hidden;cursor:pointer;}
-.child-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--terracotta),var(--gold),var(--deep-sage));}
-.child-emoji{width:52px;height:52px;background:var(--blush);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;}
-.child-info h3{font-size:1rem;font-weight:800;color:var(--text-dark);}
-.child-info p{font-size:.75rem;color:var(--text-light);font-weight:600;margin-top:1px;}
-.child-tags{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap;}
-.tag{font-size:.65rem;font-weight:800;padding:3px 9px;border-radius:20px;}
-.tag-blue{background:var(--sky);color:var(--soft-blue);}
-.tag-green{background:#daeeda;color:var(--deep-sage);}
-.tag-rose{background:var(--blush);color:var(--deep-rose);}
-.tag-purple{background:var(--light-purple);color:var(--purple);}
-.edit-btn{margin-left:auto;flex-shrink:0;background:var(--blush);border:none;border-radius:9px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--terracotta);}
+/* METRICS GRID */
+.metrics-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 20px 0;}
+.met-card{background:white;border-radius:var(--r-sm);padding:14px;box-shadow:0 3px 12px var(--shadow);display:flex;align-items:center;gap:10px;}
+.met-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.met-body .met-lbl{font-size:.65rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;}
+.met-body .met-val{font-size:1.3rem;font-weight:900;color:var(--text);line-height:1;}
+.met-body .met-trend{font-size:.68rem;font-weight:700;margin-top:2px;}
+.trend-up{color:var(--green);}
+.trend-down-good{color:var(--green);}
+.trend-down-bad{color:var(--red);}
 
-/* METRIC CARDS */
-.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px;margin-bottom:22px;}
-.metric-card{background:white;border-radius:var(--radius-sm);padding:14px;box-shadow:0 3px 14px var(--shadow);display:flex;align-items:flex-start;gap:10px;}
-.metric-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.mi-rose{background:var(--blush);}
-.mi-sky{background:var(--sky);}
-.mi-sage{background:#daeeda;}
-.mi-gold{background:var(--gold-bg);}
-.mi-purple{background:var(--light-purple);}
-.metric-info .m-val{font-size:1.3rem;font-weight:900;color:var(--text-dark);}
-.metric-info .m-lbl{font-size:.65rem;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.04em;}
-.metric-info .m-trend{font-size:.7rem;font-weight:800;margin-top:2px;}
-.trend-up{color:var(--deep-sage);}
-.trend-down{color:var(--terracotta);}
-.trend-neutral{color:var(--text-light);}
+/* QUICK ACCESS */
+.section-header{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 10px;}
+.section-header h2{font-size:.75rem;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
+.section-header a{font-size:.78rem;font-weight:700;color:var(--purple);}
+.quick-access-desc{font-size:.8rem;color:var(--text3);padding:0 20px;margin-bottom:12px;font-weight:500;}
+.quick-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px;}
+.qb-alma{background:var(--purple);border-radius:var(--r);padding:18px;cursor:pointer;border:none;width:100%;text-align:left;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 20px rgba(108,92,231,.3);}
+.qb-alma:active{transform:scale(.97);}
+.qb-quick{background:var(--green);border-radius:var(--r);padding:18px;cursor:pointer;border:none;width:100%;text-align:left;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 20px rgba(0,184,148,.3);}
+.qb-quick:active{transform:scale(.97);}
+.qb-icon{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:10px;}
+.qb-arrow{width:26px;height:26px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;float:right;margin-top:-36px;}
+.qb-title{font-size:.92rem;font-weight:800;color:white;display:block;margin-bottom:3px;}
+.qb-sub{font-size:.72rem;color:rgba(255,255,255,.8);font-weight:500;display:block;line-height:1.3;}
 
-/* QUICK LOG BANNER */
-.quick-log-banner{margin:0 20px 22px;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 24px rgba(100,60,40,.15);cursor:pointer;transition:transform .2s;}
-.quick-log-banner:hover{transform:translateY(-2px);}
-.qlb-inner{background:linear-gradient(135deg,var(--terracotta),var(--deep-rose));padding:18px 20px;display:flex;align-items:center;gap:14px;}
-.qlb-icon{width:48px;height:48px;background:rgba(255,255,255,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
-.qlb-text h3{color:white;font-size:.95rem;font-weight:900;}
-.qlb-text p{color:rgba(255,255,255,.8);font-size:.75rem;margin-top:2px;}
-.qlb-arrow{margin-left:auto;color:white;font-size:1.4rem;opacity:.7;}
+/* STRUCTURED LOG */
+.structured-header{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 12px;}
+.structured-header h2{font-size:.85rem;font-weight:800;color:var(--text);}
+.view-all{font-size:.78rem;font-weight:700;color:var(--purple);background:none;border:none;cursor:pointer;}
+.log-entries{padding:0 20px;display:flex;flex-direction:column;gap:8px;}
+.log-entry{background:white;border-radius:var(--r-sm);padding:13px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px var(--shadow);}
+.le-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.le-body{flex:1;}
+.le-title{font-size:.85rem;font-weight:700;color:var(--text);}
+.le-detail{font-size:.72rem;color:var(--text3);margin-top:2px;font-weight:500;}
+.le-time{font-size:.65rem;color:var(--text3);font-weight:600;}
+.le-badge{display:inline-block;font-size:.58rem;font-weight:800;padding:2px 7px;border-radius:6px;margin-top:3px;}
 
-/* QUICK ACTIONS */
-.quick-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 20px;margin-bottom:22px;}
-.qa-btn{background:white;border:none;border-radius:var(--radius-sm);padding:12px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;box-shadow:0 3px 14px var(--shadow);transition:transform .2s,box-shadow .2s;}
-.qa-btn:hover{transform:translateY(-3px);box-shadow:0 8px 22px var(--shadow);}
-.qa-btn .icon{font-size:1.4rem;}
-.qa-btn span{font-size:.6rem;font-weight:800;color:var(--text-mid);text-align:center;line-height:1.2;}
+/* ══ JOURNAL PAGE ══ */
+.journal-header{padding:24px 20px 0;}
+.journal-header h1{font-size:1.6rem;font-weight:900;color:var(--text);}
+.journal-tabs{display:flex;gap:6px;padding:14px 20px;overflow-x:auto;}
+.journal-tabs::-webkit-scrollbar{display:none;}
+.jtab{padding:7px 16px;border-radius:20px;border:2px solid var(--border);background:white;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;color:var(--text2);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;}
+.jtab.active{background:var(--purple);border-color:var(--purple);color:white;}
+.journal-entries{padding:0 20px;display:flex;flex-direction:column;gap:10px;}
+.je-card{background:white;border-radius:var(--r);padding:16px;box-shadow:0 3px 12px var(--shadow);border-left:4px solid var(--purple);}
+.je-card.sleep{border-left-color:#74b9ff;}
+.je-card.food{border-left-color:#55efc4;}
+.je-card.behavior{border-left-color:#fd79a8;}
+.je-card.meds{border-left-color:#a29bfe;}
+.je-card.water{border-left-color:#00cec9;}
+.je-card.milestone{border-left-color:var(--orange);}
+.je-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.je-type{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;}
+.je-date{font-size:.65rem;color:var(--text3);font-weight:600;}
+.je-title{font-size:.9rem;font-weight:700;color:var(--text);}
+.je-detail{font-size:.78rem;color:var(--text2);margin-top:3px;font-weight:500;line-height:1.4;}
+.intensity-dots{display:flex;gap:3px;margin-top:6px;}
+.idot{width:10px;height:10px;border-radius:50%;background:#eee;}
+.idot.on{background:var(--purple);}
+.idot.on.s1{background:#55efc4;}.idot.on.s2{background:#fdcb6e;}.idot.on.s3{background:#e17055;}.idot.on.s4{background:#d63031;}.idot.on.s5{background:#c0392b;}
+.add-entry-fab{position:fixed;bottom:96px;right:20px;width:56px;height:56px;background:var(--purple);border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:white;box-shadow:0 6px 20px rgba(108,92,231,.4);transition:transform .2s;z-index:50;}
+.add-entry-fab:active{transform:scale(.92);}
 
-/* AI SECTION */
-.ai-section{margin:0 20px 22px;background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 28px var(--shadow);}
-.ai-header{background:linear-gradient(135deg,var(--purple),#6b5ca5);padding:16px 18px;display:flex;align-items:center;gap:10px;}
-.ai-header .ai-icon{font-size:1.3rem;}
-.ai-header h3{color:white;font-weight:900;font-size:.9rem;}
-.ai-header p{color:rgba(255,255,255,.8);font-size:.72rem;margin-top:1px;}
-.ai-body{padding:16px 18px;}
-.chat-messages{min-height:100px;max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
-.chat-messages::-webkit-scrollbar{width:3px;}
-.chat-messages::-webkit-scrollbar-thumb{background:var(--light-purple);border-radius:3px;}
-.msg{max-width:88%;padding:9px 13px;border-radius:16px;font-size:.82rem;line-height:1.5;font-weight:600;animation:popIn .25s ease;}
-@keyframes popIn{from{opacity:0;transform:translateY(5px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-.msg-ai{background:var(--cream);color:var(--text-dark);border-bottom-left-radius:3px;align-self:flex-start;border:1px solid var(--blush);}
-.msg-user{background:linear-gradient(135deg,var(--purple),#6b5ca5);color:white;border-bottom-right-radius:3px;align-self:flex-end;}
-.msg-typing{background:var(--cream);padding:10px 14px;border-radius:16px;border-bottom-left-radius:3px;align-self:flex-start;border:1px solid var(--blush);display:flex;gap:4px;align-items:center;}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--purple);opacity:.5;animation:bounce 1.2s infinite;}
-.dot:nth-child(2){animation-delay:.2s;}.dot:nth-child(3){animation-delay:.4s;}
-@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
-.next-steps-card{background:var(--light-purple);border-radius:var(--radius-sm);padding:12px 14px;margin-top:8px;border-left:3px solid var(--purple);}
-.next-steps-card h4{font-size:.8rem;font-weight:900;color:var(--purple);margin-bottom:6px;}
-.next-steps-card ol{padding-left:16px;}
-.next-steps-card li{font-size:.78rem;color:var(--text-dark);margin-bottom:4px;font-weight:600;line-height:1.4;}
-.ai-input-row{display:flex;gap:7px;}
-.ai-input{flex:1;border:2px solid var(--blush);border-radius:var(--radius-sm);padding:10px 12px;font-family:'Nunito',sans-serif;font-size:.82rem;color:var(--text-dark);background:var(--cream);outline:none;transition:border-color .2s;resize:none;}
-.ai-input:focus{border-color:var(--purple);}
-.ai-input::placeholder{color:var(--text-light);}
-.send-btn{width:42px;height:42px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--purple),#6b5ca5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 4px 12px rgba(100,80,160,.3);transition:transform .2s;flex-shrink:0;}
-.send-btn:hover{transform:scale(1.07);}
-.send-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.quick-prompts{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.qp-btn{font-size:.68rem;font-weight:800;padding:4px 10px;background:var(--light-purple);border:none;border-radius:20px;color:var(--purple);cursor:pointer;transition:background .2s;}
-.qp-btn:hover{background:#d8d2f0;}
+/* ══ INSIGHTS PAGE ══ */
+.insights-header{padding:24px 20px 0;}
+.insights-header h1{font-size:1.6rem;font-weight:900;color:var(--text);}
+.insights-child{display:flex;align-items:center;gap:8px;margin-top:4px;}
+.insights-child .ic-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#a29bfe);display:flex;align-items:center;justify-content:center;font-size:.8rem;}
+.insights-child span{font-size:.82rem;color:var(--text2);font-weight:600;}
+.insights-child .ch-arr{font-size:.65rem;color:var(--purple);}
+.insight-cards{padding:14px 20px;display:flex;flex-direction:column;gap:12px;}
+.ins-card{background:white;border-radius:var(--r);padding:18px;box-shadow:0 4px 16px var(--shadow);}
+.ins-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.ins-card-header h3{font-size:.88rem;font-weight:800;color:var(--text);}
+.ins-card-header span{font-size:.72rem;color:var(--purple);font-weight:700;cursor:pointer;}
+.bar-chart{display:flex;align-items:flex-end;gap:6px;height:80px;}
+.bc-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.bc-bar{width:100%;border-radius:4px 4px 0 0;min-height:4px;transition:height .5s;}
+.bc-lbl{font-size:.55rem;font-weight:700;color:var(--text3);}
+.bc-val{font-size:.58rem;font-weight:800;color:var(--text);}
+.ins-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
+.is-item{background:var(--bg);border-radius:var(--r-xs);padding:10px 8px;text-align:center;}
+.is-val{font-size:1.1rem;font-weight:900;color:var(--purple);}
+.is-lbl{font-size:.6rem;font-weight:700;color:var(--text3);text-transform:uppercase;}
+.report-btns{display:flex;flex-direction:column;gap:8px;}
+.report-btn{background:white;border:2px solid var(--border);border-radius:var(--r-sm);padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;text-align:left;}
+.report-btn:hover{border-color:var(--purple);background:var(--purple-light);}
+.rb-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.rb-text h4{font-size:.85rem;font-weight:800;color:var(--text);}
+.rb-text p{font-size:.72rem;color:var(--text3);margin-top:1px;}
+.rb-arr{margin-left:auto;color:var(--purple);font-size:.9rem;}
+.prog-row{margin-bottom:10px;}
+.prog-hdr{display:flex;justify-content:space-between;font-size:.78rem;font-weight:700;color:var(--text2);margin-bottom:5px;}
+.prog-track{height:8px;background:var(--bg);border-radius:10px;overflow:hidden;}
+.prog-fill{height:100%;border-radius:10px;}
 
-/* LOG LIST */
-.log-list{padding:0 20px;display:flex;flex-direction:column;gap:8px;margin-bottom:22px;}
-.log-item{background:white;border-radius:var(--radius-sm);padding:12px 14px;display:flex;align-items:flex-start;gap:10px;box-shadow:0 3px 12px var(--shadow);}
-.log-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.log-icon.rose{background:var(--blush);}.log-icon.sky{background:var(--sky);}
-.log-icon.sage{background:#daeeda;}.log-icon.gold{background:var(--gold-bg);}
-.log-icon.purple{background:var(--light-purple);}
-.log-content h4{font-size:.82rem;font-weight:800;color:var(--text-dark);}
-.log-content p{font-size:.74rem;color:var(--text-mid);margin-top:2px;font-weight:600;}
-.log-time{font-size:.65rem;color:var(--text-light);font-weight:700;margin-left:auto;flex-shrink:0;}
+/* ══ RESOURCES PAGE ══ */
+.res-header{padding:24px 20px 0;}
+.res-header h1{font-size:1.6rem;font-weight:900;color:var(--text);}
+.res-search{margin:14px 20px;background:white;border-radius:var(--r-sm);padding:12px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px var(--shadow);}
+.res-search input{flex:1;border:none;outline:none;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--text);background:transparent;}
+.res-search input::placeholder{color:var(--text3);}
+.res-cats{display:flex;gap:8px;padding:0 20px;overflow-x:auto;margin-bottom:16px;}
+.res-cats::-webkit-scrollbar{display:none;}
+.res-cat{padding:7px 14px;border-radius:20px;border:2px solid var(--border);background:white;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;color:var(--text2);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;}
+.res-cat.active{background:var(--purple);border-color:var(--purple);color:white;}
+.res-section-title{padding:0 20px;font-size:.8rem;font-weight:800;color:var(--text);margin-bottom:10px;}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px;margin-bottom:20px;}
+.res-card{background:white;border-radius:var(--r-sm);overflow:hidden;box-shadow:0 3px 12px var(--shadow);cursor:pointer;transition:transform .2s;}
+.res-card:active{transform:scale(.97);}
+.rc-thumb{height:80px;display:flex;align-items:center;justify-content:center;font-size:2rem;}
+.rc-body{padding:10px;}
+.rc-badge{font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:6px;display:inline-block;margin-bottom:4px;}
+.badge-g{background:#e8f5e9;color:#2e7d32;}
+.badge-a{background:#e3f2fd;color:#1565c0;}
+.badge-v{background:#fce4ec;color:#c62828;}
+.rc-title{font-size:.78rem;font-weight:700;color:var(--text);line-height:1.3;}
+.rc-time{font-size:.62rem;color:var(--text3);margin-top:4px;font-weight:600;}
 
-/* ── CHARTS ── */
-.chart-grid{padding:0 20px;display:flex;flex-direction:column;gap:14px;margin-bottom:22px;}
-.chart-card{background:white;border-radius:var(--radius);padding:18px;box-shadow:0 4px 18px var(--shadow);}
-.chart-card h3{font-size:.78rem;font-weight:900;color:var(--text-mid);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em;}
-.bar-chart{display:flex;align-items:flex-end;gap:6px;height:90px;}
-.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
-.bar{width:100%;border-radius:5px 5px 0 0;transition:height .5s ease;min-height:4px;}
-.bar-label{font-size:.6rem;font-weight:800;color:var(--text-light);}
-.bar-val{font-size:.64rem;font-weight:900;color:var(--text-dark);}
-.sleep-bar{background:linear-gradient(180deg,var(--soft-blue),var(--sky));}
-.mood-bar{background:linear-gradient(180deg,var(--terracotta),var(--dusty-rose));}
-.crisis-bar{background:linear-gradient(180deg,var(--purple),var(--light-purple));}
-.water-bar{background:linear-gradient(180deg,#56c7e0,#a8e6f0);}
-.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
-.legend-item{display:flex;align-items:center;gap:4px;font-size:.68rem;font-weight:700;color:var(--text-mid);}
-.legend-dot{width:7px;height:7px;border-radius:50%;}
-.chart-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px;}
-.cs-item{background:var(--cream);border-radius:10px;padding:10px;text-align:center;}
-.cs-item .cs-val{font-size:1.2rem;font-weight:900;color:var(--deep-rose);}
-.cs-item .cs-lbl{font-size:.64rem;font-weight:800;color:var(--text-light);text-transform:uppercase;letter-spacing:.04em;}
-.progress-row{margin-bottom:8px;}
-.progress-label{display:flex;justify-content:space-between;font-size:.75rem;font-weight:800;color:var(--text-mid);margin-bottom:4px;}
-.progress-track{height:7px;background:var(--blush);border-radius:10px;overflow:hidden;}
-.progress-fill{height:100%;border-radius:10px;transition:width .7s ease;}
-
-/* ── RECORDS ── */
-.filter-row{display:flex;gap:7px;padding:0 20px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px;}
-.filter-row::-webkit-scrollbar{display:none;}
-.filter-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:2px solid var(--blush);background:white;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;color:var(--text-mid);cursor:pointer;transition:all .2s;}
-.filter-btn.active,.filter-btn:hover{background:var(--terracotta);border-color:var(--terracotta);color:white;}
-.records-list{padding:0 20px;display:flex;flex-direction:column;gap:8px;}
-.record-card{background:white;border-radius:var(--radius-sm);padding:14px;box-shadow:0 3px 12px var(--shadow);border-left:4px solid var(--terracotta);}
-.record-card.sono{border-left-color:var(--soft-blue);}
-.record-card.alimentacao{border-left-color:var(--deep-sage);}
-.record-card.marco{border-left-color:var(--gold);}
-.record-card.hidratacao{border-left-color:#56c7e0;}
-.record-card.medicamento{border-left-color:var(--purple);}
-.record-card.saude{border-left-color:#e57373;}
-.record-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
-.record-type{font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;}
-.rt-comportamento{color:var(--terracotta);}
-.rt-sono{color:var(--soft-blue);}
-.rt-alimentacao{color:var(--deep-sage);}
-.rt-marco{color:var(--gold);}
-.rt-hidratacao{color:#38b2c8;}
-.rt-medicamento{color:var(--purple);}
-.rt-saude{color:#e57373;}
-.record-date{font-size:.65rem;font-weight:700;color:var(--text-light);}
-.record-desc{font-size:.82rem;font-weight:800;color:var(--text-dark);}
-.record-detail{font-size:.74rem;color:var(--text-mid);margin-top:2px;font-weight:600;}
-.intensity-bar{display:flex;gap:3px;margin-top:6px;}
-.int-dot{width:12px;height:12px;border-radius:50%;background:var(--blush);}
-.int-dot.filled{background:var(--terracotta);}
-
-/* ── REPORT GENERATOR ── */
-.report-section{padding:0 20px;margin-bottom:22px;}
-.report-card{background:white;border-radius:var(--radius);padding:20px;box-shadow:0 4px 18px var(--shadow);}
-.report-card h3{font-size:.95rem;font-weight:900;color:var(--text-dark);margin-bottom:4px;}
-.report-card p{font-size:.78rem;color:var(--text-mid);margin-bottom:16px;}
-.report-types{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.report-type-btn{padding:12px 8px;border-radius:var(--radius-sm);border:2px solid var(--blush);background:var(--cream);cursor:pointer;text-align:center;transition:all .2s;font-family:'Nunito',sans-serif;}
-.report-type-btn .rt-icon{font-size:1.3rem;display:block;margin-bottom:4px;}
-.report-type-btn .rt-name{font-size:.72rem;font-weight:800;color:var(--text-mid);}
-.report-type-btn.selected{border-color:var(--terracotta);background:var(--blush);}
-.report-date-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-
-/* ── TEAM ── */
-.next-appt{margin:0 20px 20px;background:linear-gradient(135deg,var(--soft-blue),var(--sky));border-radius:var(--radius);padding:18px;box-shadow:0 4px 18px var(--shadow);}
-.next-appt h3{font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:white;opacity:.85;margin-bottom:5px;}
-.next-appt h2{font-size:1rem;font-weight:900;color:white;}
-.next-appt p{font-size:.78rem;color:rgba(255,255,255,.85);margin-top:3px;}
-.appt-date{font-size:.7rem;font-weight:800;color:white;background:rgba(255,255,255,.25);padding:3px 9px;border-radius:9px;display:inline-block;margin-top:7px;}
-.team-grid{padding:0 20px;display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
-.team-card{background:white;border-radius:var(--radius-sm);padding:16px;box-shadow:0 3px 14px var(--shadow);display:flex;align-items:center;gap:12px;}
-.team-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.ta-blue{background:var(--sky);}.ta-green{background:#daeeda;}
-.ta-rose{background:var(--blush);}.ta-gold{background:var(--gold-bg);}
-.team-info h4{font-size:.88rem;font-weight:800;color:var(--text-dark);}
-.team-info p{font-size:.74rem;color:var(--text-mid);margin-top:1px;}
-.team-tag{font-size:.62rem;font-weight:800;padding:2px 7px;border-radius:9px;background:var(--cream);color:var(--terracotta);margin-top:4px;display:inline-block;}
-.icon-btn{width:34px;height:34px;border-radius:9px;background:var(--blush);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;margin-left:auto;transition:background .2s;}
-.icon-btn:hover{background:var(--dusty-rose);}
-.add-btn{margin:0 20px;width:calc(100% - 40px);padding:13px;background:white;border:2px dashed var(--dusty-rose);border-radius:var(--radius-sm);cursor:pointer;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:800;color:var(--terracotta);transition:all .2s;}
-.add-btn:hover{background:var(--blush);}
-
-/* ── RESOURCES ── */
-.resources-page{padding:0;}
-.res-filter{display:flex;gap:7px;padding:0 20px;margin-bottom:16px;overflow-x:auto;}
-.res-filter::-webkit-scrollbar{display:none;}
-.res-filter .filter-btn{font-size:.68rem;}
-.res-section{padding:0 20px;margin-bottom:20px;}
-.res-section h3{font-size:.8rem;font-weight:900;color:var(--text-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em;}
-.res-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.res-card{background:white;border-radius:var(--radius-sm);overflow:hidden;box-shadow:0 3px 12px var(--shadow);cursor:pointer;transition:transform .2s;}
-.res-card:hover{transform:translateY(-2px);}
-.res-thumb{height:80px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;}
-.res-body{padding:10px;}
-.res-badge{font-size:.58rem;font-weight:900;padding:2px 7px;border-radius:8px;display:inline-block;margin-bottom:4px;}
-.badge-guide{background:#daeeda;color:var(--deep-sage);}
-.badge-article{background:var(--sky);color:var(--soft-blue);}
-.badge-video{background:var(--blush);color:var(--deep-rose);}
-.res-title{font-size:.75rem;font-weight:800;color:var(--text-dark);line-height:1.3;}
-.res-time{font-size:.62rem;color:var(--text-light);margin-top:4px;font-weight:600;}
-
-/* ── CONFIG ── */
-.profile-banner{margin:0 20px 20px;background:linear-gradient(135deg,var(--terracotta),var(--deep-rose));border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:14px;box-shadow:0 6px 24px rgba(160,90,74,.3);}
-.pb-avatar{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
-.pb-info h3{font-size:1rem;font-weight:900;color:white;}
-.pb-info p{font-size:.75rem;color:rgba(255,255,255,.8);margin-top:2px;}
-.pb-edit{margin-left:auto;background:rgba(255,255,255,.2);border:none;border-radius:9px;padding:7px 12px;color:white;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:800;cursor:pointer;transition:background .2s;flex-shrink:0;}
-.pb-edit:hover{background:rgba(255,255,255,.3);}
-.config-section{padding:0 20px;margin-bottom:20px;}
-.config-card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px var(--shadow);}
-.config-item{display:flex;align-items:center;padding:14px 16px;gap:12px;border-bottom:1px solid var(--cream);cursor:pointer;}
-.config-item:last-child{border-bottom:none;}
-.config-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.ci-rose{background:var(--blush);}.ci-sky{background:var(--sky);}
-.ci-sage{background:#daeeda;}.ci-gold{background:var(--gold-bg);}
-.ci-purple{background:var(--light-purple);}
-.config-text h4{font-size:.85rem;font-weight:800;color:var(--text-dark);}
-.config-text p{font-size:.72rem;color:var(--text-light);margin-top:1px;}
-.config-arrow{margin-left:auto;font-size:.95rem;color:var(--text-light);}
-.toggle{position:relative;width:42px;height:23px;margin-left:auto;flex-shrink:0;}
+/* ══ ACCOUNT PAGE ══ */
+.acc-banner{margin:20px;background:linear-gradient(135deg,var(--purple),#a29bfe);border-radius:var(--r);padding:22px;display:flex;align-items:center;gap:14px;box-shadow:0 6px 24px rgba(108,92,231,.3);}
+.acc-av{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.acc-info h3{font-size:1.05rem;font-weight:900;color:white;}
+.acc-info p{font-size:.78rem;color:rgba(255,255,255,.8);margin-top:2px;}
+.acc-edit{margin-left:auto;background:rgba(255,255,255,.2);border:none;border-radius:9px;padding:8px 14px;color:white;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;flex-shrink:0;}
+.acc-section{padding:0 20px;margin-bottom:20px;}
+.acc-section-title{font-size:.68rem;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.acc-card{background:white;border-radius:var(--r);overflow:hidden;box-shadow:0 3px 12px var(--shadow);}
+.acc-item{display:flex;align-items:center;padding:14px 16px;gap:12px;border-bottom:1px solid #f8f8f8;cursor:pointer;}
+.acc-item:last-child{border-bottom:none;}
+.ai-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.ai-purple{background:var(--purple-light);}
+.ai-green{background:#e8f5e9;}
+.ai-blue{background:#e3f2fd;}
+.ai-orange{background:#fff8e1;}
+.ai-red{background:#fce4ec;}
+.ai-text h4{font-size:.85rem;font-weight:700;color:var(--text);}
+.ai-text p{font-size:.72rem;color:var(--text3);margin-top:1px;}
+.ai-arr{margin-left:auto;color:var(--text3);font-size:.9rem;}
+.toggle{position:relative;width:44px;height:24px;margin-left:auto;flex-shrink:0;}
 .toggle input{opacity:0;width:0;height:0;}
-.toggle-slider{position:absolute;inset:0;background:var(--blush);border-radius:23px;cursor:pointer;transition:.3s;}
-.toggle-slider:before{content:'';position:absolute;height:17px;width:17px;left:3px;bottom:3px;background:white;border-radius:50%;transition:.3s;}
-.toggle input:checked+.toggle-slider{background:var(--terracotta);}
-.toggle input:checked+.toggle-slider:before{transform:translateX(19px);}
-.version-note{text-align:center;font-size:.68rem;color:var(--text-light);padding:8px 20px 0;font-weight:600;}
+.tslider{position:absolute;inset:0;background:#ddd;border-radius:24px;cursor:pointer;transition:.3s;}
+.tslider:before{content:'';position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:white;border-radius:50%;transition:.3s;}
+.toggle input:checked+.tslider{background:var(--purple);}
+.toggle input:checked+.tslider:before{transform:translateX(20px);}
 
-/* BOTTOM NAV */
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-top:1px solid var(--blush);padding:9px 0 14px;display:flex;justify-content:space-around;align-items:center;z-index:100;}
-.nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px 10px;border-radius:12px;border:none;background:transparent;}
-.nav-item.active .nav-icon,.nav-item.active .nav-label{color:var(--terracotta);}
-.nav-icon{font-size:1.25rem;color:var(--text-light);}
-.nav-label{font-size:.58rem;font-weight:800;color:var(--text-light);text-transform:uppercase;letter-spacing:.04em;}
+/* ══ BOTTOM NAV ══ */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-top:1px solid rgba(0,0,0,.06);padding:10px 0 16px;display:flex;justify-content:space-around;z-index:100;}
+.nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:4px 12px;border-radius:12px;}
+.nav-btn .ni{font-size:1.3rem;color:#aaa;transition:color .2s;}
+.nav-btn .nl{font-size:.58rem;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.04em;transition:color .2s;}
+.nav-btn.active .ni,.nav-btn.active .nl{color:var(--purple);}
 
-/* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(50,30,20,.45);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
+/* ══ MODALS ══ */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(6px);z-index:300;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;max-width:430px;margin:0 auto;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-sheet{background:var(--warm-white);border-radius:24px 24px 0 0;width:100%;max-width:520px;padding:22px 22px 36px;transform:translateY(30px);transition:transform .3s;max-height:88vh;overflow-y:auto;position:relative;}
+.modal-sheet{background:white;border-radius:24px 24px 0 0;width:100%;padding:20px 20px 36px;transform:translateY(20px);transition:transform .3s;max-height:90vh;overflow-y:auto;}
 .modal-overlay.open .modal-sheet{transform:translateY(0);}
-.modal-handle{width:38px;height:4px;background:var(--blush);border-radius:2px;margin:0 auto 18px;}
-.modal-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--deep-rose);margin-bottom:5px;}
-.modal-sub{font-size:.78rem;color:var(--text-light);margin-bottom:18px;}
+.modal-handle{width:36px;height:4px;background:#e0e0e0;border-radius:2px;margin:0 auto 18px;}
+.modal-title{font-size:1.2rem;font-weight:900;color:var(--text);margin-bottom:4px;}
+.modal-sub{font-size:.82rem;color:var(--text3);margin-bottom:18px;}
+.close-modal{position:absolute;top:14px;right:16px;background:#f5f5f5;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;color:var(--text3);}
 .form-group{margin-bottom:14px;}
-.form-label{display:block;font-size:.7rem;font-weight:900;color:var(--text-mid);margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;}
-.form-input,.form-select,.form-textarea{width:100%;border:2px solid var(--blush);border-radius:var(--radius-sm);padding:10px 13px;font-family:'Nunito',sans-serif;font-size:.85rem;color:var(--text-dark);background:white;outline:none;transition:border-color .2s;}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--terracotta);}
-.form-textarea{resize:vertical;min-height:74px;}
-.emotion-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
-.emotion-btn{background:var(--cream);border:2px solid var(--blush);border-radius:10px;padding:9px 3px;cursor:pointer;text-align:center;transition:all .2s;}
-.emotion-btn .e-icon{font-size:1.3rem;display:block;margin-bottom:3px;}
-.emotion-btn .e-label{font-size:.58rem;font-weight:800;color:var(--text-mid);}
-.emotion-btn.selected{border-color:var(--terracotta);background:var(--blush);}
-.close-modal{position:absolute;top:14px;right:18px;background:var(--blush);border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--terracotta);}
-.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--terracotta),var(--deep-rose));border:none;border-radius:var(--radius-sm);cursor:pointer;color:white;font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:900;box-shadow:0 6px 20px rgba(160,90,74,.3);transition:transform .2s;margin-top:6px;}
-.submit-btn:hover{transform:translateY(-2px);}
+.form-label{display:block;font-size:.7rem;font-weight:800;color:var(--text2);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em;}
+.form-input,.form-select,.form-textarea{width:100%;border:2px solid #eee;border-radius:var(--r-sm);padding:11px 13px;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--text);background:white;outline:none;transition:border-color .2s;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--purple);}
+.form-textarea{resize:vertical;min-height:80px;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-
-/* INTENSITY SLIDER */
-.intensity-select{display:flex;gap:6px;margin-top:2px;}
-.int-btn{flex:1;padding:8px 4px;border:2px solid var(--blush);border-radius:9px;background:white;cursor:pointer;text-align:center;font-family:'Nunito',sans-serif;font-size:.7rem;font-weight:900;color:var(--text-mid);transition:all .2s;}
-.int-btn.s1.sel{border-color:#7ec8a0;background:#daeeda;color:var(--deep-sage);}
-.int-btn.s2.sel{border-color:var(--gold);background:var(--gold-bg);color:#a07820;}
-.int-btn.s3.sel{border-color:var(--terracotta);background:var(--blush);color:var(--deep-rose);}
-.int-btn.s4.sel{border-color:#e57373;background:#fde8e8;color:#c0392b;}
-.int-btn.s5.sel{border-color:#b71c1c;background:#fde8e8;color:#b71c1c;}
-
-/* EMOJI PICKER */
-.emoji-pick{background:var(--cream);border:2px solid var(--blush);border-radius:9px;width:38px;height:38px;font-size:1.2rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
-.emoji-pick.selected{border-color:var(--terracotta);background:var(--blush);}
-.cond-tag{padding:5px 11px;border-radius:20px;border:2px solid var(--blush);background:white;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;color:var(--text-mid);cursor:pointer;transition:all .2s;}
-.cond-tag.selected{background:var(--blush);border-color:var(--terracotta);color:var(--deep-rose);}
+.primary-btn{width:100%;padding:15px;background:var(--purple);border:none;border-radius:var(--r-sm);cursor:pointer;color:white;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:800;box-shadow:0 6px 18px rgba(108,92,231,.3);transition:transform .15s;margin-top:6px;}
+.primary-btn:active{transform:scale(.98);}
+.primary-btn.green{background:var(--green);box-shadow:0 6px 18px rgba(0,184,148,.3);}
+.emotion-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+.emot-btn{background:#f8f8f8;border:2px solid #eee;border-radius:10px;padding:9px 3px;cursor:pointer;text-align:center;transition:all .2s;}
+.emot-btn .ei{font-size:1.25rem;display:block;margin-bottom:3px;}
+.emot-btn .el{font-size:.58rem;font-weight:700;color:var(--text3);}
+.emot-btn.sel{border-color:var(--purple);background:var(--purple-light);}
+.int-row{display:flex;gap:6px;}
+.int-btn{flex:1;padding:9px 4px;border:2px solid #eee;border-radius:9px;background:white;cursor:pointer;text-align:center;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:800;color:var(--text2);transition:all .2s;}
+.int-btn.l1.sel{border-color:#00b894;background:#e8f5e9;color:#006d51;}
+.int-btn.l2.sel{border-color:#fdcb6e;background:#fff8e1;color:#a07000;}
+.int-btn.l3.sel{border-color:#e17055;background:#fce4ec;color:#b71c1c;}
+.int-btn.l4.sel{border-color:#d63031;background:#fde8e8;color:#b71c1c;}
+.int-btn.l5.sel{border-color:#c0392b;background:#fde8e8;color:#8b0000;}
+.emoji-row{display:flex;gap:6px;flex-wrap:wrap;}
+.ep-btn{background:#f8f8f8;border:2px solid #eee;border-radius:9px;width:38px;height:38px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.ep-btn.sel{border-color:var(--purple);background:var(--purple-light);}
+.cond-row{display:flex;gap:6px;flex-wrap:wrap;}
+.cond-chip{padding:6px 12px;border-radius:20px;border:2px solid #eee;background:white;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;color:var(--text2);cursor:pointer;transition:all .2s;}
+.cond-chip.sel{background:var(--purple-light);border-color:var(--purple);color:var(--purple);}
 
 /* QUICK LOG MODAL */
-.ql-step{display:none;}
-.ql-step.active{display:block;}
-.ql-voice-area{background:var(--light-purple);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:14px;}
-.ql-voice-btn{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#6b5ca5);border:none;cursor:pointer;font-size:1.8rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;box-shadow:0 6px 20px rgba(100,80,160,.3);transition:transform .2s;}
-.ql-voice-btn:hover{transform:scale(1.08);}
-.ql-voice-btn.recording{animation:pulse 1s infinite;}
-@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 6px 20px rgba(100,80,160,.3)}50%{transform:scale(1.08);box-shadow:0 6px 28px rgba(100,80,160,.5)}}
-.ql-voice-hint{font-size:.78rem;color:var(--purple);font-weight:700;}
-.ql-result-item{background:white;border-radius:var(--radius-sm);padding:11px 13px;margin-bottom:8px;border-left:3px solid var(--terracotta);display:flex;align-items:flex-start;gap:10px;}
-.ql-result-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
-.ql-result-text h4{font-size:.8rem;font-weight:800;color:var(--text-dark);}
-.ql-result-text p{font-size:.72rem;color:var(--text-mid);margin-top:2px;}
+.ql-voice-area{background:linear-gradient(135deg,var(--purple-light),#e8e0ff);border-radius:var(--r);padding:22px;text-align:center;margin-bottom:14px;}
+.ql-voice-btn{width:72px;height:72px;border-radius:50%;background:var(--purple);border:none;cursor:pointer;font-size:1.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;box-shadow:0 6px 20px rgba(108,92,231,.35);transition:transform .2s;}
+.ql-voice-btn.rec{animation:vpulse 1s infinite;}
+@keyframes vpulse{0%,100%{transform:scale(1);box-shadow:0 6px 20px rgba(108,92,231,.35)}50%{transform:scale(1.08);box-shadow:0 6px 28px rgba(108,92,231,.6)}}
+.ql-hint{font-size:.82rem;color:var(--purple);font-weight:700;}
+.ql-status{font-size:.72rem;color:var(--purple);font-weight:700;min-height:18px;margin-top:6px;}
+.ql-no-mic{display:none;background:#fff3cd;border:1px solid #ffc107;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:.76rem;color:#856404;font-weight:700;}
+.ql-divider{display:flex;align-items:center;gap:8px;margin:12px 0 10px;}
+.ql-divider span{font-size:.68rem;font-weight:800;color:var(--text3);}
+.ql-divider::before,.ql-divider::after{content:'';flex:1;height:1px;background:#eee;}
+.ql-result{background:white;border:1px solid #eee;border-radius:var(--r-sm);padding:11px 13px;margin-bottom:8px;display:flex;gap:10px;border-left:3px solid var(--purple);}
+.ql-result-icon{font-size:1.1rem;flex-shrink:0;}
+.ql-result-body h4{font-size:.8rem;font-weight:800;color:var(--text);}
+.ql-result-body p{font-size:.72rem;color:var(--text3);}
 
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-thumb{background:var(--blush);border-radius:4px;}
+/* ALMA CHAT */
+.alma-chat{display:flex;flex-direction:column;height:70vh;max-height:600px;}
+.alma-header{background:linear-gradient(135deg,var(--purple),#a29bfe);padding:20px;text-align:center;border-radius:16px 16px 0 0;margin:-20px -20px 0;}
+.alma-avatar{font-size:2.5rem;margin-bottom:6px;}
+.alma-header h2{font-size:1rem;font-weight:900;color:white;}
+.alma-header p{font-size:.78rem;color:rgba(255,255,255,.8);}
+.alma-msgs{flex:1;overflow-y:auto;padding:14px 0;display:flex;flex-direction:column;gap:8px;}
+.alma-msgs::-webkit-scrollbar{width:3px;}
+.alma-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+.alma-msg{max-width:85%;padding:10px 13px;border-radius:16px;font-size:.84rem;font-weight:500;line-height:1.5;animation:fadeUp .2s ease;}
+.am-ai{background:#f5f0ff;color:var(--text);border-bottom-left-radius:3px;align-self:flex-start;border:1px solid var(--border);}
+.am-user{background:var(--purple);color:white;border-bottom-right-radius:3px;align-self:flex-end;}
+.am-typing{background:#f5f0ff;padding:11px 14px;border-radius:16px;border-bottom-left-radius:3px;align-self:flex-start;display:flex;gap:4px;align-items:center;}
+.tdot{width:6px;height:6px;border-radius:50%;background:var(--purple);opacity:.5;animation:tdot 1.2s infinite;}
+.tdot:nth-child(2){animation-delay:.2s;}.tdot:nth-child(3){animation-delay:.4s;}
+@keyframes tdot{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+.next-steps{background:linear-gradient(135deg,#4a90d9,#357abd);border-radius:var(--r-sm);padding:13px 14px;margin-top:6px;}
+.next-steps h4{font-size:.8rem;font-weight:900;color:white;margin-bottom:8px;}
+.next-steps ol{padding-left:16px;}
+.next-steps li{font-size:.76rem;color:rgba(255,255,255,.9);margin-bottom:4px;font-weight:600;line-height:1.4;}
+.alma-suggestions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.alma-sug{font-size:.7rem;font-weight:700;padding:5px 10px;background:var(--purple-light);border:none;border-radius:20px;color:var(--purple);cursor:pointer;}
+.alma-input-row{display:flex;gap:8px;padding-top:10px;border-top:1px solid #eee;}
+.alma-input{flex:1;border:2px solid #eee;border-radius:var(--r-sm);padding:10px 13px;font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text);outline:none;resize:none;background:#fafafa;}
+.alma-input:focus{border-color:var(--purple);}
+.alma-send{width:42px;height:42px;background:var(--purple);border:none;border-radius:var(--r-sm);cursor:pointer;color:white;font-size:1rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(108,92,231,.3);}
+.alma-send:disabled{opacity:.5;cursor:not-allowed;}
+
+/* REPORT MODAL */
+.rtype-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.rtype-btn{padding:12px 8px;border-radius:var(--r-sm);border:2px solid #eee;background:#fafafa;cursor:pointer;text-align:center;transition:all .2s;font-family:'Inter',sans-serif;}
+.rtype-btn .rt-ic{font-size:1.3rem;display:block;margin-bottom:4px;}
+.rtype-btn .rt-nm{font-size:.72rem;font-weight:800;color:var(--text2);}
+.rtype-btn.sel{border-color:var(--purple);background:var(--purple-light);}
+.report-output{font-size:.82rem;line-height:1.6;color:var(--text);}
+
+/* OFFLINE BANNER */
+#offline-bar{display:none;position:fixed;top:0;left:0;right:0;background:#e17055;color:white;text-align:center;padding:7px;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;z-index:999;max-width:430px;margin:0 auto;}
+#install-banner{display:none;position:fixed;bottom:90px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:398px;background:linear-gradient(135deg,var(--purple),var(--purple-dark));border-radius:var(--r);padding:14px 16px;z-index:200;box-shadow:0 8px 28px rgba(108,92,231,.35);display:flex;align-items:center;gap:10px;}
+#install-banner .ib-txt h4{color:white;font-size:.85rem;font-weight:900;margin:0;}
+#install-banner .ib-txt p{color:rgba(255,255,255,.8);font-size:.72rem;margin:2px 0 0;}
+#install-banner .ib-install{background:white;border:none;border-radius:9px;padding:8px 14px;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:800;color:var(--purple);cursor:pointer;margin-left:auto;flex-shrink:0;}
+#install-banner .ib-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;width:26px;height:26px;color:white;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 </style>
 </head>
 <body>
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+
+<div id="offline-bar">📵 Sem conexão — registros salvos localmente</div>
+<div id="install-banner" style="display:none">
+  <span style="font-size:1.4rem">📲</span>
+  <div class="ib-txt"><h4>Instalar Crescer Juntos</h4><p>Adicionar à tela inicial</p></div>
+  <button class="ib-install" onclick="installPWA()">Instalar</button>
+  <button class="ib-close" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
 </div>
 
-<!-- ══ PAGE: INÍCIO ══ -->
-<div class="page active" id="page-inicio">
-  <header>
-    <div class="logo-area">
-      <h1>Crescer <span>Juntos</span></h1>
-      <p>Acompanhamento Infantil com IA</p>
-    </div>
-    <div class="hdr-right">
-      <button class="avatar-btn" onclick="openModal('editcrianca')">👩</button>
-    </div>
-  </header>
+<!-- ══════════════════ ONBOARDING ══════════════════ -->
+<div id="onboarding">
+  <div class="ob-slides" id="obSlides">
 
-  <div class="greeting">
-    <h2>Olá, <span id="greetName">Família</span> 🌸</h2>
-    <p id="greetSub">Como o Mateus está hoje?</p>
-  </div>
+    <!-- SLIDE 1: Understand Patterns -->
+    <div class="ob-slide ob-s1">
+      <h1 class="ob-title">Entenda os Padrões do Seu Filho</h1>
+      <p class="ob-sub">Registre tudo em um lugar e descubra o que realmente importa</p>
+      <div class="ob-phone">
+        <div style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:10px 12px;display:flex;align-items:center;gap:6px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🦊</div>
+          <div><div style="font-size:.65rem;font-weight:800;color:white;">Home ˅</div><div style="font-size:.5rem;color:rgba(255,255,255,.7);">Mateus</div></div>
+          <div style="margin-left:auto;width:22px;height:22px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;">⚙️</div>
+        </div>
+        <div class="ob-phone-inner">
+          <div class="ob-metrics">
+            <div class="ob-metric"><div class="ob-metric-icon ic-green">😊</div><div class="ob-metric-lbl">Desafios</div><div class="ob-metric-val">3</div><div class="ob-metric-trend">↓ 45%</div></div>
+            <div class="ob-metric"><div class="ob-metric-icon ic-purple">🌙</div><div class="ob-metric-lbl">Sono</div><div class="ob-metric-val">7.5h</div><div class="ob-metric-trend">↑ 23%</div></div>
+            <div class="ob-metric"><div class="ob-metric-icon ic-blue">💧</div><div class="ob-metric-lbl">Hidratação</div><div class="ob-metric-val">41oz</div><div class="ob-metric-trend">↑ 8%</div></div>
+            <div class="ob-metric"><div class="ob-metric-icon ic-orange">🍎</div><div class="ob-metric-lbl">Refeições</div><div class="ob-metric-val">5</div><div class="ob-metric-trend">↑ 20%</div></div>
+          </div>
+          <div class="ob-insight"><span style="font-size:1rem">🎉</span><p><strong>Crises</strong> caíram <span>32%</span> esta semana</p></div>
+          <div class="ob-actions">
+            <div class="ob-action-btn purple"><div class="qb-icon" style="width:20px;height:20px;margin-bottom:5px;">💬</div><div class="act-title">Alma IA</div><div style="font-size:.55rem;color:rgba(255,255,255,.8)">Pergunte, desabafe.</div></div>
+            <div class="ob-action-btn green"><div class="qb-icon" style="width:20px;height:20px;margin-bottom:5px;">🎙️</div><div class="act-title">Quick Log</div><div style="font-size:.55rem;color:rgba(255,255,255,.8)">Fale, salve. Pronto.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ob-dots">
+        <div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div>
+      </div>
+      <button class="ob-btn-primary" onclick="nextSlide()">Próximo →</button>
+      <button class="ob-btn-skip" onclick="finishOnboarding()">Pular introdução</button>
+    </div>
 
-  <div class="child-card" onclick="openModal('editcrianca')">
-    <div class="child-emoji" id="childEmoji">🦊</div>
-    <div class="child-info">
-      <h3 id="childName">Mateus, 4 anos</h3>
-      <p id="childSince">Cadastrado em Jan 2025</p>
-      <div class="child-tags" id="childTags">
-        <span class="tag tag-green">Neuroatípico</span>
-        <span class="tag tag-blue">TEA leve</span>
-        <span class="tag tag-rose">Terapia OT</span>
+    <!-- SLIDE 2: Log Everything Zero Typing -->
+    <div class="ob-slide ob-s2">
+      <h1 class="ob-title">Registre Tudo. Sem Digitar.</h1>
+      <p class="ob-sub">Fale sobre o dia — a IA organiza automaticamente em categorias</p>
+      <div class="ob-phone">
+        <div style="padding:12px;background:white;">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;"><span style="font-size:.65rem;color:#6c5ce7;font-weight:700;">‹</span><span style="font-size:.75rem;font-weight:800;">Quick Log</span></div>
+          <div style="font-size:.62rem;font-weight:800;color:#333;margin-bottom:6px;">Como o Quick Log funciona</div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:22px;height:22px;border-radius:50%;background:#e3f2fd;display:flex;align-items:center;justify-content:center;font-size:.65rem;">🎙️</div><div><div style="font-size:.6rem;font-weight:700;">Fale naturalmente</div><div style="font-size:.52rem;color:#888;">Descreva o que aconteceu.</div></div></div>
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:22px;height:22px;border-radius:50%;background:#ede9ff;display:flex;align-items:center;justify-content:center;font-size:.65rem;">🧠</div><div><div style="font-size:.6rem;font-weight:700;">Alma organiza</div><div style="font-size:.52rem;color:#888;">Categoriza tudo pra você.</div></div></div>
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:22px;height:22px;border-radius:50%;background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:.65rem;">✅</div><div><div style="font-size:.6rem;font-weight:700;">Revise e salve</div><div style="font-size:.52rem;color:#888;">Confirme e pronto!</div></div></div>
+          </div>
+          <div style="margin-top:10px;background:linear-gradient(135deg,#ff6b6b,#fd79a8);border-radius:20px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px;"><span style="font-size:.55rem;color:white;font-weight:700;">🎙️ Ouvindo...</span></div>
+        </div>
       </div>
+      <div class="ob-badges">
+        <div class="ob-badge badge-red">🎙️ Fale o dia todo</div>
+        <div class="ob-badge badge-purple" style="align-self:flex-end">🧠 Logado automaticamente</div>
+        <div class="ob-badge badge-teal">⚡ Pronto em 2 minutos</div>
+      </div>
+      <div class="ob-dots" style="margin-top:16px;">
+        <div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div>
+      </div>
+      <button class="ob-btn-primary" onclick="nextSlide()">Próximo →</button>
+      <button class="ob-btn-skip" onclick="finishOnboarding()">Pular</button>
     </div>
-    <button class="edit-btn" onclick="event.stopPropagation();openModal('editcrianca')">✏️</button>
-  </div>
 
-  <!-- METRIC CARDS -->
-  <p class="section-title">Esta semana</p>
-  <div class="metrics-grid">
-    <div class="metric-card">
-      <div class="metric-icon mi-sky">🌙</div>
-      <div class="metric-info">
-        <div class="m-val">7h20</div>
-        <div class="m-lbl">Sono médio</div>
-        <div class="m-trend trend-up">↑ 12% vs semana</div>
+    <!-- SLIDE 3: Walk Prepared -->
+    <div class="ob-slide ob-s3">
+      <h1 class="ob-title">Entre Preparado em Cada Consulta</h1>
+      <p class="ob-sub">Gere relatórios inteligentes para IEP, médico, terapeuta e plano 504</p>
+      <div class="ob-phone">
+        <div style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:10px 12px;display:flex;align-items:center;gap:6px;">
+          <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🦊</div>
+          <div style="font-size:.65rem;font-weight:800;color:white;">Insights ˅</div>
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:7px;">
+          <div style="background:#f0ebff;border-radius:8px;padding:8px;"><div style="font-size:.6rem;font-weight:800;color:#6c5ce7;margin-bottom:3px;">Padrões de Comportamento</div><div style="font-size:.55rem;color:#555;">Descubra gatilhos e padrões.</div><div style="font-size:.55rem;color:#6c5ce7;font-weight:700;margin-top:3px;">Ver detalhes ›</div></div>
+          <div style="background:#e8f5e9;border-radius:8px;padding:8px;"><div style="font-size:.6rem;font-weight:800;color:#2e7d32;margin-bottom:3px;">Resumo IA ✨</div><div style="font-size:.55rem;color:#555;">Entradas do diário com análise.</div><div style="font-size:.55rem;color:#2e7d32;font-weight:700;margin-top:3px;">Gerar ›</div></div>
+        </div>
       </div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-icon mi-rose">🌀</div>
-      <div class="metric-info">
-        <div class="m-val">2</div>
-        <div class="m-lbl">Crises</div>
-        <div class="m-trend trend-up">↓ 40% vs semana</div>
+      <div class="ob-badges">
+        <div class="ob-badge" style="background:#6c5ce7;">🎓 Reunião IEP</div>
+        <div class="ob-badge" style="background:#e17055;align-self:flex-end">👨‍⚕️ Visita médica</div>
+        <div class="ob-badge" style="background:#fdcb6e;color:#333;">📋 Plano 504</div>
       </div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-icon mi-sage">💧</div>
-      <div class="metric-info">
-        <div class="m-val">800ml</div>
-        <div class="m-lbl">Hidratação</div>
-        <div class="m-trend trend-down">↓ 8% vs semana</div>
+      <div class="ob-dots" style="margin-top:16px;">
+        <div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div>
       </div>
+      <button class="ob-btn-primary" onclick="nextSlide()">Próximo →</button>
+      <button class="ob-btn-skip" onclick="finishOnboarding()">Pular</button>
     </div>
-    <div class="metric-card">
-      <div class="metric-icon mi-gold">⭐</div>
-      <div class="metric-info">
-        <div class="m-val">3</div>
-        <div class="m-lbl">Marcos</div>
-        <div class="m-trend trend-neutral">🎉 Novos</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- QUICK LOG BANNER -->
-  <div class="quick-log-banner" onclick="openModal('quicklog')">
-    <div class="qlb-inner">
-      <div class="qlb-icon">🎙️</div>
-      <div class="qlb-text">
-        <h3>Registro Rápido com IA</h3>
-        <p>Fale o dia do seu filho — a IA organiza tudo</p>
+    <!-- SLIDE 4: Get Started -->
+    <div class="ob-slide ob-s4">
+      <h1 class="ob-title">Suporte Além do Rastreamento</h1>
+      <p class="ob-sub">Alma — sua parceira de IA disponível 24h para perguntas, estratégias e apoio emocional</p>
+      <div class="ob-phone" style="height:280px;">
+        <div style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:14px 12px;text-align:center;">
+          <div style="font-size:1.8rem;margin-bottom:4px;">☁️</div>
+          <div style="font-size:.72rem;font-weight:800;color:white;">Olá! Bem-vinda 💛</div>
+          <div style="font-size:.58rem;color:rgba(255,255,255,.8);margin-top:2px;">Sou a Alma, sua IA de parentalidade.</div>
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:6px;">
+          <div style="background:#fff3cd;border-radius:9px;padding:8px;"><div style="font-size:.6rem;font-weight:700;">💭 Precisa desabafar?</div><div style="font-size:.52rem;color:#888;margin-top:2px;">Estou aqui sem julgamentos.</div><div style="margin-top:5px;background:#6c5ce7;border-radius:8px;padding:3px 8px;display:inline-block;font-size:.55rem;color:white;font-weight:700;">Vamos conversar ›</div></div>
+          <div style="font-size:.6rem;font-weight:800;color:#333;margin-top:4px;">Sugestões</div>
+          <div style="font-size:.58rem;color:#555;padding:4px 0;border-bottom:1px solid #f0f0f0;">💛 Como apoiar melhor dia a dia?</div>
+          <div style="font-size:.58rem;color:#555;padding:4px 0;">📚 O que funciona em famílias como a minha?</div>
+        </div>
       </div>
-      <div class="qlb-arrow">›</div>
+      <div class="ob-dots" style="margin-top:16px;">
+        <div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div>
+      </div>
+      <button class="ob-btn-primary" onclick="finishOnboarding()">Começar agora →</button>
+      <button class="ob-btn-skip" onclick="finishOnboarding()">Já tenho conta</button>
     </div>
-  </div>
 
-  <p class="section-title">Registrar por categoria</p>
-  <div class="quick-actions">
-    <button class="qa-btn" onclick="openModal('comportamento')"><span class="icon">🌀</span><span>Compor&shy;tamento</span></button>
-    <button class="qa-btn" onclick="openModal('sono')"><span class="icon">🌙</span><span>Sono</span></button>
-    <button class="qa-btn" onclick="openModal('alimentacao')"><span class="icon">🍎</span><span>Alimen&shy;tação</span></button>
-    <button class="qa-btn" onclick="openModal('hidratacao')"><span class="icon">💧</span><span>Hidra&shy;tação</span></button>
-    <button class="qa-btn" onclick="openModal('medicamento')"><span class="icon">💊</span><span>Medica&shy;mento</span></button>
-    <button class="qa-btn" onclick="openModal('saude')"><span class="icon">🏥</span><span>Saúde</span></button>
-    <button class="qa-btn" onclick="openModal('tela')"><span class="icon">📱</span><span>Tela</span></button>
-    <button class="qa-btn" onclick="openModal('marco')"><span class="icon">⭐</span><span>Marco</span></button>
-  </div>
-
-  <p class="section-title">Alma — sua IA parceira</p>
-  <div class="ai-section">
-    <div class="ai-header">
-      <div class="ai-icon">✨</div>
-      <div><h3>Alma</h3><p>Parceira de parentalidade 24/7</p></div>
-    </div>
-    <div class="ai-body">
-      <div class="quick-prompts">
-        <button class="qp-btn" onclick="setPrompt('Como lidar com crises de sensibilidade sensorial?')">Sensorial</button>
-        <button class="qp-btn" onclick="setPrompt('O que perguntar na consulta com o neuropediatra?')">Consulta</button>
-        <button class="qp-btn" onclick="setPrompt('Dicas para melhorar a rotina de sono do Mateus')">Sono</button>
-        <button class="qp-btn" onclick="setPrompt('Hoje Mateus teve crise na escola por mudança de rotina e não quis comer no almoço.')">Relatar dia</button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="msg msg-ai">Olá! 💛 Sou a Alma, sua parceira de parentalidade. Pode me contar sobre o dia do Mateus ou perguntar qualquer coisa. Estou aqui a qualquer hora!</div>
-      </div>
-      <div id="nextStepsArea"></div>
-      <div class="ai-input-row">
-        <textarea class="ai-input" id="aiInput" placeholder="Fale sobre o dia ou faça uma pergunta..." rows="2" onkeydown="handleKey(event)"></textarea>
-        <button class="send-btn" id="sendBtn" onclick="sendMessage()">➤</button>
-      </div>
-    </div>
-  </div>
-
-  <p class="section-title">Registros recentes</p>
-  <div class="log-list" id="logList">
-    <div class="log-item"><div class="log-icon rose">⭐</div><div class="log-content"><h4>Marco: disse "eu te amo" sozinho</h4><p>Área: Comunicação espontânea</p></div><div class="log-time">Hoje</div></div>
-    <div class="log-item"><div class="log-icon sky">🌙</div><div class="log-content"><h4>Sono: 7h45 ininterrupto</h4><p>Dormiu às 20:30 • Qualidade: Ótima</p></div><div class="log-time">Ontem</div></div>
-    <div class="log-item"><div class="log-icon gold">🌀</div><div class="log-content"><h4>Crise: agitação na escola</h4><p>Gatilho: mudança de rotina • Intensidade: 3/5</p></div><div class="log-time">Ter</div></div>
-    <div class="log-item"><div class="log-icon sage">💧</div><div class="log-content"><h4>Hidratação: 950ml</h4><p>Meta diária: 1000ml</p></div><div class="log-time">Seg</div></div>
   </div>
 </div>
 
-<!-- ══ PAGE: GRÁFICOS ══ -->
-<div class="page" id="page-graficos">
-  <div class="page-header"><span class="ph-icon">📊</span><h2>Gráficos & Evolução</h2></div>
-  <div class="chart-grid">
-    <div class="chart-card">
-      <h3>Sono — 7 dias (horas)</h3>
-      <div class="bar-chart" id="sleepChart"></div>
-      <div class="legend"><div class="legend-item"><div class="legend-dot" style="background:var(--soft-blue)"></div>Horas de sono</div></div>
-      <div class="chart-summary">
-        <div class="cs-item"><div class="cs-val">7h20</div><div class="cs-lbl">Média</div></div>
-        <div class="cs-item"><div class="cs-val">8h15</div><div class="cs-lbl">Melhor noite</div></div>
-      </div>
-    </div>
-    <div class="chart-card">
-      <h3>Crises por dia</h3>
-      <div class="bar-chart" id="crisisChart"></div>
-      <div class="chart-summary">
-        <div class="cs-item"><div class="cs-val">2</div><div class="cs-lbl">Esta semana</div></div>
-        <div class="cs-item"><div class="cs-val">↓40%</div><div class="cs-lbl">vs anterior</div></div>
-      </div>
-    </div>
-    <div class="chart-card">
-      <h3>Hidratação — 7 dias (ml)</h3>
-      <div class="bar-chart" id="waterChart"></div>
-      <div class="legend"><div class="legend-item"><div class="legend-dot" style="background:#56c7e0"></div>Meta: 1000ml/dia</div></div>
-    </div>
-    <div class="chart-card">
-      <h3>Aceitação alimentar</h3>
-      <div>
-        <div class="progress-row"><div class="progress-label"><span>Frutas</span><span>92%</span></div><div class="progress-track"><div class="progress-fill" style="width:92%;background:var(--deep-sage)"></div></div></div>
-        <div class="progress-row"><div class="progress-label"><span>Legumes</span><span>58%</span></div><div class="progress-track"><div class="progress-fill" style="width:58%;background:var(--terracotta)"></div></div></div>
-        <div class="progress-row"><div class="progress-label"><span>Proteínas</span><span>75%</span></div><div class="progress-track"><div class="progress-fill" style="width:75%;background:var(--soft-blue)"></div></div></div>
-        <div class="progress-row"><div class="progress-label"><span>Carboidratos</span><span>88%</span></div><div class="progress-track"><div class="progress-fill" style="width:88%;background:var(--gold)"></div></div></div>
-      </div>
-    </div>
-    <div class="chart-card">
-      <h3>Humor semanal (1–5)</h3>
-      <div class="bar-chart" id="moodChart"></div>
-    </div>
-  </div>
-</div>
+<!-- ══════════════════ MAIN APP ══════════════════ -->
+<div id="app">
 
-<!-- ══ PAGE: REGISTROS ══ -->
-<div class="page" id="page-registros">
-  <div class="page-header"><span class="ph-icon">📋</span><h2>Todos os Registros</h2></div>
-  <div class="filter-row">
-    <button class="filter-btn active" onclick="filterRecords('todos',this)">Todos</button>
-    <button class="filter-btn" onclick="filterRecords('comportamento',this)">🌀 Crise</button>
-    <button class="filter-btn" onclick="filterRecords('sono',this)">🌙 Sono</button>
-    <button class="filter-btn" onclick="filterRecords('alimentacao',this)">🍎 Alim.</button>
-    <button class="filter-btn" onclick="filterRecords('hidratacao',this)">💧 Água</button>
-    <button class="filter-btn" onclick="filterRecords('medicamento',this)">💊 Medic.</button>
-    <button class="filter-btn" onclick="filterRecords('marco',this)">⭐ Marcos</button>
-  </div>
-  <!-- REPORT GENERATOR -->
-  <div class="report-section">
-    <div class="report-card">
-      <h3>📄 Gerar Relatório para Consulta</h3>
-      <p>Leve dados reais para a próxima reunião de IEP, médico ou terapeuta</p>
-      <div class="report-types">
-        <button class="report-type-btn selected" onclick="selectReport(this)"><span class="rt-icon">🎓</span><span class="rt-name">IEP / Escola</span></button>
-        <button class="report-type-btn" onclick="selectReport(this)"><span class="rt-icon">👨‍⚕️</span><span class="rt-name">Médico</span></button>
-        <button class="report-type-btn" onclick="selectReport(this)"><span class="rt-icon">🧠</span><span class="rt-name">Terapeuta</span></button>
-        <button class="report-type-btn" onclick="selectReport(this)"><span class="rt-icon">📋</span><span class="rt-name">Plano 504</span></button>
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <div class="home-header">
+      <div class="home-child-selector" onclick="openModal('editchild')">
+        <div class="hcs-avatar" id="hcsAvatar">🦊</div>
+        <div class="hcs-info">
+          <h3 id="hcsName">Home <span class="hcs-chevron">˅</span></h3>
+          <p id="hcsSub">Mateus</p>
+        </div>
       </div>
-      <div class="report-date-row">
-        <div><label class="form-label">De</label><input type="date" class="form-input" id="repFrom" value="2026-05-01"></div>
-        <div><label class="form-label">Até</label><input type="date" class="form-input" id="repTo" value="2026-06-03"></div>
+      <button class="header-settings" onclick="goTo('account')">⚙️</button>
+    </div>
+
+    <div class="insight-banner">
+      <div class="ib-icon">🎉</div>
+      <div class="ib-text"><strong>Crises</strong> caíram <strong>32%</strong> esta semana — ótimo progresso!</div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="met-card"><div class="met-icon ic-green">😊</div><div class="met-body"><div class="met-lbl">Desafios</div><div class="met-val">3</div><div class="met-trend trend-down-good">↓ 45%</div></div></div>
+      <div class="met-card"><div class="met-icon ic-purple">🌙</div><div class="met-body"><div class="met-lbl">Sono</div><div class="met-val">7.5h</div><div class="met-trend trend-up">↑ 23%</div></div></div>
+      <div class="met-card"><div class="met-icon ic-blue">💧</div><div class="met-body"><div class="met-lbl">Hidratação</div><div class="met-val">950ml</div><div class="met-trend trend-up">↑ 8%</div></div></div>
+      <div class="met-card"><div class="met-icon ic-orange">🍎</div><div class="met-body"><div class="met-lbl">Refeições</div><div class="met-val">5</div><div class="met-trend trend-up">↑ 20%</div></div></div>
+    </div>
+
+    <div class="section-header">
+      <h2>Apoio rápido</h2>
+    </div>
+    <p class="quick-access-desc">Obtenha apoio e registre o dia rapidamente.</p>
+    <div class="quick-btns">
+      <button class="qb-alma" onclick="openModal('alma')">
+        <div class="qb-icon">💬</div>
+        <div class="qb-arrow">→</div>
+        <span class="qb-title">Alma IA</span>
+        <span class="qb-sub">Desabafe, pergunte e receba orientação.</span>
+      </button>
+      <button class="qb-quick" onclick="openModal('quicklog')">
+        <div class="qb-icon">🎙️</div>
+        <div class="qb-arrow">→</div>
+        <span class="qb-title">Quick Log</span>
+        <span class="qb-sub">Fale, salve. Pronto.</span>
+      </button>
+    </div>
+
+    <div class="structured-header">
+      <h2>Registro estruturado</h2>
+      <button class="view-all" onclick="goTo('journal')">Ver tudo</button>
+    </div>
+    <div class="log-entries" id="homeLog">
+      <div class="log-entry"><div class="le-icon" style="background:#ede9ff;">⭐</div><div class="le-body"><div class="le-title">Disse "eu te amo" sozinho</div><div class="le-detail">Área: Comunicação espontânea</div><span class="le-badge" style="background:#fff8e1;color:#a07000;">Marco</span></div><div class="le-time">Hoje</div></div>
+      <div class="log-entry"><div class="le-icon" style="background:#e3f2fd;">🌙</div><div class="le-body"><div class="le-title">Sono: 7h45 ininterrupto</div><div class="le-detail">20:30 → 07:15 • Qualidade ótima</div><span class="le-badge" style="background:#e3f2fd;color:#1565c0;">Sono</span></div><div class="le-time">Ontem</div></div>
+      <div class="log-entry"><div class="le-icon" style="background:#fce4ec;">🌀</div><div class="le-body"><div class="le-title">Crise: agitação na escola</div><div class="le-detail">Gatilho: mudança de rotina • 15min</div><div class="intensity-dots"><div class="idot on s3"></div><div class="idot on s3"></div><div class="idot on s3"></div><div class="idot"></div><div class="idot"></div></div></div><div class="le-time">Ter</div></div>
+      <div class="log-entry"><div class="le-icon" style="background:#e8f5e9;">💧</div><div class="le-body"><div class="le-title">Hidratação: 950ml</div><div class="le-detail">Meta diária: 1000ml</div><span class="le-badge" style="background:#e8f5e9;color:#2e7d32;">Água</span></div><div class="le-time">Seg</div></div>
+    </div>
+  </div>
+
+  <!-- JOURNAL -->
+  <div class="page" id="page-journal">
+    <div class="journal-header"><h1>Diário</h1></div>
+    <div class="journal-tabs">
+      <button class="jtab active" onclick="filterJournal('todos',this)">Todos</button>
+      <button class="jtab" onclick="filterJournal('behavior',this)">🌀 Comportamento</button>
+      <button class="jtab" onclick="filterJournal('sleep',this)">🌙 Sono</button>
+      <button class="jtab" onclick="filterJournal('food',this)">🍎 Alimentação</button>
+      <button class="jtab" onclick="filterJournal('water',this)">💧 Hidratação</button>
+      <button class="jtab" onclick="filterJournal('meds',this)">💊 Medicamentos</button>
+      <button class="jtab" onclick="filterJournal('milestone',this)">⭐ Marcos</button>
+    </div>
+    <div class="journal-entries" id="journalEntries"></div>
+    <button class="add-entry-fab" onclick="openModal('addentry')">+</button>
+  </div>
+
+  <!-- INSIGHTS -->
+  <div class="page" id="page-insights">
+    <div class="insights-header">
+      <h1>Insights</h1>
+      <div class="insights-child">
+        <div class="ic-av">🦊</div>
+        <span id="insightsChildName">Mateus</span>
+        <span class="ch-arr">˅</span>
       </div>
-      <button class="submit-btn" onclick="generateReport()">✨ Gerar com IA</button>
+    </div>
+    <div class="insight-cards">
+      <div class="ins-card">
+        <div class="ins-card-header"><h3>Sono — 7 dias</h3><span>Detalhes</span></div>
+        <div class="bar-chart" id="sleepChart"></div>
+        <div class="ins-summary">
+          <div class="is-item"><div class="is-val">7h20</div><div class="is-lbl">Média</div></div>
+          <div class="is-item"><div class="is-val">8h15</div><div class="is-lbl">Melhor</div></div>
+          <div class="is-item"><div class="is-val">↑12%</div><div class="is-lbl">vs semana</div></div>
+        </div>
+      </div>
+      <div class="ins-card">
+        <div class="ins-card-header"><h3>Crises por dia</h3><span>Detalhes</span></div>
+        <div class="bar-chart" id="crisisChart"></div>
+        <div class="ins-summary">
+          <div class="is-item"><div class="is-val">2</div><div class="is-lbl">Esta semana</div></div>
+          <div class="is-item"><div class="is-val">↓40%</div><div class="is-lbl">vs anterior</div></div>
+          <div class="is-item"><div class="is-val">Rotina</div><div class="is-lbl">Gatilho</div></div>
+        </div>
+      </div>
+      <div class="ins-card">
+        <div class="ins-card-header"><h3>Aceitação alimentar</h3><span>Detalhes</span></div>
+        <div class="prog-row"><div class="prog-hdr"><span>Frutas</span><span>92%</span></div><div class="prog-track"><div class="prog-fill" style="width:92%;background:#00b894"></div></div></div>
+        <div class="prog-row"><div class="prog-hdr"><span>Legumes</span><span>58%</span></div><div class="prog-track"><div class="prog-fill" style="width:58%;background:#e17055"></div></div></div>
+        <div class="prog-row"><div class="prog-hdr"><span>Proteínas</span><span>75%</span></div><div class="prog-track"><div class="prog-fill" style="width:75%;background:#74b9ff"></div></div></div>
+        <div class="prog-row"><div class="prog-hdr"><span>Carboidratos</span><span>88%</span></div><div class="prog-track"><div class="prog-fill" style="width:88%;background:#fdcb6e"></div></div></div>
+      </div>
+      <div class="ins-card">
+        <div class="ins-card-header"><h3>Gerar relatório para consulta</h3></div>
+        <div class="report-btns">
+          <button class="report-btn" onclick="openReportModal('IEP / Escola')"><div class="rb-icon" style="background:#ede9ff;">🎓</div><div class="rb-text"><h4>Reunião IEP</h4><p>Dados e metas para sua equipe</p></div><span class="rb-arr">›</span></button>
+          <button class="report-btn" onclick="openReportModal('Médico')"><div class="rb-icon" style="background:#fce4ec;">👨‍⚕️</div><div class="rb-text"><h4>Visita ao médico</h4><p>Preparado para sua consulta</p></div><span class="rb-arr">›</span></button>
+          <button class="report-btn" onclick="openReportModal('Terapeuta')"><div class="rb-icon" style="background:#e8f5e9;">🧠</div><div class="rb-text"><h4>Sessão de terapia</h4><p>Progresso e observações</p></div><span class="rb-arr">›</span></button>
+          <button class="report-btn" onclick="openReportModal('Plano 504')"><div class="rb-icon" style="background:#fff8e1;">📋</div><div class="rb-text"><h4>Plano 504</h4><p>Mostre o que seu filho precisa</p></div><span class="rb-arr">›</span></button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="records-list" id="recordsList"></div>
-</div>
 
-<!-- ══ PAGE: EQUIPE ══ -->
-<div class="page" id="page-equipe">
-  <div class="page-header"><span class="ph-icon">👨‍⚕️</span><h2>Equipe de Apoio</h2></div>
-  <div class="next-appt">
-    <h3>Próxima consulta</h3>
-    <h2>Terapeuta Ocupacional</h2>
-    <p>Dra. Fernanda Lima</p>
-    <span class="appt-date">📅 Qui, 12 Jun — 14h00</span>
+  <!-- RESOURCES -->
+  <div class="page" id="page-resources">
+    <div class="res-header"><h1>Recursos</h1></div>
+    <div class="res-search"><span>🔍</span><input placeholder="Buscar artigos e guias..."></div>
+    <div class="res-cats">
+      <button class="res-cat active" onclick="setResCat(this)">Todos</button>
+      <button class="res-cat" onclick="setResCat(this)">Apoio ao cuidador</button>
+      <button class="res-cat" onclick="setResCat(this)">Comportamento</button>
+      <button class="res-cat" onclick="setResCat(this)">Sensorial</button>
+      <button class="res-cat" onclick="setResCat(this)">Escola / IEP</button>
+      <button class="res-cat" onclick="setResCat(this)">Alimentação</button>
+    </div>
+    <p class="res-section-title">Apoio ao Cuidador</p>
+    <div class="res-grid">
+      <div class="res-card"><div class="rc-thumb" style="background:#e8f5e9;">🧩</div><div class="rc-body"><span class="rc-badge badge-g">Guia</span><div class="rc-title">Guia de treinamento gratuito em autismo</div><div class="rc-time">⏱ 6 min</div></div></div>
+      <div class="res-card"><div class="rc-thumb" style="background:#e3f2fd;">💼</div><div class="rc-body"><span class="rc-badge badge-a">Artigo</span><div class="rc-title">Fundos de emergência vs. fundos especiais</div><div class="rc-time">⏱ 6 min</div></div></div>
+    </div>
+    <p class="res-section-title">Comportamento & Crises</p>
+    <div class="res-grid">
+      <div class="res-card"><div class="rc-thumb" style="background:#fce4ec;">🌀</div><div class="rc-body"><span class="rc-badge badge-g">Guia</span><div class="rc-title">Entendendo meltdowns vs shutdowns</div><div class="rc-time">⏱ 7 min</div></div></div>
+      <div class="res-card"><div class="rc-thumb" style="background:#ede9ff;">🧘</div><div class="rc-body"><span class="rc-badge badge-a">Artigo</span><div class="rc-title">Estratégias sensoriais para o dia a dia</div><div class="rc-time">⏱ 5 min</div></div></div>
+      <div class="res-card"><div class="rc-thumb" style="background:#fff8e1;">🏫</div><div class="rc-body"><span class="rc-badge badge-g">Guia</span><div class="rc-title">Como se preparar para a reunião de IEP</div><div class="rc-time">⏱ 8 min</div></div></div>
+      <div class="res-card"><div class="rc-thumb" style="background:#fce4ec;">💛</div><div class="rc-body"><span class="rc-badge badge-a">Artigo</span><div class="rc-title">Autocuidado para pais de crianças TEA</div><div class="rc-time">⏱ 5 min</div></div></div>
+    </div>
   </div>
-  <p class="section-title">Profissionais cadastrados</p>
-  <div class="team-grid">
-    <div class="team-card"><div class="team-avatar ta-rose">👩‍⚕️</div><div class="team-info"><h4>Dra. Fernanda Lima</h4><p>Terapeuta Ocupacional</p><span class="team-tag">Terapia Sensorial</span></div><button class="icon-btn">💬</button></div>
-    <div class="team-card"><div class="team-avatar ta-blue">👨‍⚕️</div><div class="team-info"><h4>Dr. Carlos Mendes</h4><p>Neuropediatra</p><span class="team-tag">TEA / TDAH</span></div><button class="icon-btn">💬</button></div>
-    <div class="team-card"><div class="team-avatar ta-green">🧠</div><div class="team-info"><h4>Psic. Ana Beatriz</h4><p>Psicóloga Infantil</p><span class="team-tag">ABA / Cognitivo</span></div><button class="icon-btn">💬</button></div>
-    <div class="team-card"><div class="team-avatar ta-gold">🗣️</div><div class="team-info"><h4>Fonoaud. Paula Costa</h4><p>Fonoaudióloga</p><span class="team-tag">Comunicação</span></div><button class="icon-btn">💬</button></div>
-  </div>
-  <button class="add-btn">+ Adicionar profissional</button>
-</div>
 
-<!-- ══ PAGE: RECURSOS ══ -->
-<div class="page" id="page-recursos">
-  <div class="page-header"><span class="ph-icon">📚</span><h2>Recursos & Artigos</h2></div>
-  <div class="res-filter filter-row">
-    <button class="filter-btn active" onclick="filterRes('todos',this)">Todos</button>
-    <button class="filter-btn" onclick="filterRes('sensorial',this)">🧠 Sensorial</button>
-    <button class="filter-btn" onclick="filterRes('comportamento',this)">🌀 Comportamento</button>
-    <button class="filter-btn" onclick="filterRes('familia',this)">💛 Família</button>
-    <button class="filter-btn" onclick="filterRes('escola',this)">🎓 Escola/IEP</button>
-  </div>
-  <div class="res-section">
-    <h3>Em destaque</h3>
-    <div class="res-cards">
-      <div class="res-card"><div class="res-thumb" style="background:#daeeda">🧩</div><div class="res-body"><span class="res-badge badge-guide">Guia</span><div class="res-title">Como preparar seu filho para mudanças de rotina</div><div class="res-time">⏱ 6 min de leitura</div></div></div>
-      <div class="res-card"><div class="res-thumb" style="background:var(--light-purple)">💜</div><div class="res-body"><span class="res-badge badge-article">Artigo</span><div class="res-title">Estratégias sensoriais para o dia a dia</div><div class="res-time">⏱ 4 min de leitura</div></div></div>
-      <div class="res-card"><div class="res-thumb" style="background:var(--gold-bg)">🏫</div><div class="res-body"><span class="res-badge badge-guide">Guia</span><div class="res-title">Como se preparar para a reunião de IEP</div><div class="res-time">⏱ 8 min de leitura</div></div></div>
-      <div class="res-card"><div class="res-thumb" style="background:var(--blush)">💛</div><div class="res-body"><span class="res-badge badge-article">Artigo</span><div class="res-title">Autocuidado para pais de crianças TEA</div><div class="res-time">⏱ 5 min de leitura</div></div></div>
+  <!-- ACCOUNT -->
+  <div class="page" id="page-account">
+    <div class="acc-banner">
+      <div class="acc-av" id="accAvatar">🦊</div>
+      <div class="acc-info"><h3 id="accName">Família Silva</h3><p id="accDetail">Mateus, 4 anos</p></div>
+      <button class="acc-edit" onclick="openModal('editchild')">Editar</button>
+    </div>
+    <div class="acc-section">
+      <div class="acc-section-title">Perfil da criança</div>
+      <div class="acc-card">
+        <div class="acc-item" onclick="openModal('editchild')"><div class="ai-icon ai-purple">🦊</div><div class="ai-text"><h4 id="accChildName">Dados do Mateus</h4><p id="accChildDetail">4 anos • TEA nível 1</p></div><span class="ai-arr">›</span></div>
+        <div class="acc-item" onclick="openModal('editchild')"><div class="ai-icon ai-blue">🏥</div><div class="ai-text"><h4>Diagnósticos</h4><p id="accDiag">TEA nível 1</p></div><span class="ai-arr">›</span></div>
+        <div class="acc-item" onclick="openModal('editchild')"><div class="ai-icon ai-green">💊</div><div class="ai-text"><h4>Medicamentos</h4><p id="accMeds">Nenhum cadastrado</p></div><span class="ai-arr">›</span></div>
+      </div>
+    </div>
+    <div class="acc-section">
+      <div class="acc-section-title">Notificações</div>
+      <div class="acc-card">
+        <div class="acc-item"><div class="ai-icon ai-orange">🔔</div><div class="ai-text"><h4>Lembrete diário</h4><p>Às 20h00</p></div><label class="toggle"><input type="checkbox" checked><span class="tslider"></span></label></div>
+        <div class="acc-item"><div class="ai-icon ai-purple">💊</div><div class="ai-text"><h4>Medicamentos</h4><p>Nos horários cadastrados</p></div><label class="toggle"><input type="checkbox" checked><span class="tslider"></span></label></div>
+        <div class="acc-item"><div class="ai-icon ai-blue">📅</div><div class="ai-text"><h4>Consultas</h4><p>1 dia antes</p></div><label class="toggle"><input type="checkbox" checked><span class="tslider"></span></label></div>
+      </div>
+    </div>
+    <div class="acc-section">
+      <div class="acc-section-title">Dados & Privacidade</div>
+      <div class="acc-card">
+        <div class="acc-item"><div class="ai-icon ai-green">📤</div><div class="ai-text"><h4>Exportar dados</h4><p>PDF para compartilhar</p></div><span class="ai-arr">›</span></div>
+        <div class="acc-item"><div class="ai-icon ai-orange">🔒</div><div class="ai-text"><h4>Privacidade</h4><p>Biometria ativada</p></div><label class="toggle"><input type="checkbox" checked><span class="tslider"></span></label></div>
+        <div class="acc-item"><div class="ai-icon ai-purple">ℹ️</div><div class="ai-text"><h4>Sobre</h4><p>Crescer Juntos v2.0</p></div><span class="ai-arr">›</span></div>
+      </div>
     </div>
   </div>
-  <div class="res-section">
-    <h3>Comportamento & Crises</h3>
-    <div class="res-cards">
-      <div class="res-card"><div class="res-thumb" style="background:#fde8e8">🌀</div><div class="res-body"><span class="res-badge badge-guide">Guia</span><div class="res-title">Entendendo meltdowns vs shutdowns</div><div class="res-time">⏱ 7 min</div></div></div>
-      <div class="res-card"><div class="res-thumb" style="background:var(--sky)">🧘</div><div class="res-body"><span class="res-badge badge-video">Vídeo</span><div class="res-title">Técnicas de regulação emocional para crianças</div><div class="res-time">⏱ 12 min</div></div></div>
-    </div>
-  </div>
-</div>
 
-<!-- ══ PAGE: CONFIG ══ -->
-<div class="page" id="page-config">
-  <div class="page-header"><span class="ph-icon">⚙️</span><h2>Configurações</h2></div>
-  <div class="profile-banner">
-    <div class="pb-avatar" id="pbEmoji">🦊</div>
-    <div class="pb-info">
-      <h3 id="pbName">Família Silva</h3>
-      <p id="pbDetail">Mateus, 4 anos • McKinney, TX</p>
-    </div>
-    <button class="pb-edit" onclick="openModal('editcrianca')">Editar</button>
-  </div>
-  <p class="section-title">Perfil da criança</p>
-  <div class="config-section">
-    <div class="config-card">
-      <div class="config-item" onclick="openModal('editcrianca')"><div class="config-icon ci-rose">🦊</div><div class="config-text"><h4 id="cfgChildName">Dados do Mateus</h4><p id="cfgChildDetail">4 anos • TEA leve</p></div><span class="config-arrow">›</span></div>
-      <div class="config-item" onclick="openModal('editcrianca')"><div class="config-icon ci-sky">🏥</div><div class="config-text"><h4>Diagnósticos & condições</h4><p id="cfgDiagnosis">TEA leve</p></div><span class="config-arrow">›</span></div>
-      <div class="config-item" onclick="openModal('editcrianca')"><div class="config-icon ci-sage">💊</div><div class="config-text"><h4>Medicamentos</h4><p id="cfgMeds">Nenhum cadastrado</p></div><span class="config-arrow">›</span></div>
-    </div>
-  </div>
-  <p class="section-title">Notificações</p>
-  <div class="config-section">
-    <div class="config-card">
-      <div class="config-item"><div class="config-icon ci-gold">🔔</div><div class="config-text"><h4>Lembrete diário de registro</h4><p>Às 20h00</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-      <div class="config-item"><div class="config-icon ci-rose">📅</div><div class="config-text"><h4>Lembrete de consultas</h4><p>1 dia antes</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-      <div class="config-item"><div class="config-icon ci-purple">💊</div><div class="config-text"><h4>Lembrete de medicamentos</h4><p>Nos horários cadastrados</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-      <div class="config-item"><div class="config-icon ci-sky">📊</div><div class="config-text"><h4>Relatório semanal</h4><p>Toda segunda-feira</p></div><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
-    </div>
-  </div>
-  <p class="section-title">App & Dados</p>
-  <div class="config-section">
-    <div class="config-card">
-      <div class="config-item"><div class="config-icon ci-sage">📤</div><div class="config-text"><h4>Exportar relatório PDF</h4><p>Para compartilhar com equipe</p></div><span class="config-arrow">›</span></div>
-      <div class="config-item"><div class="config-icon ci-gold">🔒</div><div class="config-text"><h4>Privacidade & segurança</h4><p>Bloqueio por biometria</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-      <div class="config-item"><div class="config-icon ci-rose">ℹ️</div><div class="config-text"><h4>Sobre o app</h4><p>Versão 2.0.0</p></div><span class="config-arrow">›</span></div>
-    </div>
-  </div>
-  <p class="version-note">Crescer Juntos v2.0 • Feito com 💛 para famílias brasileiras</p>
-</div>
+</div><!-- /app -->
 
 <!-- BOTTOM NAV -->
-<nav class="bottom-nav">
-  <button class="nav-item active" onclick="goTo('inicio',this)"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></button>
-  <button class="nav-item" onclick="goTo('graficos',this)"><span class="nav-icon">📊</span><span class="nav-label">Gráficos</span></button>
-  <button class="nav-item" onclick="goTo('registros',this)"><span class="nav-icon">📋</span><span class="nav-label">Registros</span></button>
-  <button class="nav-item" onclick="goTo('equipe',this)"><span class="nav-icon">👨‍⚕️</span><span class="nav-label">Equipe</span></button>
-  <button class="nav-item" onclick="goTo('recursos',this)"><span class="nav-icon">📚</span><span class="nav-label">Recursos</span></button>
-  <button class="nav-item" onclick="goTo('config',this)"><span class="nav-icon">⚙️</span><span class="nav-label">Config</span></button>
+<nav class="bottom-nav" id="bottomNav" style="display:none;">
+  <button class="nav-btn active" onclick="goTo('home',this)"><span class="ni">🏠</span><span class="nl">Início</span></button>
+  <button class="nav-btn" onclick="goTo('journal',this)"><span class="ni">📔</span><span class="nl">Diário</span></button>
+  <button class="nav-btn" onclick="goTo('insights',this)"><span class="ni">📊</span><span class="nl">Insights</span></button>
+  <button class="nav-btn" onclick="goTo('resources',this)"><span class="ni">📚</span><span class="nl">Recursos</span></button>
+  <button class="nav-btn" onclick="goTo('account',this)"><span class="ni">👤</span><span class="nl">Conta</span></button>
 </nav>
 
-<!-- ══════ MODALS ══════ -->
+<!-- ══════════ MODALS ══════════ -->
+
+<!-- ALMA CHAT -->
+<div class="modal-overlay" id="modal-alma">
+  <div class="modal-sheet" style="padding:0;border-radius:24px 24px 0 0;overflow:hidden;">
+    <div class="alma-chat" style="padding:0 18px 18px;">
+      <div class="alma-header">
+        <div class="alma-avatar">☁️</div>
+        <h2>Alma</h2>
+        <p>Sua parceira de parentalidade IA</p>
+        <button class="close-modal" style="top:12px;right:12px;background:rgba(255,255,255,.2);color:white;" onclick="closeModal('alma')">✕</button>
+      </div>
+      <div class="alma-msgs" id="almaMsgs">
+        <div class="alma-msg am-ai">Olá! 💛 Sou a Alma. Pode me contar sobre o dia do Mateus ou perguntar qualquer coisa. Estou aqui a qualquer hora!</div>
+      </div>
+      <div id="almaNextSteps"></div>
+      <div class="alma-suggestions">
+        <button class="alma-sug" onclick="almaSet('Como lidar com crises sensoriais?')">Crises sensoriais</button>
+        <button class="alma-sug" onclick="almaSet('O que perguntar na consulta com neuropediatra?')">Próxima consulta</button>
+        <button class="alma-sug" onclick="almaSet('Preciso desabafar sobre o dia de hoje')">Desabafar</button>
+      </div>
+      <div class="alma-input-row">
+        <textarea class="alma-input" id="almaInput" rows="1" placeholder="Pergunte qualquer coisa..." onkeydown="almaKey(event)"></textarea>
+        <button class="alma-send" id="almaSend" onclick="almaSend()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- QUICK LOG -->
 <div class="modal-overlay" id="modal-quicklog">
-  <div class="modal-sheet">
+  <div class="modal-sheet" style="position:relative;">
     <button class="close-modal" onclick="closeModal('quicklog')">✕</button>
     <div class="modal-handle"></div>
-    <div class="modal-title">🎙️ Registro Rápido</div>
-    <p class="modal-sub">Descreva o dia como contaria para um amigo. A IA organiza tudo.</p>
-
-    <!-- IFRAME WARNING BANNER -->
-    <div id="qlIframeWarning" style="display:none;background:linear-gradient(135deg,#fff3cd,#ffeaa7);border:1px solid #f0c040;border-radius:12px;padding:12px 14px;margin-bottom:14px;">
-      <p style="font-size:.8rem;font-weight:800;color:#7d5a00;margin-bottom:6px;">📱 Para usar o microfone:</p>
-      <p style="font-size:.74rem;color:#856404;font-weight:600;margin-bottom:10px;">O app está rodando dentro do Claude.ai, que bloqueia o microfone por segurança. Baixe o arquivo e abra no navegador do seu celular.</p>
-      <button onclick="downloadAndOpen()" style="width:100%;padding:10px;background:linear-gradient(135deg,#f0a500,#d4870a);border:none;border-radius:9px;color:white;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:900;cursor:pointer;">⬇️ Baixar app para usar microfone</button>
-      <p style="font-size:.68rem;color:#856404;margin-top:6px;text-align:center;font-weight:600;">Ou use o campo de texto abaixo — funciona aqui mesmo ✓</p>
-    </div>
-
-    <div class="ql-step active" id="ql-step1">
-      <!-- VOICE AREA -->
-      <div class="ql-voice-area" id="qlVoiceArea">
-        <button class="ql-voice-btn" id="qlVoiceBtn" onclick="startVoice()">🎙️</button>
-        <p class="ql-voice-hint" id="qlHint">Toque para falar</p>
-        <div id="qlVoiceStatus" style="display:none;margin-top:8px;font-size:.72rem;color:var(--purple);font-weight:800;min-height:18px;"></div>
+    <div class="modal-title">🎙️ Quick Log</div>
+    <p class="modal-sub">Fale o dia como contaria para um amigo. A IA organiza tudo.</p>
+    <div id="ql-s1">
+      <div class="ql-voice-area">
+        <button class="ql-voice-btn" id="qlBtn" onclick="qlToggle()">🎙️</button>
+        <p class="ql-hint" id="qlHint">Toque para falar</p>
+        <p class="ql-status" id="qlStatus"></p>
       </div>
-
-      <!-- MIC ERROR -->
-      <div id="qlMicError" style="display:none;background:#fde8e8;border:1px solid #e57373;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:.76rem;color:#c0392b;font-weight:700;"></div>
-
-      <div style="display:flex;align-items:center;gap:8px;margin:12px 0 8px;">
-        <div style="flex:1;height:1px;background:var(--blush);"></div>
-        <span style="font-size:.68rem;font-weight:800;color:var(--text-light);">OU ESCREVA ABAIXO</span>
-        <div style="flex:1;height:1px;background:var(--blush);"></div>
-      </div>
-
-      <textarea class="form-textarea" id="qlText" placeholder="Ex: Hoje o Mateus dormiu bem, 8 horas. Na escola teve uma crise pequena quando mudaram a sala. No almoço comeu tudo mas recusou a salada. Tomou o remédio de manhã. À tarde ficou calmo brincando." rows="5"></textarea>
-      <button class="submit-btn" style="margin-top:10px" onclick="processQuickLog()">✨ Organizar com IA</button>
+      <div class="ql-no-mic" id="qlNoMic"></div>
+      <div class="ql-divider"><span>OU ESCREVA ABAIXO</span></div>
+      <textarea class="form-textarea" id="qlText" rows="4" placeholder="Ex: Hoje o Mateus dormiu bem, 8 horas. Na escola teve uma crise pequena quando mudaram a sala. No almoço comeu tudo mas recusou a salada. Tomou o remédio de manhã."></textarea>
+      <button class="primary-btn green" style="margin-top:10px;" onclick="qlProcess()">✨ Organizar com IA</button>
     </div>
-
-    <div class="ql-step" id="ql-step2">
-      <p class="form-label" style="margin-bottom:12px">A IA identificou estes registros:</p>
+    <div id="ql-s2" style="display:none;">
+      <p class="form-label" style="margin-bottom:12px;">A IA identificou estes registros:</p>
       <div id="qlResults"></div>
-      <button class="submit-btn" onclick="saveQuickLog()">✓ Salvar todos os registros</button>
-      <button style="width:100%;margin-top:8px;padding:11px;border:2px solid var(--blush);border-radius:var(--radius-sm);background:white;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:800;color:var(--text-mid);cursor:pointer;" onclick="document.getElementById('ql-step1').classList.add('active');document.getElementById('ql-step2').classList.remove('active')">← Editar texto</button>
+      <button class="primary-btn" onclick="qlSave()">✓ Salvar todos</button>
+      <button style="width:100%;margin-top:8px;padding:11px;border:2px solid #eee;border-radius:var(--r-sm);background:white;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;color:var(--text2);cursor:pointer;" onclick="document.getElementById('ql-s1').style.display='block';document.getElementById('ql-s2').style.display='none'">← Editar</button>
     </div>
   </div>
 </div>
 
-<!-- COMPORTAMENTO -->
-<div class="modal-overlay" id="modal-comportamento">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('comportamento')">✕</button>
+<!-- ADD ENTRY -->
+<div class="modal-overlay" id="modal-addentry">
+  <div class="modal-sheet" style="position:relative;">
+    <button class="close-modal" onclick="closeModal('addentry')">✕</button>
     <div class="modal-handle"></div>
-    <div class="modal-title">Registrar Comportamento</div>
-    <p class="modal-sub">Crises, stimming, ecolalia e outros comportamentos</p>
+    <div class="modal-title">Novo Registro</div>
     <div class="form-group"><label class="form-label">Tipo</label>
-      <select class="form-select" id="comp-tipo"><option>Crise / Meltdown</option><option>Shutdown</option><option>Agitação</option><option>Stimming</option><option>Comportamento positivo</option><option>Ecolalia</option><option>Isolamento</option><option>Outro</option></select>
+      <select class="form-select" id="ae-type" onchange="updateAddEntryForm()">
+        <option value="behavior">🌀 Comportamento / Crise</option>
+        <option value="sleep">🌙 Sono</option>
+        <option value="food">🍎 Alimentação</option>
+        <option value="water">💧 Hidratação</option>
+        <option value="meds">💊 Medicamento</option>
+        <option value="health">🏥 Saúde / Intestinal</option>
+        <option value="screen">📱 Tempo de tela</option>
+        <option value="milestone">⭐ Marco</option>
+      </select>
     </div>
-    <div class="form-group"><label class="form-label">Intensidade</label>
-      <div class="intensity-select">
-        <button class="int-btn s1" onclick="selectInt(this,1)">1<br><span style="font-size:.58rem">Leve</span></button>
-        <button class="int-btn s2" onclick="selectInt(this,2)">2<br><span style="font-size:.58rem">Baixa</span></button>
-        <button class="int-btn s3" onclick="selectInt(this,3)">3<br><span style="font-size:.58rem">Média</span></button>
-        <button class="int-btn s4" onclick="selectInt(this,4)">4<br><span style="font-size:.58rem">Alta</span></button>
-        <button class="int-btn s5" onclick="selectInt(this,5)">5<br><span style="font-size:.58rem">Grave</span></button>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Humor</label>
-      <div class="emotion-grid">
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😊</span><span class="e-label">Feliz</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😢</span><span class="e-label">Triste</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😤</span><span class="e-label">Irritado</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😰</span><span class="e-label">Ansioso</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😐</span><span class="e-label">Neutro</span></button>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Gatilho</label><textarea class="form-textarea" id="comp-gatilho" placeholder="O que aconteceu antes?"></textarea></div>
-    <div class="two-col">
-      <div class="form-group"><label class="form-label">Duração (min)</label><input type="number" class="form-input" id="comp-dur" placeholder="Ex: 15"></div>
-      <div class="form-group"><label class="form-label">Local</label><select class="form-select" id="comp-local"><option>Casa</option><option>Escola</option><option>Terapia</option><option>Outro</option></select></div>
-    </div>
-    <button class="submit-btn" onclick="saveRecord('comportamento')">✓ Salvar</button>
+    <div id="ae-form-body"></div>
+    <button class="primary-btn" onclick="saveEntry()">✓ Salvar</button>
   </div>
 </div>
 
-<!-- SONO -->
-<div class="modal-overlay" id="modal-sono">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('sono')">✕</button>
+<!-- EDIT CHILD -->
+<div class="modal-overlay" id="modal-editchild">
+  <div class="modal-sheet" style="position:relative;">
+    <button class="close-modal" onclick="closeModal('editchild')">✕</button>
     <div class="modal-handle"></div>
-    <div class="modal-title">Registrar Sono</div>
-    <div class="two-col">
-      <div class="form-group"><label class="form-label">Dormiu às</label><input type="time" class="form-input" id="sono-inicio" value="20:30"></div>
-      <div class="form-group"><label class="form-label">Acordou às</label><input type="time" class="form-input" id="sono-fim" value="07:00"></div>
-    </div>
-    <div class="form-group"><label class="form-label">Qualidade</label>
-      <div class="emotion-grid">
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😴</span><span class="e-label">Ótimo</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😪</span><span class="e-label">Bom</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😣</span><span class="e-label">Regular</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😭</span><span class="e-label">Ruim</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">🌙</span><span class="e-label">Agitado</span></button>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Acordou durante a noite?</label>
-      <select class="form-select" id="sono-acord"><option value="0">Não</option><option value="1">1x</option><option value="2">2x</option><option value="3">3x ou mais</option></select>
-    </div>
-    <div class="form-group"><label class="form-label">Observações</label><textarea class="form-textarea" id="sono-obs" placeholder="Ex: Pesadelo, dificuldade para dormir..."></textarea></div>
-    <button class="submit-btn" onclick="saveRecord('sono')">✓ Salvar</button>
-  </div>
-</div>
-
-<!-- ALIMENTAÇÃO -->
-<div class="modal-overlay" id="modal-alimentacao">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('alimentacao')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">Registrar Alimentação</div>
-    <div class="two-col">
-      <div class="form-group"><label class="form-label">Refeição</label>
-        <select class="form-select" id="alim-ref"><option>Café da manhã</option><option>Almoço</option><option>Lanche</option><option>Jantar</option></select>
-      </div>
-      <div class="form-group"><label class="form-label">Horário</label><input type="time" class="form-input" id="alim-hora"></div>
-    </div>
-    <div class="form-group"><label class="form-label">O que comeu?</label><input class="form-input" id="alim-o-que" placeholder="Ex: Arroz, frango, brócolis..."></div>
-    <div class="form-group"><label class="form-label">Reação alimentar / Sensibilidade</label><input class="form-input" id="alim-reacao" placeholder="Ex: Recusou textura, vômito, preferência..."></div>
-    <div class="form-group"><label class="form-label">Aceitação</label>
-      <div class="emotion-grid">
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😋</span><span class="e-label">Adorou</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😊</span><span class="e-label">Comeu bem</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😐</span><span class="e-label">Regular</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">🙅</span><span class="e-label">Recusou</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">🤢</span><span class="e-label">Sensível</span></button>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Novo alimento introduzido</label><input class="form-input" id="alim-novo" placeholder="Deixe vazio se não houver"></div>
-    <button class="submit-btn" onclick="saveRecord('alimentacao')">✓ Salvar</button>
-  </div>
-</div>
-
-<!-- HIDRATAÇÃO -->
-<div class="modal-overlay" id="modal-hidratacao">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('hidratacao')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">💧 Hidratação</div>
-    <div class="form-group"><label class="form-label">Quantidade (ml)</label><input type="number" class="form-input" id="hidra-ml" placeholder="Ex: 250"></div>
-    <div class="form-group"><label class="form-label">Bebida</label>
-      <select class="form-select" id="hidra-tipo"><option>Água</option><option>Suco natural</option><option>Leite</option><option>Vitamina</option><option>Chá</option><option>Outro</option></select>
-    </div>
-    <div class="form-group"><label class="form-label">Meta diária (ml)</label><input type="number" class="form-input" id="hidra-meta" placeholder="Ex: 1000" value="1000"></div>
-    <button class="submit-btn" onclick="saveRecord('hidratacao')">✓ Salvar</button>
-  </div>
-</div>
-
-<!-- MEDICAMENTO -->
-<div class="modal-overlay" id="modal-medicamento">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('medicamento')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">💊 Medicamento</div>
-    <div class="form-group"><label class="form-label">Nome do medicamento</label><input class="form-input" id="med-nome" placeholder="Ex: Ritalina, Risperdal..."></div>
-    <div class="two-col">
-      <div class="form-group"><label class="form-label">Dose</label><input class="form-input" id="med-dose" placeholder="Ex: 10mg"></div>
-      <div class="form-group"><label class="form-label">Horário</label><input type="time" class="form-input" id="med-hora"></div>
-    </div>
-    <div class="form-group"><label class="form-label">Foi administrado?</label>
-      <div style="display:flex;gap:10px;">
-        <button class="int-btn s1" id="med-sim" onclick="document.getElementById('med-sim').classList.add('sel');document.getElementById('med-nao').classList.remove('sel')" style="flex:1;padding:12px;">✓ Sim</button>
-        <button class="int-btn s4" id="med-nao" onclick="document.getElementById('med-nao').classList.add('sel');document.getElementById('med-sim').classList.remove('sel')" style="flex:1;padding:12px;">✕ Não</button>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Efeitos observados</label><textarea class="form-textarea" id="med-efeitos" placeholder="Comportamento, apetite, sono..."></textarea></div>
-    <button class="submit-btn" onclick="saveRecord('medicamento')">✓ Salvar</button>
-  </div>
-</div>
-
-<!-- SAÚDE -->
-<div class="modal-overlay" id="modal-saude">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('saude')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">🏥 Saúde & Intestinal</div>
-    <div class="form-group"><label class="form-label">Tipo de registro</label>
-      <select class="form-select" id="saude-tipo"><option>Evacuação intestinal</option><option>Sintoma físico</option><option>Consulta médica</option><option>Exame</option><option>Vacinação</option></select>
-    </div>
-    <div class="form-group"><label class="form-label">Descrição</label><textarea class="form-textarea" id="saude-desc" placeholder="Ex: Consistência, frequência, sintomas..."></textarea></div>
-    <div class="form-group"><label class="form-label">Horário</label><input type="time" class="form-input" id="saude-hora"></div>
-    <button class="submit-btn" onclick="saveRecord('saude')">✓ Salvar</button>
-  </div>
-</div>
-
-<!-- TEMPO DE TELA -->
-<div class="modal-overlay" id="modal-tela">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('tela')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">📱 Tempo de Tela</div>
-    <div class="form-group"><label class="form-label">Dispositivo</label>
-      <select class="form-select" id="tela-disp"><option>Tablet</option><option>Celular</option><option>TV</option><option>Computador</option><option>Videogame</option></select>
-    </div>
-    <div class="two-col">
-      <div class="form-group"><label class="form-label">Duração (min)</label><input type="number" class="form-input" id="tela-min" placeholder="Ex: 45"></div>
-      <div class="form-group"><label class="form-label">Tipo de conteúdo</label><select class="form-select" id="tela-tipo"><option>Educativo</option><option>Entretenimento</option><option>Jogo</option><option>YouTube</option></select></div>
-    </div>
-    <div class="form-group"><label class="form-label">Comportamento durante</label>
-      <div class="emotion-grid">
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😊</span><span class="e-label">Calmo</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😤</span><span class="e-label">Agitado</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😢</span><span class="e-label">Difícil parar</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">🧘</span><span class="e-label">Regulado</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😐</span><span class="e-label">Normal</span></button>
-      </div>
-    </div>
-    <button class="submit-btn" onclick="saveRecord('tela')">✓ Salvar</button>
-  </div>
-</div>
-
-<!-- MARCO -->
-<div class="modal-overlay" id="modal-marco">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('marco')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">🎉 Registrar Marco</div>
-    <p class="modal-sub">Cada conquista merece ser celebrada!</p>
-    <div class="form-group"><label class="form-label">Área do desenvolvimento</label>
-      <select class="form-select" id="marco-area"><option>Comunicação / Fala</option><option>Motor grosso</option><option>Motor fino</option><option>Social / Emocional</option><option>Cognitivo</option><option>Autocuidado</option><option>Sensorial</option></select>
-    </div>
-    <div class="form-group"><label class="form-label">Descreva o marco</label><textarea class="form-textarea" id="marco-desc" placeholder="Ex: Disse 'eu te amo' pela primeira vez..."></textarea></div>
-    <div class="form-group"><label class="form-label">Como você se sentiu?</label>
-      <div class="emotion-grid">
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">🥹</span><span class="e-label">Emocionada</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">🎉</span><span class="e-label">Feliz</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">😮</span><span class="e-label">Surpresa</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">💪</span><span class="e-label">Orgulhosa</span></button>
-        <button class="emotion-btn" onclick="selectEmotion(this)"><span class="e-icon">💛</span><span class="e-label">Grata</span></button>
-      </div>
-    </div>
-    <button class="submit-btn" onclick="saveRecord('marco')">⭐ Salvar Marco</button>
-  </div>
-</div>
-
-<!-- EDITAR CRIANÇA -->
-<div class="modal-overlay" id="modal-editcrianca">
-  <div class="modal-sheet">
-    <button class="close-modal" onclick="closeModal('editcrianca')">✕</button>
-    <div class="modal-handle"></div>
-    <div class="modal-title">Editar Perfil da Criança</div>
-    <p class="modal-sub">Atualiza em todo o app automaticamente.</p>
+    <div class="modal-title">Perfil da Criança</div>
     <div class="form-group"><label class="form-label">Avatar</label>
-      <div style="display:flex;gap:7px;flex-wrap:wrap;">
-        <button class="emoji-pick selected" onclick="pickEmoji(this,'🦊')">🦊</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🐻')">🐻</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🐼')">🐼</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🦁')">🦁</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🐯')">🐯</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🐸')">🐸</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🐧')">🐧</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🦋')">🦋</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🌟')">🌟</button>
-        <button class="emoji-pick" onclick="pickEmoji(this,'🌈')">🌈</button>
+      <div class="emoji-row">
+        <button class="ep-btn sel" onclick="pickEmoji(this,'🦊')">🦊</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🐻')">🐻</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🐼')">🐼</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🦁')">🦁</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🐯')">🐯</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🐸')">🐸</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🦋')">🦋</button>
+        <button class="ep-btn" onclick="pickEmoji(this,'🌟')">🌟</button>
       </div>
     </div>
-    <div class="form-group"><label class="form-label">Nome da criança</label><input class="form-input" id="edit-nome" placeholder="Ex: Mateus" value="Mateus"></div>
+    <div class="form-group"><label class="form-label">Nome</label><input class="form-input" id="ec-name" value="Mateus"></div>
     <div class="two-col">
-      <div class="form-group"><label class="form-label">Data de nascimento</label><input type="date" class="form-input" id="edit-nasc" value="2021-01-15"></div>
-      <div class="form-group"><label class="form-label">Sexo</label><select class="form-select" id="edit-sexo"><option value="M" selected>Masculino</option><option value="F">Feminino</option><option value="O">Outro</option></select></div>
+      <div class="form-group"><label class="form-label">Nascimento</label><input type="date" class="form-input" id="ec-dob" value="2021-01-15"></div>
+      <div class="form-group"><label class="form-label">Sexo</label><select class="form-select" id="ec-sex"><option value="M" selected>Masculino</option><option value="F">Feminino</option><option>Outro</option></select></div>
     </div>
     <div class="form-group"><label class="form-label">Diagnóstico principal</label>
-      <select class="form-select" id="edit-diag">
+      <select class="form-select" id="ec-diag">
         <option value="">Nenhum / Aguardando</option>
-        <option value="TEA leve" selected>TEA — Nível 1 (leve)</option>
-        <option value="TEA moderado">TEA — Nível 2 (moderado)</option>
-        <option value="TEA grave">TEA — Nível 3 (grave)</option>
+        <option value="TEA nível 1" selected>TEA — Nível 1 (leve)</option>
+        <option value="TEA nível 2">TEA — Nível 2 (moderado)</option>
+        <option value="TEA nível 3">TEA — Nível 3 (grave)</option>
         <option value="TDAH">TDAH</option>
         <option value="Atraso no desenvolvimento">Atraso no desenvolvimento</option>
         <option value="Síndrome de Down">Síndrome de Down</option>
         <option value="Dislexia">Dislexia</option>
-        <option value="Outro">Outro</option>
       </select>
     </div>
-    <div class="form-group"><label class="form-label">Terapias & condições adicionais</label>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;" id="condTags">
-        <button class="cond-tag" onclick="toggleCond(this)" data-val="Neuroatípico">Neuroatípico</button>
-        <button class="cond-tag selected" onclick="toggleCond(this)" data-val="Terapia OT">Terapia OT</button>
-        <button class="cond-tag" onclick="toggleCond(this)" data-val="Terapia ABA">Terapia ABA</button>
-        <button class="cond-tag" onclick="toggleCond(this)" data-val="Fonoaudiologia">Fonoaudiologia</button>
-        <button class="cond-tag" onclick="toggleCond(this)" data-val="Psicoterapia">Psicoterapia</button>
-        <button class="cond-tag" onclick="toggleCond(this)" data-val="Altas habilidades">Altas habilidades</button>
-        <button class="cond-tag" onclick="toggleCond(this)" data-val="Sensorial">Hipersensibilidade sensorial</button>
+    <div class="form-group"><label class="form-label">Terapias & condições</label>
+      <div class="cond-row">
+        <button class="cond-chip" onclick="this.classList.toggle('sel')" data-v="Neuroatípico">Neuroatípico</button>
+        <button class="cond-chip sel" onclick="this.classList.toggle('sel')" data-v="Terapia OT">Terapia OT</button>
+        <button class="cond-chip" onclick="this.classList.toggle('sel')" data-v="ABA">ABA</button>
+        <button class="cond-chip" onclick="this.classList.toggle('sel')" data-v="Fonoaudiologia">Fonoaudiologia</button>
+        <button class="cond-chip" onclick="this.classList.toggle('sel')" data-v="Psicoterapia">Psicoterapia</button>
+        <button class="cond-chip" onclick="this.classList.toggle('sel')" data-v="Sensorial">Sensorial</button>
       </div>
     </div>
-    <div class="form-group"><label class="form-label">Medicamentos em uso</label><input class="form-input" id="edit-meds" placeholder="Ex: Ritalina 10mg — ou vazio"></div>
-    <div class="form-group"><label class="form-label">Observações</label><textarea class="form-textarea" id="edit-obs" placeholder="Ex: Sensível a barulhos, prefere rotinas fixas..."></textarea></div>
-    <button class="submit-btn" onclick="saveChildProfile()">✓ Salvar Perfil</button>
+    <div class="form-group"><label class="form-label">Medicamentos</label><input class="form-input" id="ec-meds" placeholder="Ex: Ritalina 10mg — ou vazio"></div>
+    <button class="primary-btn" onclick="saveChild()">✓ Salvar perfil</button>
   </div>
 </div>
 
-<!-- REPORT MODAL -->
+<!-- REPORT -->
 <div class="modal-overlay" id="modal-report">
-  <div class="modal-sheet">
+  <div class="modal-sheet" style="position:relative;">
     <button class="close-modal" onclick="closeModal('report')">✕</button>
     <div class="modal-handle"></div>
-    <div class="modal-title">📄 Relatório Gerado</div>
-    <div id="reportContent" style="font-size:.82rem;line-height:1.6;color:var(--text-dark);"></div>
-    <button class="submit-btn" style="margin-top:16px" onclick="closeModal('report')">✓ Fechar</button>
+    <div class="modal-title" id="reportTitle">📄 Relatório</div>
+    <div class="report-output" id="reportOutput"><div style="text-align:center;padding:24px;color:var(--purple);">✨ Gerando com IA...</div></div>
+    <button class="primary-btn" style="margin-top:16px;" onclick="closeModal('report')">✓ Fechar</button>
   </div>
 </div>
 
 <script>
-// ══ DATA ══
-const records = [
-  {type:'marco',date:'Hoje',icon:'⭐',title:'Disse "eu te amo" sozinho',detail:'Área: Comunicação / Fala',cls:'rose'},
-  {type:'sono',date:'Ontem',icon:'🌙',title:'Sono: 7h45 ininterrupto',detail:'20:30 → 07:15 • Qualidade: Ótima',cls:'sky'},
-  {type:'comportamento',date:'Ter',icon:'🌀',title:'Crise: agitação na escola',detail:'Gatilho: mudança de rotina • Intensidade: 3/5 • 15min',cls:'gold'},
-  {type:'alimentacao',date:'Ter',icon:'🍎',title:'Almoço: aceitou brócolis!',detail:'Novo alimento introduzido • Aceitação: boa',cls:'sage'},
-  {type:'hidratacao',date:'Seg',icon:'💧',title:'Hidratação: 950ml',detail:'Meta: 1000ml • Água e suco natural',cls:'sky'},
-  {type:'medicamento',date:'Seg',icon:'💊',title:'Ritalina 10mg administrada',detail:'08:00 • Sem efeitos adversos observados',cls:'purple'},
-  {type:'saude',date:'Dom',icon:'🏥',title:'Intestinal: evacuação normal',detail:'2x no dia • Consistência normal',cls:'rose'},
-  {type:'comportamento',date:'Sáb',icon:'🌀',title:'Stimming intenso',detail:'Contexto: supermercado • Duração: 30min • Intensidade: 2/5',cls:'gold'},
-  {type:'marco',date:'Sex',icon:'⭐',title:'Montou quebra-cabeça 24pcs',detail:'Área: Motor fino / Cognitivo',cls:'rose'},
+// ══ STATE ══
+let currentSlide = 0;
+let childEmoji = '🦊';
+let intensity = 0;
+let qlRecords = [];
+let isRecording = false;
+let recognition = null;
+let speechOK = false;
+let currentReportType = '';
+
+const entries = [
+  {type:'milestone',date:'Hoje',icon:'⭐',title:'Disse "eu te amo" sozinho',detail:'Área: Comunicação espontânea'},
+  {type:'sleep',date:'Ontem',icon:'🌙',title:'Sono: 7h45 ininterrupto',detail:'20:30 → 07:15 • Qualidade ótima'},
+  {type:'behavior',date:'Ter',icon:'🌀',title:'Crise: agitação na escola',detail:'Gatilho: mudança de rotina • 15min • Intensidade 3/5'},
+  {type:'food',date:'Ter',icon:'🍎',title:'Almoço: aceitou brócolis!',detail:'Novo alimento introduzido'},
+  {type:'water',date:'Seg',icon:'💧',title:'Hidratação: 950ml',detail:'Meta: 1000ml'},
+  {type:'meds',date:'Seg',icon:'💊',title:'Ritalina 10mg administrada',detail:'08:00 • Sem efeitos adversos'},
+  {type:'health',date:'Dom',icon:'🏥',title:'Saúde intestinal: normal',detail:'2x no dia'},
+  {type:'milestone',date:'Sex',icon:'⭐',title:'Montou quebra-cabeça 24pcs',detail:'Área: Motor fino / Cognitivo'},
 ];
 
-let selectedEmoji = '🦊';
-let selectedIntensity = 0;
-let reportType = 'IEP / Escola';
+// ══ ONBOARDING ══
+function nextSlide() {
+  currentSlide = Math.min(currentSlide + 1, 3);
+  document.getElementById('obSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+function finishOnboarding() {
+  document.getElementById('onboarding').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('bottomNav').style.display = 'flex';
+  renderJournal('todos');
+  renderCharts();
+  initSpeech();
+}
+// Swipe support for onboarding
+let touchStartX = 0;
+document.getElementById('obSlides').addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
+document.getElementById('obSlides').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (dx < -50 && currentSlide < 3) nextSlide();
+  else if (dx > 50 && currentSlide > 0) { currentSlide--; document.getElementById('obSlides').style.transform = `translateX(-${currentSlide * 100}%)`; }
+});
 
 // ══ NAVIGATION ══
 function goTo(page, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-'+page).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  window.scrollTo(0,0);
-  if(page==='graficos') renderCharts();
-  if(page==='registros') renderRecords('todos');
+  document.getElementById('page-' + page).classList.add('active');
+  if (btn) { document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+  window.scrollTo(0, 0);
+  if (page === 'insights') renderCharts();
+  if (page === 'journal') renderJournal('todos');
 }
 
 // ══ MODAL ══
-function openModal(t){ document.getElementById('modal-'+t).classList.add('open'); document.body.style.overflow='hidden'; }
-function closeModal(t){ document.getElementById('modal-'+t).classList.remove('open'); document.body.style.overflow=''; }
-document.querySelectorAll('.modal-overlay').forEach(el=>{
-  el.addEventListener('click', e=>{if(e.target===el){el.classList.remove('open');document.body.style.overflow='';}});
-});
+function openModal(id) { document.getElementById('modal-' + id).classList.add('open'); document.body.style.overflow = 'hidden'; if(id==='addentry') updateAddEntryForm(); }
+function closeModal(id) { document.getElementById('modal-' + id).classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.modal-overlay').forEach(el => el.addEventListener('click', e => { if(e.target===el){ el.classList.remove('open'); document.body.style.overflow=''; } }));
 
-// ══ FORM HELPERS ══
-function selectEmotion(btn){ btn.closest('.emotion-grid').querySelectorAll('.emotion-btn').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); }
-function selectInt(btn, val){ selectedIntensity=val; btn.closest('.intensity-select').querySelectorAll('.int-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
-function pickEmoji(btn,e){ document.querySelectorAll('.emoji-pick').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); selectedEmoji=e; }
-function toggleCond(btn){ btn.classList.toggle('selected'); }
-function selectReport(btn){ document.querySelectorAll('.report-type-btn').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); reportType=btn.querySelector('.rt-name').textContent; }
-function filterRes(f,btn){ document.querySelectorAll('.res-filter .filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
-
-// ══ SAVE RECORD ══
-const RICONS={comportamento:{icon:'🌀',cls:'gold'},sono:{icon:'🌙',cls:'sky'},alimentacao:{icon:'🍎',cls:'sage'},hidratacao:{icon:'💧',cls:'sky'},medicamento:{icon:'💊',cls:'purple'},saude:{icon:'🏥',cls:'rose'},tela:{icon:'📱',cls:'purple'},marco:{icon:'⭐',cls:'rose'}};
-function saveRecord(type){
-  closeModal(type);
-  let title='',detail='';
-  if(type==='comportamento'){
-    const t=document.getElementById('comp-tipo').value;
-    const g=document.getElementById('comp-gatilho').value;
-    const d=document.getElementById('comp-dur').value;
-    title=t; detail=(g?'Gatilho: '+g:'')+(d?' • '+d+'min':'')+(selectedIntensity?' • Intensidade: '+selectedIntensity+'/5':'');
-  }else if(type==='sono'){
-    const i=document.getElementById('sono-inicio').value, f=document.getElementById('sono-fim').value;
-    title=`Sono: ${i} → ${f}`; detail=document.getElementById('sono-obs').value||'Registro de sono';
-  }else if(type==='alimentacao'){
-    const r=document.getElementById('alim-ref').value, q=document.getElementById('alim-o-que').value;
-    title=r+(q?': '+q:''); const n=document.getElementById('alim-novo').value; detail=n?'Novo alimento: '+n:'Refeição registrada';
-  }else if(type==='hidratacao'){
-    const m=document.getElementById('hidra-ml').value, t=document.getElementById('hidra-tipo').value;
-    title=`Hidratação: ${m||'?'}ml de ${t}`; detail='Meta: '+document.getElementById('hidra-meta').value+'ml';
-  }else if(type==='medicamento'){
-    const n=document.getElementById('med-nome').value, d=document.getElementById('med-dose').value, h=document.getElementById('med-hora').value;
-    title=`${n||'Medicamento'} ${d||''} administrado`; detail=h?'Horário: '+h:'';
-  }else if(type==='saude'){
-    const t=document.getElementById('saude-tipo').value, d=document.getElementById('saude-desc').value;
-    title=t; detail=d||'';
-  }else if(type==='tela'){
-    const d=document.getElementById('tela-disp').value, m=document.getElementById('tela-min').value;
-    title=`Tempo de tela: ${m||'?'}min no ${d}`; detail='';
-  }else if(type==='marco'){
-    const a=document.getElementById('marco-area').value, d=document.getElementById('marco-desc').value;
-    title=d||'Marco registrado!'; detail='Área: '+a;
-  }
-  const {icon,cls}=RICONS[type];
-  records.unshift({type,date:'Agora',icon,title:title||'Registrado',detail:detail||'',cls});
-  const list=document.getElementById('logList');
-  const item=document.createElement('div'); item.className='log-item'; item.style.animation='popIn .3s ease';
-  item.innerHTML=`<div class="log-icon ${cls}">${icon}</div><div class="log-content"><h4>${title||'Registrado'}</h4><p>${detail||'Agora mesmo'}</p></div><div class="log-time">Agora</div>`;
-  list.insertBefore(item,list.firstChild);
-  selectedIntensity=0;
-}
-
-// ══ QUICK LOG ══
-let qlRecords=[];
-async function processQuickLog(){
-  const text=document.getElementById('qlText').value.trim();
-  if(!text){alert('Por favor, escreva ou fale sobre o dia do seu filho.');return;}
-  document.getElementById('ql-step1').classList.remove('active');
-  document.getElementById('ql-step2').classList.add('active');
-  document.getElementById('qlResults').innerHTML='<div style="text-align:center;padding:20px;color:var(--purple)">✨ Analisando com IA...</div>';
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',max_tokens:1000,
-        system:`Você é um assistente especializado em desenvolvimento infantil. Analise o texto e extraia registros organizados em JSON. Retorne APENAS um array JSON válido, sem markdown, sem explicação. Formato: [{"type":"sono|comportamento|alimentacao|hidratacao|medicamento|marco|saude","icon":"emoji","title":"título curto","detail":"detalhe"}]. Use os emojis: sono=🌙, comportamento=🌀, alimentacao=🍎, hidratacao=💧, medicamento=💊, marco=⭐, saude=🏥. Máximo 6 registros. Se não houver informação suficiente, retorne array vazio [].`,
-        messages:[{role:'user',content:text}]
-      })
-    });
-    const data=await res.json();
-    const rawText=data.content?.[0]?.text||'[]';
-    try{
-      qlRecords=JSON.parse(rawText.replace(/```json|```/g,'').trim());
-    }catch{qlRecords=[{type:'comportamento',icon:'📝',title:'Relato do dia registrado',detail:text.substring(0,80)}];}
-  }catch{
-    qlRecords=[{type:'comportamento',icon:'📝',title:'Relato do dia registrado',detail:'Registro manual'}];
-  }
-  const colorMap={sono:'sky',comportamento:'gold',alimentacao:'sage',hidratacao:'sky',medicamento:'purple',marco:'rose',saude:'rose'};
-  document.getElementById('qlResults').innerHTML=qlRecords.map(r=>`
-    <div class="ql-result-item">
-      <div class="ql-result-icon">${r.icon||'📝'}</div>
-      <div class="ql-result-text"><h4>${r.title}</h4><p>${r.detail||''}</p></div>
-    </div>`).join('');
-}
-function saveQuickLog(){
-  qlRecords.forEach(r=>{
-    const colorMap={sono:'sky',comportamento:'gold',alimentacao:'sage',hidratacao:'sky',medicamento:'purple',marco:'rose',saude:'rose'};
-    records.unshift({type:r.type||'comportamento',date:'Agora',icon:r.icon||'📝',title:r.title,detail:r.detail||'',cls:colorMap[r.type]||'gold'});
-    const list=document.getElementById('logList');
-    const item=document.createElement('div'); item.className='log-item'; item.style.animation='popIn .3s ease';
-    item.innerHTML=`<div class="log-icon ${colorMap[r.type]||'gold'}">${r.icon||'📝'}</div><div class="log-content"><h4>${r.title}</h4><p>${r.detail||''}</p></div><div class="log-time">Agora</div>`;
-    list.insertBefore(item,list.firstChild);
-  });
-  document.getElementById('qlText').value='';
-  document.getElementById('ql-step1').classList.add('active');
-  document.getElementById('ql-step2').classList.remove('active');
-  closeModal('quicklog');
-}
-// ══ VOICE RECORDING (Web Speech API) ══
-let isRecording = false;
-let recognition = null;
-let speechSupported = false;
-
-// Check support on load
-(function checkSpeech(){
-  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if(SpeechRec){
-    speechSupported = true;
-    recognition = new SpeechRec();
-    recognition.lang = 'pt-BR';
-    recognition.continuous = true;
-    recognition.interimResults = true;
-
-    let finalTranscript = '';
-
-    recognition.onstart = function(){
-      isRecording = true;
-      const btn = document.getElementById('qlVoiceBtn');
-      const hint = document.getElementById('qlHint');
-      const status = document.getElementById('qlVoiceStatus');
-      btn.textContent = '⏹️';
-      btn.classList.add('recording');
-      hint.textContent = 'Ouvindo… toque para parar';
-      status.style.display = 'block';
-      status.textContent = '🔴 Gravando...';
-    };
-
-    recognition.onresult = function(e){
-      let interim = '';
-      for(let i = e.resultIndex; i < e.results.length; i++){
-        const t = e.results[i][0].transcript;
-        if(e.results[i].isFinal){ finalTranscript += t + ' '; }
-        else { interim = t; }
-      }
-      const ta = document.getElementById('qlText');
-      ta.value = finalTranscript + interim;
-      document.getElementById('qlVoiceStatus').textContent = '🔴 Gravando... "' + (interim || finalTranscript).slice(-40) + '"';
-    };
-
-    recognition.onerror = function(e){
-      stopRecording();
-      const noSpeech = document.getElementById('qlNoSpeechMsg');
-      if(e.error === 'not-allowed' || e.error === 'permission-denied'){
-        noSpeech.style.display = 'block';
-        noSpeech.innerHTML = '🔒 Permissão de microfone negada. <br>Use o campo de texto abaixo para descrever o dia.';
-      } else if(e.error === 'network'){
-        noSpeech.style.display = 'block';
-        noSpeech.innerHTML = '🌐 Sem conexão para reconhecimento de voz. <br>Use o campo de texto abaixo.';
-      } else {
-        noSpeech.style.display = 'block';
-        noSpeech.innerHTML = '⚠️ Voz indisponível neste momento (' + e.error + '). <br>Use o campo de texto abaixo.';
-      }
-    };
-
-    recognition.onend = function(){
-      if(isRecording){ stopRecording(); }
-    };
-  } else {
-    // Not supported — show message when modal opens
-    speechSupported = false;
-  }
-})();
-
-function toggleRecording(){
-  if(!speechSupported){
-    document.getElementById('qlNoSpeechMsg').style.display = 'block';
-    document.getElementById('qlNoSpeechMsg').innerHTML = '⚠️ Reconhecimento de voz não suportado neste navegador.<br>Use o campo de texto abaixo — funciona perfeitamente!';
-    document.getElementById('qlVoiceArea').style.display = 'none';
-    return;
-  }
-  if(!isRecording){
-    // reset
-    if(recognition) {
-      try {
-        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-        recognition = new SpeechRec();
-        recognition.lang = 'pt-BR';
-        recognition.continuous = true;
-        recognition.interimResults = true;
-        // re-attach handlers
-        recognition.onstart = function(){
-          isRecording = true;
-          document.getElementById('qlVoiceBtn').textContent = '⏹️';
-          document.getElementById('qlVoiceBtn').classList.add('recording');
-          document.getElementById('qlHint').textContent = 'Ouvindo… toque para parar';
-          const s = document.getElementById('qlVoiceStatus');
-          s.style.display = 'block';
-          s.textContent = '🔴 Gravando...';
-        };
-        let ft = '';
-        recognition.onresult = function(e){
-          let interim = '';
-          for(let i = e.resultIndex; i < e.results.length; i++){
-            const t = e.results[i][0].transcript;
-            if(e.results[i].isFinal){ ft += t + ' '; }
-            else { interim = t; }
-          }
-          document.getElementById('qlText').value = ft + interim;
-          document.getElementById('qlVoiceStatus').textContent = '🔴 Gravando... "' + (interim || ft).slice(-50) + '"';
-        };
-        recognition.onerror = function(e){
-          stopRecording();
-          const n = document.getElementById('qlNoSpeechMsg');
-          n.style.display = 'block';
-          if(e.error === 'not-allowed'){
-            n.innerHTML = '🔒 Permissão de microfone negada.<br>Use o campo de texto abaixo.';
-          } else {
-            n.innerHTML = '⚠️ Erro de voz (' + e.error + ').<br>Use o campo de texto abaixo.';
-          }
-        };
-        recognition.onend = function(){ if(isRecording) stopRecording(); };
-        recognition.start();
-      } catch(err){
-        document.getElementById('qlNoSpeechMsg').style.display = 'block';
-        document.getElementById('qlNoSpeechMsg').innerHTML = '⚠️ Não foi possível iniciar o microfone.<br>Use o campo de texto abaixo.';
-      }
-    }
-  } else {
-    stopRecording();
-  }
-}
-
-function stopRecording(){
-  isRecording = false;
-  try { if(recognition) recognition.stop(); } catch(e){}
-  const btn = document.getElementById('qlVoiceBtn');
-  const hint = document.getElementById('qlHint');
-  const status = document.getElementById('qlVoiceStatus');
-  if(btn){ btn.textContent = '🎙️'; btn.classList.remove('recording'); }
-  if(hint){ hint.textContent = 'Toque para falar novamente'; }
-  if(status){ status.style.display = 'none'; }
-}
-
-// ══ AI CHAT ══
-const chatEl=document.getElementById('chatMessages');
-const inputEl=document.getElementById('aiInput');
-const sendBtn=document.getElementById('sendBtn');
-function setPrompt(t){inputEl.value=t;inputEl.focus();}
-function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}}
-function addMsg(text,role){
-  const d=document.createElement('div');d.className='msg msg-'+role;d.textContent=text;
-  chatEl.appendChild(d);chatEl.scrollTop=chatEl.scrollHeight;
-}
-function addTyping(){const d=document.createElement('div');d.className='msg-typing';d.id='typing';d.innerHTML='<div class="dot"></div><div class="dot"></div><div class="dot"></div>';chatEl.appendChild(d);chatEl.scrollTop=chatEl.scrollHeight;}
-function removeTyping(){const t=document.getElementById('typing');if(t)t.remove();}
-async function sendMessage(){
-  const text=inputEl.value.trim();if(!text)return;
-  addMsg(text,'user');inputEl.value='';sendBtn.disabled=true;addTyping();
-  document.getElementById('nextStepsArea').innerHTML='';
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',max_tokens:1200,
-        system:`Você é a Alma, assistente de IA especializada em desenvolvimento infantil e parentalidade, integrada ao app "Crescer Juntos". Apoie pais de crianças de 0 a 12 anos, incluindo neurodiversas (TEA, TDAH).
-Seja calorosa, empática e prática. Responda em português brasileiro.
-SEMPRE termine sua resposta com uma seção "PRÓXIMOS PASSOS:" seguida de exatamente 3 sugestões numeradas de ação concreta que o pai/mãe pode fazer hoje ou esta semana. Formato: "PRÓXIMOS PASSOS:\n1. ...\n2. ...\n3. ..."
-Máximo 4 parágrafos antes dos próximos passos. Emojis com moderação.`,
-        messages:[{role:'user',content:text}]
-      })
-    });
-    removeTyping();
-    if(!res.ok){addMsg('Ops! Não consegui conectar agora. Tente em instantes. 💛','ai');}
-    else{
-      const data=await res.json();
-      const full=data.content?.[0]?.text||'Desculpe, não entendi.';
-      const parts=full.split('PRÓXIMOS PASSOS:');
-      addMsg(parts[0].trim(),'ai');
-      if(parts[1]){
-        const steps=parts[1].trim().split('\n').filter(s=>s.trim()).slice(0,3);
-        const ns=document.getElementById('nextStepsArea');
-        ns.innerHTML=`<div class="next-steps-card"><h4>🚀 Próximos passos</h4><ol>${steps.map(s=>`<li>${s.replace(/^\d+\.\s*/,'')}</li>`).join('')}</ol></div>`;
-      }
-    }
-  }catch(e){removeTyping();addMsg('Sem conexão no momento. 💛','ai');}
-  finally{sendBtn.disabled=false;chatEl.scrollTop=chatEl.scrollHeight;}
-}
-
-// ══ RECORDS ══
-function filterRecords(filter,btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active'); renderRecords(filter);
-}
-function renderRecords(filter){
-  const list=document.getElementById('recordsList');
-  const filtered=filter==='todos'?records:records.filter(r=>r.type===filter);
-  list.innerHTML=filtered.map(r=>`
-    <div class="record-card ${r.type}">
-      <div class="record-header">
-        <span class="record-type rt-${r.type}">${r.icon} ${r.type.charAt(0).toUpperCase()+r.type.slice(1)}</span>
-        <span class="record-date">${r.date}</span>
+// ══ JOURNAL ══
+const typeColors = {behavior:'#fce4ec',sleep:'#e3f2fd',food:'#e8f5e9',water:'#e0f7fa',meds:'#ede9ff',health:'#fff8e1',screen:'#f3e5f5',milestone:'#fff8e1'};
+const typeNames = {behavior:'Comportamento',sleep:'Sono',food:'Alimentação',water:'Hidratação',meds:'Medicamento',health:'Saúde',screen:'Tela',milestone:'Marco'};
+function renderJournal(filter) {
+  const list = document.getElementById('journalEntries');
+  const filtered = filter === 'todos' ? entries : entries.filter(e => e.type === filter);
+  list.innerHTML = filtered.map(e => `
+    <div class="je-card ${e.type}">
+      <div class="je-header">
+        <span class="je-type" style="color:${e.type==='behavior'?'#e91e63':e.type==='sleep'?'#1976d2':e.type==='food'?'#2e7d32':e.type==='water'?'#00838f':e.type==='meds'?'#6c5ce7':e.type==='milestone'?'#e65100':'#555'}">${e.icon} ${typeNames[e.type]||e.type}</span>
+        <span class="je-date">${e.date}</span>
       </div>
-      <div class="record-desc">${r.title}</div>
-      ${r.detail?`<div class="record-detail">${r.detail}</div>`:''}
+      <div class="je-title">${e.title}</div>
+      <div class="je-detail">${e.detail}</div>
     </div>`).join('');
 }
-
-// ══ REPORT GENERATOR ══
-async function generateReport(){
-  const from=document.getElementById('repFrom').value;
-  const to=document.getElementById('repTo').value;
-  openModal('report');
-  document.getElementById('reportContent').innerHTML='<div style="text-align:center;padding:24px;color:var(--purple)">✨ Gerando relatório com IA...</div>';
-  const summary=records.slice(0,8).map(r=>`${r.type}: ${r.title}`).join('\n');
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',max_tokens:1200,
-        system:'Você é um assistente especializado em desenvolvimento infantil. Gere relatórios profissionais em português para consultas médicas e reuniões educacionais. Seja objetivo, claro e use linguagem adequada para profissionais de saúde e educação.',
-        messages:[{role:'user',content:`Gere um relatório tipo "${reportType}" para a criança Mateus (4 anos, TEA nível 1) com base nos seguintes registros do período ${from} a ${to}:\n\n${summary}\n\nIncluir: resumo executivo, pontos de atenção, evolução observada e recomendações. Formato HTML simples com <h3>, <p> e <ul>.`}]
-      })
-    });
-    const data=await res.json();
-    document.getElementById('reportContent').innerHTML=data.content?.[0]?.text||'Erro ao gerar relatório.';
-  }catch{
-    document.getElementById('reportContent').innerHTML='<p>Erro de conexão. Tente novamente.</p>';
-  }
+function filterJournal(f, btn) {
+  document.querySelectorAll('.jtab').forEach(b => b.classList.remove('active')); btn.classList.add('active'); renderJournal(f);
 }
 
-// ══ CHARTS ══
-function renderCharts(){
-  renderBar('sleepChart',[{l:'Seg',v:7.5},{l:'Ter',v:6.8},{l:'Qua',v:7.2},{l:'Qui',v:8.25},{l:'Sex',v:7.0},{l:'Sáb',v:6.5},{l:'Dom',v:7.75}],8.5,'sleep-bar',true,'h');
-  renderBar('crisisChart',[{l:'Seg',v:0},{l:'Ter',v:1},{l:'Qua',v:0},{l:'Qui',v:0},{l:'Sex',v:1},{l:'Sáb',v:0},{l:'Dom',v:0}],3,'crisis-bar',false,'');
-  renderBar('waterChart',[{l:'Seg',v:950},{l:'Ter',v:800},{l:'Qua',v:1100},{l:'Qui',v:750},{l:'Sex',v:900},{l:'Sáb',v:650},{l:'Dom',v:1000}],1200,'water-bar',false,'ml');
-  renderBar('moodChart',[{l:'Seg',v:4},{l:'Ter',v:2},{l:'Qua',v:3},{l:'Qui',v:5},{l:'Sex',v:4},{l:'Sáb',v:3},{l:'Dom',v:4}],5,'mood-bar',false,'');
+// ══ ADD ENTRY FORM ══
+const aeForms = {
+  behavior:`<div class="form-group"><label class="form-label">Tipo</label><select class="form-select" id="ae-btype"><option>Crise / Meltdown</option><option>Shutdown</option><option>Agitação</option><option>Stimming</option><option>Comportamento positivo</option><option>Ecolalia</option></select></div><div class="form-group"><label class="form-label">Intensidade</label><div class="int-row"><button class="int-btn l1" onclick="setInt(this,1)">1 Leve</button><button class="int-btn l2" onclick="setInt(this,2)">2 Baixa</button><button class="int-btn l3" onclick="setInt(this,3)">3 Média</button><button class="int-btn l4" onclick="setInt(this,4)">4 Alta</button><button class="int-btn l5" onclick="setInt(this,5)">5 Grave</button></div></div><div class="form-group"><label class="form-label">Gatilho</label><textarea class="form-textarea" id="ae-trigger" placeholder="O que aconteceu antes?" rows="2"></textarea></div><div class="two-col"><div class="form-group"><label class="form-label">Duração (min)</label><input type="number" class="form-input" id="ae-dur" placeholder="Ex: 15"></div><div class="form-group"><label class="form-label">Local</label><select class="form-select" id="ae-loc"><option>Casa</option><option>Escola</option><option>Terapia</option><option>Outro</option></select></div></div>`,
+  sleep:`<div class="two-col"><div class="form-group"><label class="form-label">Dormiu às</label><input type="time" class="form-input" id="ae-st" value="20:30"></div><div class="form-group"><label class="form-label">Acordou às</label><input type="time" class="form-input" id="ae-et" value="07:00"></div></div><div class="form-group"><label class="form-label">Qualidade</label><div class="emotion-grid"><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😴</span><span class="el">Ótimo</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😪</span><span class="el">Bom</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😣</span><span class="el">Regular</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😭</span><span class="el">Ruim</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">🌙</span><span class="el">Agitado</span></button></div></div><div class="form-group"><label class="form-label">Observações</label><textarea class="form-textarea" id="ae-obs" rows="2" placeholder="Acordou durante a noite?"></textarea></div>`,
+  food:`<div class="two-col"><div class="form-group"><label class="form-label">Refeição</label><select class="form-select" id="ae-meal"><option>Café</option><option>Almoço</option><option>Lanche</option><option>Jantar</option></select></div><div class="form-group"><label class="form-label">Horário</label><input type="time" class="form-input" id="ae-mtime"></div></div><div class="form-group"><label class="form-label">O que comeu?</label><input class="form-input" id="ae-food" placeholder="Ex: Arroz, frango, brócolis..."></div><div class="form-group"><label class="form-label">Reação / Sensibilidade</label><input class="form-input" id="ae-react" placeholder="Ex: Recusou textura, vômito..."></div><div class="form-group"><label class="form-label">Aceitação</label><div class="emotion-grid"><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😋</span><span class="el">Adorou</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😊</span><span class="el">Bem</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😐</span><span class="el">Regular</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">🙅</span><span class="el">Recusou</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">🤢</span><span class="el">Sensível</span></button></div></div>`,
+  water:`<div class="form-group"><label class="form-label">Quantidade (ml)</label><input type="number" class="form-input" id="ae-ml" placeholder="Ex: 250"></div><div class="form-group"><label class="form-label">Bebida</label><select class="form-select" id="ae-drink"><option>Água</option><option>Suco natural</option><option>Leite</option><option>Chá</option></select></div>`,
+  meds:`<div class="form-group"><label class="form-label">Medicamento</label><input class="form-input" id="ae-med" placeholder="Ex: Ritalina, Risperdal..."></div><div class="two-col"><div class="form-group"><label class="form-label">Dose</label><input class="form-input" id="ae-dose" placeholder="Ex: 10mg"></div><div class="form-group"><label class="form-label">Horário</label><input type="time" class="form-input" id="ae-mhour"></div></div><div class="form-group"><label class="form-label">Efeitos observados</label><textarea class="form-textarea" id="ae-eff" rows="2" placeholder="Comportamento, apetite, sono..."></textarea></div>`,
+  health:`<div class="form-group"><label class="form-label">Tipo</label><select class="form-select" id="ae-htype"><option>Evacuação intestinal</option><option>Sintoma físico</option><option>Consulta médica</option><option>Exame</option></select></div><div class="form-group"><label class="form-label">Descrição</label><textarea class="form-textarea" id="ae-hdesc" rows="2" placeholder="Detalhes..."></textarea></div>`,
+  screen:`<div class="form-group"><label class="form-label">Dispositivo</label><select class="form-select" id="ae-dev"><option>Tablet</option><option>Celular</option><option>TV</option><option>Computador</option></select></div><div class="two-col"><div class="form-group"><label class="form-label">Duração (min)</label><input type="number" class="form-input" id="ae-smin" placeholder="Ex: 45"></div><div class="form-group"><label class="form-label">Tipo</label><select class="form-select" id="ae-stype"><option>Educativo</option><option>Entretenimento</option><option>Jogo</option></select></div></div>`,
+  milestone:`<div class="form-group"><label class="form-label">Área</label><select class="form-select" id="ae-marea"><option>Comunicação / Fala</option><option>Motor grosso</option><option>Motor fino</option><option>Social / Emocional</option><option>Cognitivo</option><option>Autocuidado</option><option>Sensorial</option></select></div><div class="form-group"><label class="form-label">Descreva o marco</label><textarea class="form-textarea" id="ae-mdesc" rows="3" placeholder="Ex: Disse 'eu te amo' pela primeira vez..."></textarea></div><div class="form-group"><label class="form-label">Como você se sentiu?</label><div class="emotion-grid"><button class="emot-btn" onclick="selEmot(this)"><span class="ei">🥹</span><span class="el">Emocionada</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">🎉</span><span class="el">Feliz</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">😮</span><span class="el">Surpresa</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">💪</span><span class="el">Orgulhosa</span></button><button class="emot-btn" onclick="selEmot(this)"><span class="ei">💛</span><span class="el">Grata</span></button></div></div>`,
+};
+function updateAddEntryForm() {
+  const type = document.getElementById('ae-type').value;
+  document.getElementById('ae-form-body').innerHTML = aeForms[type] || '';
+  intensity = 0;
 }
-function renderBar(id,data,max,cls,showVal,unit){
-  const el=document.getElementById(id);if(!el)return;
-  el.innerHTML=data.map(d=>{const pct=Math.round((d.v/max)*100);return`<div class="bar-wrap">${showVal?`<span class="bar-val">${d.v}${unit}</span>`:''}<div class="bar ${cls}" style="height:${pct}%"></div><span class="bar-label">${d.l}</span></div>`;}).join('');
+function setInt(btn, val) { intensity=val; btn.closest('.int-row').querySelectorAll('.int-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
+function selEmot(btn) { btn.closest('.emotion-grid').querySelectorAll('.emot-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
+function saveEntry() {
+  const type = document.getElementById('ae-type').value;
+  const icons = {behavior:'🌀',sleep:'🌙',food:'🍎',water:'💧',meds:'💊',health:'🏥',screen:'📱',milestone:'⭐'};
+  let title = typeNames[type] + ' registrado', detail = 'Agora mesmo';
+  if(type==='behavior'){ const t=document.getElementById('ae-btype')?.value; const g=document.getElementById('ae-trigger')?.value; title=t||'Comportamento'; detail=(g?'Gatilho: '+g:'')+(intensity?' • Intensidade: '+intensity+'/5':''); }
+  else if(type==='sleep'){ const s=document.getElementById('ae-st')?.value,e=document.getElementById('ae-et')?.value; title=`Sono: ${s} → ${e}`; detail='Registro de sono'; }
+  else if(type==='food'){ const m=document.getElementById('ae-meal')?.value,f=document.getElementById('ae-food')?.value; title=m+(f?': '+f:''); detail=document.getElementById('ae-react')?.value||''; }
+  else if(type==='water'){ const ml=document.getElementById('ae-ml')?.value; title='Hidratação: '+(ml||'?')+'ml'; detail=''; }
+  else if(type==='meds'){ const n=document.getElementById('ae-med')?.value,d=document.getElementById('ae-dose')?.value; title=(n||'Medicamento')+' '+(d||''); detail=''; }
+  else if(type==='milestone'){ const d=document.getElementById('ae-mdesc')?.value; title=d||'Marco!'; detail='Área: '+(document.getElementById('ae-marea')?.value||''); }
+  entries.unshift({type,date:'Agora',icon:icons[type],title,detail});
+  // Add to home log
+  const hl=document.getElementById('homeLog');
+  const bg=typeColors[type]||'#f5f5f5';
+  const item=document.createElement('div'); item.className='log-entry'; item.style.animation='fadeUp .3s ease';
+  item.innerHTML=`<div class="le-icon" style="background:${bg};">${icons[type]}</div><div class="le-body"><div class="le-title">${title}</div><div class="le-detail">${detail}</div></div><div class="le-time">Agora</div>`;
+  hl.insertBefore(item,hl.firstChild);
+  closeModal('addentry'); intensity=0;
 }
 
 // ══ CHILD PROFILE ══
-function calcAge(nasc){const b=new Date(nasc),n=new Date();let y=n.getFullYear()-b.getFullYear();if(n.getMonth()-b.getMonth()<0||(n.getMonth()===b.getMonth()&&n.getDate()<b.getDate()))y--;return y;}
-function saveChildProfile(){
-  const nome=document.getElementById('edit-nome').value.trim()||'Sem nome';
-  const nasc=document.getElementById('edit-nasc').value;
-  const diag=document.getElementById('edit-diag').value;
-  const meds=document.getElementById('edit-meds').value.trim();
-  const conds=[...document.querySelectorAll('.cond-tag.selected')].map(b=>b.dataset.val);
-  const age=nasc?calcAge(nasc):'?';
-  document.getElementById('childEmoji').textContent=selectedEmoji;
-  document.getElementById('childName').textContent=`${nome}, ${age} anos`;
-  const tagsEl=document.getElementById('childTags');
-  tagsEl.innerHTML='';
-  if(diag)tagsEl.innerHTML+=`<span class="tag tag-blue">${diag}</span>`;
-  conds.forEach(c=>{tagsEl.innerHTML+=`<span class="tag tag-green">${c}</span>`;});
-  document.getElementById('cfgChildName').textContent=`Dados de ${nome}`;
-  document.getElementById('cfgChildDetail').textContent=`${age} anos • ${diag||'Sem diagnóstico'}`;
-  document.getElementById('cfgDiagnosis').textContent=diag||'Nenhum';
-  document.getElementById('cfgMeds').textContent=meds||'Nenhum cadastrado';
-  document.getElementById('pbEmoji').textContent=selectedEmoji;
-  document.getElementById('pbName').textContent='Família';
-  document.getElementById('pbDetail').textContent=`${nome}, ${age} anos`;
-  document.getElementById('greetSub').textContent=`Como ${nome} está hoje?`;
-  document.querySelector('.greeting h2').innerHTML=`Olá, <span id="greetName">Família</span> 🌸`;
-  closeModal('editcrianca');
-}
-</script>
-
-<div id="installBanner" style="display:none;position:fixed;bottom:96px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:480px;background:linear-gradient(135deg,#c9856a,#a05a4a);border-radius:16px;padding:14px 16px;z-index:300;box-shadow:0 8px 28px rgba(100,60,40,.3);display:flex;align-items:center;gap:12px;">
-  <span style="font-size:1.6rem">📲</span>
-  <div style="flex:1">
-    <p style="color:white;font-family:Nunito,sans-serif;font-size:.85rem;font-weight:900;margin:0">Instalar Crescer Juntos</p>
-    <p style="color:rgba(255,255,255,.8);font-family:Nunito,sans-serif;font-size:.72rem;margin:2px 0 0">Adicionar à tela inicial como app</p>
-  </div>
-  <button onclick="installApp()" style="background:white;border:none;border-radius:10px;padding:8px 14px;font-family:Nunito,sans-serif;font-size:.78rem;font-weight:900;color:#c9856a;cursor:pointer;">Instalar</button>
-  <button onclick="document.getElementById('installBanner').style.display='none'" style="background:rgba(255,255,255,.2);border:none;border-radius:8px;width:28px;height:28px;color:white;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</button>
-</div>
-
-<script>
-// ── SERVICE WORKER ──
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('[SW] Registered:', reg.scope))
-      .catch(err => console.log('[SW] Error:', err));
-  });
+function pickEmoji(btn, e) { document.querySelectorAll('.ep-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); childEmoji=e; }
+function calcAge(dob) { const b=new Date(dob),n=new Date(); let y=n.getFullYear()-b.getFullYear(); if(n.getMonth()-b.getMonth()<0||(n.getMonth()===b.getMonth()&&n.getDate()<b.getDate()))y--; return y; }
+function saveChild() {
+  const name=document.getElementById('ec-name').value.trim()||'Mateus';
+  const dob=document.getElementById('ec-dob').value;
+  const diag=document.getElementById('ec-diag').value;
+  const meds=document.getElementById('ec-meds').value.trim();
+  const age=dob?calcAge(dob):'?';
+  // Update everywhere
+  document.getElementById('hcsAvatar').textContent=childEmoji;
+  document.getElementById('hcsName').innerHTML=`Home <span class="hcs-chevron">˅</span>`;
+  document.getElementById('hcsSub').textContent=name;
+  document.getElementById('accAvatar').textContent=childEmoji;
+  document.getElementById('accName').textContent='Família';
+  document.getElementById('accDetail').textContent=`${name}, ${age} anos`;
+  document.getElementById('accChildName').textContent=`Dados de ${name}`;
+  document.getElementById('accChildDetail').textContent=`${age} anos • ${diag||'Sem diagnóstico'}`;
+  document.getElementById('accDiag').textContent=diag||'Nenhum';
+  document.getElementById('accMeds').textContent=meds||'Nenhum cadastrado';
+  document.getElementById('insightsChildName').textContent=name;
+  closeModal('editchild');
 }
 
-// ── PWA INSTALL PROMPT ──
-let deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  const banner = document.getElementById('installBanner');
-  if (banner) banner.style.display = 'flex';
-});
+// ══ CHARTS ══
+function renderCharts() {
+  rBar('sleepChart',[{l:'S',v:7.5},{l:'T',v:6.8},{l:'Q',v:7.2},{l:'Q',v:8.25},{l:'S',v:7.0},{l:'S',v:6.5},{l:'D',v:7.75}],8.5,'#74b9ff',true,'h');
+  rBar('crisisChart',[{l:'S',v:0},{l:'T',v:1},{l:'Q',v:0},{l:'Q',v:0},{l:'S',v:1},{l:'S',v:0},{l:'D',v:0}],3,'#fd79a8',false,'');
+}
+function rBar(id,data,max,color,showVal,unit){
+  const el=document.getElementById(id); if(!el)return;
+  el.innerHTML=data.map(d=>{const p=Math.round((d.v/max)*100);return`<div class="bc-wrap">${showVal?`<span class="bc-val">${d.v}${unit}</span>`:''}<div class="bc-bar" style="height:${p}%;background:${color};"></div><span class="bc-lbl">${d.l}</span></div>`;}).join('');
+}
 
-function installApp() {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(choice => {
-    if (choice.outcome === 'accepted') {
-      console.log('[PWA] Installed!');
-      document.getElementById('installBanner').style.display = 'none';
+// ══ REPORT ══
+function openReportModal(type) {
+  currentReportType = type; openModal('report');
+  document.getElementById('reportTitle').textContent='📄 Relatório: '+type;
+  document.getElementById('reportOutput').innerHTML='<div style="text-align:center;padding:24px;color:var(--purple)">✨ Gerando com IA...</div>';
+  generateReport(type);
+}
+async function generateReport(type) {
+  const summary = entries.slice(0,6).map(e=>`${typeNames[e.type]}: ${e.title}`).join('\n');
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'Gere relatórios profissionais em português para consultas médicas e reuniões educacionais. Seja objetivo e use HTML simples com h3, p, ul.',messages:[{role:'user',content:`Gere relatório "${type}" para criança com TEA nível 1, 4 anos:\n${summary}`}]})});
+    const d=await res.json();
+    document.getElementById('reportOutput').innerHTML=d.content?.[0]?.text||'Erro.';
+  }catch{document.getElementById('reportOutput').innerHTML='<p>Erro de conexão. Tente novamente.</p>';}
+}
+
+// ══ ALMA CHAT ══
+function almaSet(t){document.getElementById('almaInput').value=t;}
+function almaKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();almaSend();}}
+function addAlmaMsg(text,role){
+  const d=document.createElement('div');d.className='alma-msg am-'+role;d.textContent=text;
+  document.getElementById('almaMsgs').appendChild(d);document.getElementById('almaMsgs').scrollTop=99999;
+}
+function addAlmaTyping(){const d=document.createElement('div');d.className='am-typing';d.id='at';d.innerHTML='<div class="tdot"></div><div class="tdot"></div><div class="tdot"></div>';document.getElementById('almaMsgs').appendChild(d);document.getElementById('almaMsgs').scrollTop=99999;}
+function removeTyping(){const t=document.getElementById('at');if(t)t.remove();}
+async function almaSend(){
+  const inp=document.getElementById('almaInput');const text=inp.value.trim();if(!text)return;
+  addAlmaMsg(text,'user');inp.value='';document.getElementById('almaSend').disabled=true;addAlmaTyping();
+  document.getElementById('almaNextSteps').innerHTML='';
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`Você é a Alma, IA especializada em parentalidade de crianças neuroatípicas. Seja calorosa, empática e prática. Responda em português brasileiro. SEMPRE termine com "PRÓXIMOS PASSOS:\n1. ...\n2. ...\n3. ..." com 3 ações concretas. Máximo 3 parágrafos antes dos próximos passos.`,messages:[{role:'user',content:text}]})});
+    removeTyping();
+    const d=await res.json();
+    const full=d.content?.[0]?.text||'Desculpe, não entendi.';
+    const parts=full.split('PRÓXIMOS PASSOS:');
+    addAlmaMsg(parts[0].trim(),'ai');
+    if(parts[1]){
+      const steps=parts[1].trim().split('\n').filter(s=>s.trim()).slice(0,3);
+      document.getElementById('almaNextSteps').innerHTML=`<div class="next-steps"><h4>🚀 Próximos passos</h4><ol>${steps.map(s=>`<li>${s.replace(/^\d+\.\s*/,'')}</li>`).join('')}</ol></div>`;
     }
-    deferredPrompt = null;
-  });
+  }catch{removeTyping();addAlmaMsg('Sem conexão no momento. 💛','ai');}
+  finally{document.getElementById('almaSend').disabled=false;}
 }
 
-window.addEventListener('appinstalled', () => {
-  document.getElementById('installBanner').style.display = 'none';
-  deferredPrompt = null;
-});
-
-// ── OFFLINE INDICATOR ──
-function updateOnlineStatus() {
-  const isOnline = navigator.onLine;
-  let indicator = document.getElementById('offlineIndicator');
-  if (!isOnline) {
-    if (!indicator) {
-      indicator = document.createElement('div');
-      indicator.id = 'offlineIndicator';
-      indicator.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#e57373;color:white;text-align:center;padding:6px;font-family:Nunito,sans-serif;font-size:.75rem;font-weight:800;z-index:999;';
-      indicator.textContent = '📵 Sem conexão — registros salvos localmente';
-      document.body.appendChild(indicator);
-    }
-  } else {
-    if (indicator) indicator.remove();
+// ══ SPEECH / QUICK LOG ══
+function initSpeech(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){speechOK=false;return;}
+  speechOK=true;
+}
+function qlToggle(){
+  if(!speechOK){
+    document.getElementById('qlNoMic').style.display='block';
+    document.getElementById('qlNoMic').innerHTML='⚠️ Voz não disponível neste ambiente — use o campo de texto abaixo.';
+    document.getElementById('qlVoiceArea' in document?'qlVoiceArea':'.ql-voice-area')?.style&&(document.querySelector('.ql-voice-area').style.display='none');
+    return;
   }
+  if(!isRecording){
+    const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    recognition=new SR();recognition.lang='pt-BR';recognition.continuous=true;recognition.interimResults=true;
+    let ft='';
+    recognition.onstart=()=>{isRecording=true;const b=document.getElementById('qlBtn');b.textContent='⏹️';b.classList.add('rec');document.getElementById('qlHint').textContent='Ouvindo… toque para parar';document.getElementById('qlStatus').textContent='🔴 Gravando...';};
+    recognition.onresult=e=>{let interim='';for(let i=e.resultIndex;i<e.results.length;i++){const t=e.results[i][0].transcript;if(e.results[i].isFinal)ft+=t+' ';else interim=t;}document.getElementById('qlText').value=ft+interim;document.getElementById('qlStatus').textContent='🔴 "'+( interim||ft).slice(-50)+'"';};
+    recognition.onerror=e=>{qlStop();const n=document.getElementById('qlNoMic');n.style.display='block';n.innerHTML=e.error==='not-allowed'?'🔒 Permissão negada. Use o campo de texto.':'⚠️ Erro ('+e.error+'). Use o campo de texto.';};
+    recognition.onend=()=>{if(isRecording)qlStop();};
+    try{recognition.start();}catch(e){document.getElementById('qlNoMic').style.display='block';document.getElementById('qlNoMic').innerHTML='⚠️ Não foi possível iniciar o microfone.';}
+  }else{qlStop();}
 }
-window.addEventListener('online', updateOnlineStatus);
-window.addEventListener('offline', updateOnlineStatus);
-updateOnlineStatus();
+function qlStop(){isRecording=false;try{recognition&&recognition.stop();}catch(e){}const b=document.getElementById('qlBtn');if(b){b.textContent='🎙️';b.classList.remove('rec');}document.getElementById('qlHint').textContent='Toque para falar novamente';document.getElementById('qlStatus').textContent='';}
+async function qlProcess(){
+  const text=document.getElementById('qlText').value.trim();if(!text){alert('Escreva ou fale sobre o dia.');return;}
+  document.getElementById('ql-s1').style.display='none';document.getElementById('ql-s2').style.display='block';
+  document.getElementById('qlResults').innerHTML='<div style="text-align:center;padding:16px;color:var(--purple)">✨ Analisando com IA...</div>';
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:'Analise o texto e extraia registros. Retorne APENAS JSON array: [{"type":"sleep|behavior|food|water|meds|milestone|health","icon":"emoji","title":"título","detail":"detalhe"}]. Máximo 6. Sem markdown.',messages:[{role:'user',content:text}]})});
+    const d=await res.json();
+    const raw=d.content?.[0]?.text||'[]';
+    try{qlRecords=JSON.parse(raw.replace(/```json|```/g,'').trim());}catch{qlRecords=[{type:'behavior',icon:'📝',title:'Relato registrado',detail:text.slice(0,60)}];}
+  }catch{qlRecords=[{type:'behavior',icon:'📝',title:'Relato registrado',detail:'Sem conexão'}];}
+  document.getElementById('qlResults').innerHTML=qlRecords.map(r=>`<div class="ql-result"><div class="ql-result-icon">${r.icon||'📝'}</div><div class="ql-result-body"><h4>${r.title}</h4><p>${r.detail||''}</p></div></div>`).join('');
+}
+function qlSave(){
+  const icm={sleep:'🌙',behavior:'🌀',food:'🍎',water:'💧',meds:'💊',milestone:'⭐',health:'🏥'};
+  const bgm={sleep:'#e3f2fd',behavior:'#fce4ec',food:'#e8f5e9',water:'#e0f7fa',meds:'#ede9ff',milestone:'#fff8e1',health:'#fff8e1'};
+  qlRecords.forEach(r=>{
+    entries.unshift({type:r.type||'behavior',date:'Agora',icon:r.icon||icm[r.type]||'📝',title:r.title,detail:r.detail||''});
+    const hl=document.getElementById('homeLog');
+    const item=document.createElement('div');item.className='log-entry';item.style.animation='fadeUp .3s ease';
+    item.innerHTML=`<div class="le-icon" style="background:${bgm[r.type]||'#f5f5f5'}">${r.icon||'📝'}</div><div class="le-body"><div class="le-title">${r.title}</div><div class="le-detail">${r.detail||''}</div></div><div class="le-time">Agora</div>`;
+    hl.insertBefore(item,hl.firstChild);
+  });
+  document.getElementById('qlText').value='';document.getElementById('ql-s1').style.display='block';document.getElementById('ql-s2').style.display='none';
+  closeModal('quicklog');
+}
+
+// ══ RESOURCE CAT ══
+function setResCat(btn){document.querySelectorAll('.res-cat').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+
+// ══ OFFLINE / PWA ══
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;document.getElementById('install-banner').style.display='flex';});
+function installPWA(){if(!deferredPrompt)return;deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>{document.getElementById('install-banner').style.display='none';deferredPrompt=null;});}
+window.addEventListener('appinstalled',()=>{document.getElementById('install-banner').style.display='none';});
+function chkOnline(){document.getElementById('offline-bar').style.display=navigator.onLine?'none':'block';}
+window.addEventListener('online',chkOnline);window.addEventListener('offline',chkOnline);chkOnline();
+
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
 </body>
 </html>
