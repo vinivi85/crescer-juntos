@@ -24,8 +24,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 :root{
-  --bg:#f5f0ff;
-  --bg2:#efe8ff;
+  --bg:#111111;
+  --bg2:#1a1a1a;
   --white:#ffffff;
   --purple:#6c5ce7;
   --purple-dark:#5a4bd1;
@@ -43,10 +43,10 @@
   --shadow:rgba(108,92,231,0.12);
   --r:16px;--r-sm:12px;--r-xs:8px;
 }
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;max-width:430px;margin:0 auto;}
+body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height:100vh;overflow-x:hidden;width:100%;}
 
 /* ══ ONBOARDING ══ */
-#onboarding{position:fixed;inset:0;z-index:1000;background:var(--bg);max-width:430px;margin:0 auto;}
+#onboarding{position:fixed;inset:0;z-index:1000;background:#111;}
 .ob-slides{display:flex;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1);}
 .ob-slide{min-width:100%;height:100%;display:flex;flex-direction:column;align-items:center;padding:60px 28px 40px;position:relative;overflow:hidden;}
 .ob-slide::before{content:'';position:absolute;inset:0;border-radius:0;}
@@ -276,14 +276,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .toggle input:checked+.tslider:before{transform:translateX(20px);}
 
 /* ══ BOTTOM NAV ══ */
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-top:1px solid rgba(0,0,0,.06);padding:10px 0 16px;display:flex;justify-content:space-around;z-index:100;}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;width:100%;background:rgba(17,17,17,.96);backdrop-filter:blur(20px);border-top:1px solid #222;padding:10px 0 16px;display:flex;justify-content:space-around;z-index:100;}
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:4px 12px;border-radius:12px;}
 .nav-btn .ni{font-size:1.3rem;color:#aaa;transition:color .2s;}
 .nav-btn .nl{font-size:.58rem;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.04em;transition:color .2s;}
 .nav-btn.active .ni,.nav-btn.active .nl{color:var(--purple);}
 
 /* ══ MODALS ══ */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(6px);z-index:300;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;max-width:430px;margin:0 auto;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(6px);z-index:300;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
 .modal-sheet{background:white;border-radius:24px 24px 0 0;width:100%;padding:20px 20px 36px;transform:translateY(20px);transition:transform .3s;max-height:90vh;overflow-y:auto;}
 .modal-overlay.open .modal-sheet{transform:translateY(0);}
@@ -372,7 +372,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .report-output{font-size:.82rem;line-height:1.6;color:var(--text);}
 
 /* OFFLINE BANNER */
-#offline-bar{display:none;position:fixed;top:0;left:0;right:0;background:#e17055;color:white;text-align:center;padding:7px;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;z-index:999;max-width:430px;margin:0 auto;}
+#offline-bar{display:none;position:fixed;top:0;left:0;right:0;background:#e17055;color:white;text-align:center;padding:7px;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;z-index:999;}
 #install-banner{display:none;position:fixed;bottom:90px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:398px;background:linear-gradient(135deg,var(--purple),var(--purple-dark));border-radius:var(--r);padding:14px 16px;z-index:200;box-shadow:0 8px 28px rgba(108,92,231,.35);display:flex;align-items:center;gap:10px;}
 #install-banner .ib-txt h4{color:white;font-size:.85rem;font-weight:900;margin:0;}
 #install-banner .ib-txt p{color:rgba(255,255,255,.8);font-size:.72rem;margin:2px 0 0;}
@@ -392,7 +392,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
 <!-- ══════════════════ ONBOARDING ══════════════════ -->
 <!-- ══════════════════ ONBOARDING ══════════════════ -->
-<div id="onboarding" style="position:fixed;inset:0;z-index:1000;background:#111;max-width:430px;margin:0 auto;display:flex;flex-direction:column;">
+<div id="onboarding" style="position:fixed;inset:0;z-index:1000;background:#111;display:flex;flex-direction:column;">
 
   <!-- SCREEN 1: Welcome + Role picker -->
   <div id="ob-welcome" style="flex:1;display:flex;flex-direction:column;padding:0 24px;">
@@ -1138,7 +1138,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <p style="font-size:.9rem;">Gerando seu painel com IA...</p>
       </div>
     </div>
-    <div style="position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:0 auto;padding:16px 20px 28px;background:#111;border-top:1px solid #222;">
+    <div style="position:fixed;bottom:0;left:0;right:0;padding:16px 20px 28px;background:#111;border-top:1px solid #222;">
       <button onclick="launchApp()" style="background:#4fc3f7;border:none;border-radius:50px;padding:17px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;">Ir para o app →</button>
     </div>
   </div>
