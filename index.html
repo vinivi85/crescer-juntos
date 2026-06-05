@@ -1512,9 +1512,31 @@ const screens = {
   promise:'ob-promise',trackexp:'ob-trackexp',reminder:'ob-reminder',topics:'ob-topics',
   demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot'
 };
+// ══ SCREEN NUMBERING (versão de teste) ══
+const SCREEN_ORDER = [
+  'welcome','collab','name','goals','subgoals','affirm',
+  'childname','dob','diag','barriers','agerange','hardmoments',
+  'meltdowns','diagjourney','communication','startingpoint',
+  'behaviors','triggers','sensory','parentblock','timeavail',
+  'support','promise','trackexp','reminder','topics','demo',
+  'celebrate','snapshot'
+];
+
 function showScreen(id) {
   Object.values(screens).forEach(s=>{const el=document.getElementById(s);if(el)el.style.display='none';});
-  const t=document.getElementById(screens[id]);if(t)t.style.display='flex';
+  const t=document.getElementById(screens[id]);if(!t)return;t.style.display='flex';
+  // Remove any existing badge
+  const old=t.querySelector('.screen-badge');if(old)old.remove();
+  // Add number badge
+  const num=SCREEN_ORDER.indexOf(id)+1;
+  if(num>0){
+    const badge=document.createElement('div');
+    badge.className='screen-badge';
+    badge.textContent=num;
+    badge.style.cssText='position:absolute;top:14px;right:16px;background:rgba(79,195,247,.18);color:#4fc3f7;font-family:Inter,sans-serif;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;pointer-events:none;z-index:99;letter-spacing:.04em;border:1px solid rgba(79,195,247,.3);';
+    t.style.position='relative';
+    t.appendChild(badge);
+  }
   window.scrollTo(0,0);
 }
 function selectRole(role) {
@@ -1936,6 +1958,17 @@ function chkOnline(){document.getElementById('offline-bar').style.display=naviga
 window.addEventListener('online',chkOnline);window.addEventListener('offline',chkOnline);chkOnline();
 
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+
+// Badge on welcome screen (shown by default, not via showScreen)
+(function(){
+  const el=document.getElementById('ob-welcome');
+  if(!el)return;
+  el.style.position='relative';
+  const b=document.createElement('div');
+  b.className='screen-badge';b.textContent='1';
+  b.style.cssText='position:absolute;top:14px;right:16px;background:rgba(79,195,247,.18);color:#4fc3f7;font-family:Inter,sans-serif;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;pointer-events:none;z-index:99;letter-spacing:.04em;border:1px solid rgba(79,195,247,.3);';
+  el.appendChild(b);
+})();
 </script>
 </body>
 </html>
