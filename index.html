@@ -381,120 +381,157 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 </div>
 
 <!-- ══════════════════ ONBOARDING ══════════════════ -->
-<div id="onboarding">
-  <div class="ob-slides" id="obSlides">
+<!-- ══════════════════ ONBOARDING ══════════════════ -->
+<div id="onboarding" style="position:fixed;inset:0;z-index:1000;background:#111;max-width:430px;margin:0 auto;display:flex;flex-direction:column;">
 
-    <!-- SLIDE 1: Understand Patterns -->
-    <div class="ob-slide ob-s1">
-      <h1 class="ob-title">Entenda os Padrões do Seu Filho</h1>
-      <p class="ob-sub">Registre tudo em um lugar e descubra o que realmente importa</p>
-      <div class="ob-phone">
-        <div style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:10px 12px;display:flex;align-items:center;gap:6px;">
-          <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🦊</div>
-          <div><div style="font-size:.65rem;font-weight:800;color:white;">Home ˅</div><div style="font-size:.5rem;color:rgba(255,255,255,.7);">Mateus</div></div>
-          <div style="margin-left:auto;width:22px;height:22px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;">⚙️</div>
-        </div>
-        <div class="ob-phone-inner">
-          <div class="ob-metrics">
-            <div class="ob-metric"><div class="ob-metric-icon ic-green">😊</div><div class="ob-metric-lbl">Desafios</div><div class="ob-metric-val">3</div><div class="ob-metric-trend">↓ 45%</div></div>
-            <div class="ob-metric"><div class="ob-metric-icon ic-purple">🌙</div><div class="ob-metric-lbl">Sono</div><div class="ob-metric-val">7.5h</div><div class="ob-metric-trend">↑ 23%</div></div>
-            <div class="ob-metric"><div class="ob-metric-icon ic-blue">💧</div><div class="ob-metric-lbl">Hidratação</div><div class="ob-metric-val">41oz</div><div class="ob-metric-trend">↑ 8%</div></div>
-            <div class="ob-metric"><div class="ob-metric-icon ic-orange">🍎</div><div class="ob-metric-lbl">Refeições</div><div class="ob-metric-val">5</div><div class="ob-metric-trend">↑ 20%</div></div>
-          </div>
-          <div class="ob-insight"><span style="font-size:1rem">🎉</span><p><strong>Crises</strong> caíram <span>32%</span> esta semana</p></div>
-          <div class="ob-actions">
-            <div class="ob-action-btn purple"><div class="qb-icon" style="width:20px;height:20px;margin-bottom:5px;">💬</div><div class="act-title">Alma IA</div><div style="font-size:.55rem;color:rgba(255,255,255,.8)">Pergunte, desabafe.</div></div>
-            <div class="ob-action-btn green"><div class="qb-icon" style="width:20px;height:20px;margin-bottom:5px;">🎙️</div><div class="act-title">Quick Log</div><div style="font-size:.55rem;color:rgba(255,255,255,.8)">Fale, salve. Pronto.</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="ob-dots">
-        <div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div>
-      </div>
-      <button class="ob-btn-primary" onclick="nextSlide()">Próximo →</button>
-      <button class="ob-btn-skip" onclick="finishOnboarding()">Pular introdução</button>
+  <!-- SCREEN 1: Welcome + Role picker -->
+  <div id="ob-welcome" style="flex:1;display:flex;flex-direction:column;padding:0 24px;">
+    <div style="padding-top:56px;">
+      <p style="color:#888;font-size:.95rem;text-align:center;margin-bottom:6px;">Bem-vindo ao</p>
+      <h1 style="font-family:'Pacifico',cursive;font-size:2.6rem;color:#4fc3f7;text-align:center;line-height:1.1;margin-bottom:8px;">Crescer<br>Juntos</h1>
+      <p style="color:#888;font-size:.95rem;text-align:center;margin-bottom:44px;">Diga-nos como você vai usar o app.</p>
     </div>
-
-    <!-- SLIDE 2: Log Everything Zero Typing -->
-    <div class="ob-slide ob-s2">
-      <h1 class="ob-title">Registre Tudo. Sem Digitar.</h1>
-      <p class="ob-sub">Fale sobre o dia — a IA organiza automaticamente em categorias</p>
-      <div class="ob-phone">
-        <div style="padding:12px;background:white;">
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;"><span style="font-size:.65rem;color:#6c5ce7;font-weight:700;">‹</span><span style="font-size:.75rem;font-weight:800;">Quick Log</span></div>
-          <div style="font-size:.62rem;font-weight:800;color:#333;margin-bottom:6px;">Como o Quick Log funciona</div>
-          <div style="display:flex;flex-direction:column;gap:7px;">
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:22px;height:22px;border-radius:50%;background:#e3f2fd;display:flex;align-items:center;justify-content:center;font-size:.65rem;">🎙️</div><div><div style="font-size:.6rem;font-weight:700;">Fale naturalmente</div><div style="font-size:.52rem;color:#888;">Descreva o que aconteceu.</div></div></div>
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:22px;height:22px;border-radius:50%;background:#ede9ff;display:flex;align-items:center;justify-content:center;font-size:.65rem;">🧠</div><div><div style="font-size:.6rem;font-weight:700;">Alma organiza</div><div style="font-size:.52rem;color:#888;">Categoriza tudo pra você.</div></div></div>
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:22px;height:22px;border-radius:50%;background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:.65rem;">✅</div><div><div style="font-size:.6rem;font-weight:700;">Revise e salve</div><div style="font-size:.52rem;color:#888;">Confirme e pronto!</div></div></div>
-          </div>
-          <div style="margin-top:10px;background:linear-gradient(135deg,#ff6b6b,#fd79a8);border-radius:20px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px;"><span style="font-size:.55rem;color:white;font-weight:700;">🎙️ Ouvindo...</span></div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <button id="role-parent" onclick="selectRole('parent')" style="background:#2a2a2a;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:border-color .2s;text-align:left;width:100%;">
+        <span style="font-size:1.8rem;">👪</span>
+        <div>
+          <div style="color:white;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;">Sou pai, mãe ou responsável</div>
+          <div style="color:#888;font-size:.82rem;margin-top:3px;font-family:'Inter',sans-serif;">de uma criança autista ou possivelmente autista</div>
         </div>
-      </div>
-      <div class="ob-badges">
-        <div class="ob-badge badge-red">🎙️ Fale o dia todo</div>
-        <div class="ob-badge badge-purple" style="align-self:flex-end">🧠 Logado automaticamente</div>
-        <div class="ob-badge badge-teal">⚡ Pronto em 2 minutos</div>
-      </div>
-      <div class="ob-dots" style="margin-top:16px;">
-        <div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div>
-      </div>
-      <button class="ob-btn-primary" onclick="nextSlide()">Próximo →</button>
-      <button class="ob-btn-skip" onclick="finishOnboarding()">Pular</button>
+      </button>
+      <button id="role-collab" onclick="selectRole('collab')" style="background:#2a2a2a;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:border-color .2s;text-align:left;width:100%;">
+        <span style="font-size:1.8rem;">🤝</span>
+        <div>
+          <div style="color:white;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;">Sou colaborador convidado</div>
+          <div style="color:#888;font-size:.82rem;margin-top:3px;font-family:'Inter',sans-serif;">para ajudar nos cuidados de uma criança</div>
+        </div>
+      </button>
     </div>
-
-    <!-- SLIDE 3: Walk Prepared -->
-    <div class="ob-slide ob-s3">
-      <h1 class="ob-title">Entre Preparado em Cada Consulta</h1>
-      <p class="ob-sub">Gere relatórios inteligentes para IEP, médico, terapeuta e plano 504</p>
-      <div class="ob-phone">
-        <div style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:10px 12px;display:flex;align-items:center;gap:6px;">
-          <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🦊</div>
-          <div style="font-size:.65rem;font-weight:800;color:white;">Insights ˅</div>
-        </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:7px;">
-          <div style="background:#f0ebff;border-radius:8px;padding:8px;"><div style="font-size:.6rem;font-weight:800;color:#6c5ce7;margin-bottom:3px;">Padrões de Comportamento</div><div style="font-size:.55rem;color:#555;">Descubra gatilhos e padrões.</div><div style="font-size:.55rem;color:#6c5ce7;font-weight:700;margin-top:3px;">Ver detalhes ›</div></div>
-          <div style="background:#e8f5e9;border-radius:8px;padding:8px;"><div style="font-size:.6rem;font-weight:800;color:#2e7d32;margin-bottom:3px;">Resumo IA ✨</div><div style="font-size:.55rem;color:#555;">Entradas do diário com análise.</div><div style="font-size:.55rem;color:#2e7d32;font-weight:700;margin-top:3px;">Gerar ›</div></div>
-        </div>
-      </div>
-      <div class="ob-badges">
-        <div class="ob-badge" style="background:#6c5ce7;">🎓 Reunião IEP</div>
-        <div class="ob-badge" style="background:#e17055;align-self:flex-end">👨‍⚕️ Visita médica</div>
-        <div class="ob-badge" style="background:#fdcb6e;color:#333;">📋 Plano 504</div>
-      </div>
-      <div class="ob-dots" style="margin-top:16px;">
-        <div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div>
-      </div>
-      <button class="ob-btn-primary" onclick="nextSlide()">Próximo →</button>
-      <button class="ob-btn-skip" onclick="finishOnboarding()">Pular</button>
-    </div>
-
-    <!-- SLIDE 4: Get Started -->
-    <div class="ob-slide ob-s4">
-      <h1 class="ob-title">Suporte Além do Rastreamento</h1>
-      <p class="ob-sub">Alma — sua parceira de IA disponível 24h para perguntas, estratégias e apoio emocional</p>
-      <div class="ob-phone" style="height:280px;">
-        <div style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:14px 12px;text-align:center;">
-          <div style="font-size:1.8rem;margin-bottom:4px;">☁️</div>
-          <div style="font-size:.72rem;font-weight:800;color:white;">Olá! Bem-vinda 💛</div>
-          <div style="font-size:.58rem;color:rgba(255,255,255,.8);margin-top:2px;">Sou a Alma, sua IA de parentalidade.</div>
-        </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:6px;">
-          <div style="background:#fff3cd;border-radius:9px;padding:8px;"><div style="font-size:.6rem;font-weight:700;">💭 Precisa desabafar?</div><div style="font-size:.52rem;color:#888;margin-top:2px;">Estou aqui sem julgamentos.</div><div style="margin-top:5px;background:#6c5ce7;border-radius:8px;padding:3px 8px;display:inline-block;font-size:.55rem;color:white;font-weight:700;">Vamos conversar ›</div></div>
-          <div style="font-size:.6rem;font-weight:800;color:#333;margin-top:4px;">Sugestões</div>
-          <div style="font-size:.58rem;color:#555;padding:4px 0;border-bottom:1px solid #f0f0f0;">💛 Como apoiar melhor dia a dia?</div>
-          <div style="font-size:.58rem;color:#555;padding:4px 0;">📚 O que funciona em famílias como a minha?</div>
-        </div>
-      </div>
-      <div class="ob-dots" style="margin-top:16px;">
-        <div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div>
-      </div>
-      <button class="ob-btn-primary" onclick="finishOnboarding()">Começar agora →</button>
-      <button class="ob-btn-skip" onclick="finishOnboarding()">Já tenho conta</button>
-    </div>
-
+    <div style="flex:1;"></div>
+    <button onclick="proceedFromRole()" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;">Continuar →</button>
   </div>
+
+  <!-- SCREEN 2: Collaborator info -->
+  <div id="ob-collab" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
+    <button onclick="showScreen('welcome')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:16px 0 0;text-align:left;">‹</button>
+    <div style="flex:1;padding-top:32px;">
+      <div style="width:80px;height:80px;background:#1a2a3a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 28px;">🤝</div>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:10px;">Bem-vindo, Colaborador!</h2>
+      <p style="color:#888;font-size:.92rem;margin-bottom:36px;line-height:1.5;">Obrigado por fazer parte da equipe de suporte de uma criança.</p>
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">📩</div>
+          <div><div style="color:white;font-size:.95rem;font-weight:700;font-family:'Inter',sans-serif;">Verifique seu convite</div><div style="color:#888;font-size:.82rem;margin-top:4px;font-family:'Inter',sans-serif;">Um pai ou responsável deve ter enviado um link de convite para você.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🔗</div>
+          <div><div style="color:white;font-size:.95rem;font-weight:700;font-family:'Inter',sans-serif;">Abra o link</div><div style="color:#888;font-size:.82rem;margin-top:4px;font-family:'Inter',sans-serif;">Toque no link de convite para entrar e criar sua conta.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👥</div>
+          <div><div style="color:white;font-size:.95rem;font-weight:700;font-family:'Inter',sans-serif;">Comece a colaborar</div><div style="color:#888;font-size:.82rem;margin-top:4px;font-family:'Inter',sans-serif;">Conectado, você poderá ver e contribuir com o acompanhamento da criança.</div></div>
+        </div>
+      </div>
+    </div>
+    <button onclick="showScreen('name')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;">Entendi</button>
+  </div>
+
+  <!-- SCREEN 3: What's your name (with progress bar) -->
+  <div id="ob-name" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('welcome')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
+        <div id="progressBar" style="height:100%;background:#4fc3f7;border-radius:2px;width:8%;transition:width .4s;"></div>
+      </div>
+    </div>
+    <div style="flex:1;padding-top:40px;">
+      <p style="color:#888;font-size:.9rem;margin-bottom:8px;font-family:'Inter',sans-serif;">Certo, primeiro as coisas,</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:48px;">Como devemos te chamar?</h2>
+      <div style="border-bottom:1px solid #333;padding-bottom:12px;margin-bottom:8px;">
+        <input id="ob-name-input" type="text" placeholder="Digite seu nome" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;" oninput="onNameInput(this.value)" onkeydown="if(event.key==='Enter')goToChildName()">
+      </div>
+    </div>
+    <button onclick="goToChildName()" id="btn-name-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+  </div>
+
+  <!-- SCREEN 4: Child's name -->
+  <div id="ob-childname" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('name')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
+        <div style="height:100%;background:#4fc3f7;border-radius:2px;width:25%;"></div>
+      </div>
+    </div>
+    <div style="flex:1;padding-top:40px;">
+      <p style="color:#888;font-size:.9rem;margin-bottom:8px;font-family:'Inter',sans-serif;">Ótimo! Agora,</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:48px;">Qual é o nome da criança?</h2>
+      <div style="border-bottom:1px solid #333;padding-bottom:12px;">
+        <input id="ob-child-input" type="text" placeholder="Nome da criança" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;" oninput="onChildInput(this.value)" onkeydown="if(event.key==='Enter')goToDOB()">
+      </div>
+    </div>
+    <button onclick="goToDOB()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+  </div>
+
+  <!-- SCREEN 5: Child DOB -->
+  <div id="ob-dob" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('childname')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
+        <div style="height:100%;background:#4fc3f7;border-radius:2px;width:50%;"></div>
+      </div>
+    </div>
+    <div style="flex:1;padding-top:40px;">
+      <p style="color:#888;font-size:.9rem;margin-bottom:8px;font-family:'Inter',sans-serif;">Perfeito,</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:48px;">Quando <span id="dobChildName">a criança</span> nasceu?</h2>
+      <div style="border-bottom:1px solid #333;padding-bottom:12px;">
+        <input id="ob-dob-input" type="date" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;color-scheme:dark;" onchange="document.getElementById('btn-dob-continue').style.opacity='1';document.getElementById('btn-dob-continue').style.background='#4fc3f7';document.getElementById('btn-dob-continue').style.color='#111';">
+      </div>
+    </div>
+    <button onclick="goToDiagnosis()" id="btn-dob-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+  </div>
+
+  <!-- SCREEN 6: Diagnosis -->
+  <div id="ob-diag" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('dob')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
+        <div style="height:100%;background:#4fc3f7;border-radius:2px;width:75%;"></div>
+      </div>
+    </div>
+    <div style="padding-top:40px;padding-bottom:16px;">
+      <p style="color:#888;font-size:.9rem;margin-bottom:8px;font-family:'Inter',sans-serif;">Quase lá,</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:6px;">Diagnóstico de <span id="diagChildName">Mateus</span></h2>
+      <p style="color:#888;font-size:.82rem;margin-bottom:28px;font-family:'Inter',sans-serif;">Selecione o que melhor descreve a situação atual.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;" id="diagOptions">
+        <button onclick="selectDiag(this,'TEA — Nível 1 (leve)')" class="diag-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">🧩</span><div style="color:white;font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;">TEA — Nível 1 (leve)</div>
+        </button>
+        <button onclick="selectDiag(this,'TEA — Nível 2 (moderado)')" class="diag-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">🧩</span><div style="color:white;font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;">TEA — Nível 2 (moderado)</div>
+        </button>
+        <button onclick="selectDiag(this,'TEA — Nível 3 (grave)')" class="diag-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">🧩</span><div style="color:white;font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;">TEA — Nível 3 (grave)</div>
+        </button>
+        <button onclick="selectDiag(this,'Possivelmente autista / aguardando diagnóstico')" class="diag-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">🔍</span><div style="color:white;font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;">Possivelmente autista / aguardando diagnóstico</div>
+        </button>
+        <button onclick="selectDiag(this,'TDAH')" class="diag-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">⚡</span><div style="color:white;font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;">TDAH</div>
+        </button>
+        <button onclick="selectDiag(this,'Outro / prefiro não informar')" class="diag-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">💬</span><div style="color:white;font-size:.9rem;font-weight:700;font-family:'Inter',sans-serif;">Outro / prefiro não informar</div>
+        </button>
+      </div>
+    </div>
+    <button onclick="finishOnboarding()" id="btn-diag-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;flex-shrink:0;">Começar →</button>
+  </div>
+
 </div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.diag-opt:active{opacity:.8;}
+</style>
 
 <!-- ══════════════════ MAIN APP ══════════════════ -->
 <div id="app">
@@ -831,7 +868,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
 <script>
 // ══ STATE ══
-let currentSlide = 0;
 let childEmoji = '🦊';
 let intensity = 0;
 let qlRecords = [];
@@ -839,6 +875,9 @@ let isRecording = false;
 let recognition = null;
 let speechOK = false;
 let currentReportType = '';
+let userRole = 'parent';
+let userName = '';
+let selectedDiag = '';
 
 const entries = [
   {type:'milestone',date:'Hoje',icon:'⭐',title:'Disse "eu te amo" sozinho',detail:'Área: Comunicação espontânea'},
@@ -852,26 +891,55 @@ const entries = [
 ];
 
 // ══ ONBOARDING ══
-function nextSlide() {
-  currentSlide = Math.min(currentSlide + 1, 3);
-  document.getElementById('obSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+const screens = {welcome:'ob-welcome',collab:'ob-collab',name:'ob-name',childname:'ob-childname',dob:'ob-dob',diag:'ob-diag'};
+function showScreen(id) {
+  Object.values(screens).forEach(s=>{const el=document.getElementById(s);if(el)el.style.display='none';});
+  const t=document.getElementById(screens[id]);if(t)t.style.display='flex';
+}
+function selectRole(role) {
+  userRole=role;
+  document.querySelectorAll('#ob-welcome button[id^="role-"]').forEach(b=>b.style.borderColor='transparent');
+  const btn=document.getElementById('role-'+role);if(btn)btn.style.borderColor='#4fc3f7';
+}
+function proceedFromRole() {
+  if(userRole==='collab'){showScreen('collab');}else{showScreen('name');setTimeout(()=>document.getElementById('ob-name-input').focus(),100);}
+}
+function onNameInput(val) {
+  const btn=document.getElementById('btn-name-continue');
+  if(val.trim().length>0){btn.style.opacity='1';btn.style.background='#4fc3f7';btn.style.color='#111';}
+  else{btn.style.opacity='.5';btn.style.background='#2a2a2a';btn.style.color='white';}
+}
+function onChildInput(val) {
+  const btn=document.getElementById('btn-child-continue');
+  if(val.trim().length>0){btn.style.opacity='1';btn.style.background='#4fc3f7';btn.style.color='#111';
+    document.getElementById('dobChildName').textContent=val.trim();document.getElementById('diagChildName').textContent=val.trim();
+  }else{btn.style.opacity='.5';btn.style.background='#2a2a2a';btn.style.color='white';}
+}
+function goToChildName(){const v=document.getElementById('ob-name-input').value.trim();if(!v)return;userName=v;showScreen('childname');setTimeout(()=>document.getElementById('ob-child-input').focus(),100);}
+function goToDOB(){const v=document.getElementById('ob-child-input').value.trim();if(!v)return;showScreen('dob');}
+function goToDiagnosis(){const v=document.getElementById('ob-dob-input').value;if(!v)return;showScreen('diag');}
+function selectDiag(btn,val){
+  selectedDiag=val;document.querySelectorAll('.diag-opt').forEach(b=>b.style.borderColor='transparent');btn.style.borderColor='#4fc3f7';
+  const c=document.getElementById('btn-diag-continue');c.style.opacity='1';c.style.background='#4fc3f7';c.style.color='#111';
 }
 function finishOnboarding() {
-  document.getElementById('onboarding').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  document.getElementById('bottomNav').style.display = 'flex';
-  renderJournal('todos');
-  renderCharts();
-  initSpeech();
+  const cn=document.getElementById('ob-child-input')?.value.trim()||'Mateus';
+  const dob=document.getElementById('ob-dob-input')?.value||'';
+  const diag=selectedDiag||'TEA — Nível 1 (leve)';
+  const age=dob?calcAge(dob):4;
+  document.getElementById('hcsSub').textContent=cn;
+  document.getElementById('insightsChildName').textContent=cn;
+  document.getElementById('accDetail').textContent=`${cn}, ${age} anos`;
+  document.getElementById('accChildName').textContent=`Dados de ${cn}`;
+  document.getElementById('accChildDetail').textContent=`${age} anos • ${diag}`;
+  document.getElementById('accDiag').textContent=diag;
+  if(document.getElementById('ec-name'))document.getElementById('ec-name').value=cn;
+  if(document.getElementById('ec-dob')&&dob)document.getElementById('ec-dob').value=dob;
+  document.getElementById('onboarding').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('bottomNav').style.display='flex';
+  renderJournal('todos');renderCharts();initSpeech();
 }
-// Swipe support for onboarding
-let touchStartX = 0;
-document.getElementById('obSlides').addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
-document.getElementById('obSlides').addEventListener('touchend', e => {
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  if (dx < -50 && currentSlide < 3) nextSlide();
-  else if (dx > 50 && currentSlide > 0) { currentSlide--; document.getElementById('obSlides').style.transform = `translateX(-${currentSlide * 100}%)`; }
-});
 
 // ══ NAVIGATION ══
 function goTo(page, btn) {
