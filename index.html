@@ -945,7 +945,192 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🧍</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Nenhum agora</span></button>
       </div>
     </div>
-    <button onclick="finishOnboarding()" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Começar →</button>
+    <button onclick="showScreen('promise')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+  </div>
+
+  <!-- SCREEN: PROMISE (Your future) -->
+  <div id="ob-promise" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
+    <div style="padding-top:16px;">
+      <button onclick="showScreen('support')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+    </div>
+    <div style="padding-top:28px;padding-bottom:16px;">
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.7rem;font-weight:900;margin-bottom:8px;line-height:1.2;">Seu futuro com <span id="promise-child">seu filho</span></h1>
+      <p style="color:#888;font-size:.9rem;margin-bottom:24px;font-family:'Inter',sans-serif;">Com base no que você compartilhou, aqui está o que é possível:</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+        <div style="background:#1e1e1e;border-radius:16px;padding:16px 18px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:44px;height:44px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🧭</div>
+          <div><div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:4px;">Um próximo passo claro</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;">Passos que você pode seguir em vez de adivinhar.</div></div>
+        </div>
+        <div style="background:#1e1e1e;border-radius:16px;padding:16px 18px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:44px;height:44px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">⏱️</div>
+          <div><div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:4px;">Mais tempo para você</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;">Uma abordagem que economiza tempo e reduz o estresse diário.</div></div>
+        </div>
+        <div style="background:#1e1e1e;border-radius:16px;padding:16px 18px;display:flex;align-items:flex-start;gap:14px;">
+          <div style="width:44px;height:44px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">😮‍💨</div>
+          <div><div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:4px;">Crises que acontecem menos</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;">Momentos difíceis ficam menos frequentes e mais fáceis de superar.</div></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #2a2a2a;padding-top:20px;margin-bottom:16px;">
+        <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;text-align:center;margin-bottom:14px;">Como vamos te levar lá</h2>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="background:#1e1e1e;border-radius:16px;padding:18px;text-align:center;">
+            <div style="font-size:1.6rem;margin-bottom:8px;">🎯</div>
+            <div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">Nós fazemos o trabalho</div>
+            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">Você só faz check-in em 2 minutos por dia. Conectamos os pontos e damos dicas para você curtir o processo.</div>
+          </div>
+          <div style="background:#1e1e1e;border-radius:16px;padding:18px;text-align:center;">
+            <div style="font-size:1.6rem;margin-bottom:8px;">👨‍👩‍👧</div>
+            <div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">1.500+ famílias vendo resultados</div>
+            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">Pais como você encontraram clareza e viram melhorias reais.</div>
+          </div>
+          <div style="background:#1e1e1e;border-radius:16px;padding:18px;text-align:center;">
+            <div style="font-size:1.6rem;margin-bottom:8px;">⚡</div>
+            <div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">Sinta a diferença em 7 dias</div>
+            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">A maioria dos pais começa a se sentir mais calma e confiante em uma semana.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button onclick="showScreen('trackexp')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Gosto do que ouço →</button>
+  </div>
+
+  <!-- SCREEN: TRACKING EXPERIENCE -->
+  <div id="ob-trackexp" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('promise')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:94%;"></div></div>
+    </div>
+    <div style="flex:1;padding-top:32px;">
+      <p style="color:#888;font-size:.9rem;margin-bottom:6px;font-family:'Inter',sans-serif;">Ótimo! Quase lá.</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:28px;line-height:1.3;">Você já tentou rastrear os comportamentos e padrões de <span id="track-child">seu filho</span> antes?</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;">
+          <span style="background:#22c55e;border-radius:8px;padding:4px 7px;font-size:.85rem;">✅</span>
+          <span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, estou acostumado</span>
+        </button>
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;">
+          <span style="font-size:1.3rem;">😮‍💨</span>
+          <span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, mas é difícil manter</span>
+        </button>
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;">
+          <span style="background:#3b82f6;border-radius:8px;padding:3px 6px;color:white;font-size:.6rem;font-weight:900;">NEW</span>
+          <span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Não, nunca tentei antes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN: REMINDER TIME -->
+  <div id="ob-reminder" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('trackexp')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:96%;"></div></div>
+    </div>
+    <div style="flex:1;padding-top:32px;">
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:6px;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
+      <p style="color:#888;font-size:.85rem;margin-bottom:24px;font-family:'Inter',sans-serif;">Escolha um horário que funciona na maioria dos dias.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌅</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Manhã cedo</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🍱</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Pausa do almoço</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌙</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Após a hora de dormir</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🚫</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Sem lembretes por enquanto</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN: TOPICS -->
+  <div id="ob-topics" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
+    <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
+      <button onclick="showScreen('reminder')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:98%;"></div></div>
+    </div>
+    <div style="padding-top:32px;padding-bottom:16px;">
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:6px;">Tópicos nos quais quer mais orientação</h2>
+      <p style="color:#888;font-size:.85rem;margin-bottom:20px;font-family:'Inter',sans-serif;">Selecione todos que se aplicam.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">🎒</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Escola & advocacia</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">IEP/504, estratégias de sala de aula, reuniões</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">👨‍⚕️</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Terapias & progresso</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">ABA, fala, DIR/Floortime, monitorar progresso</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">🍽️</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Alimentação, nutrição & saúde</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">Estratégias alimentares, dietas, medicamentos</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">🎵</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Ferramentas & estratégias sensoriais</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">Regulação sensorial, ambientes, ferramentas</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">📖</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Básicos do autismo & sinais</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">Info básica, sinais precoces, avaliações</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">🔄</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Transições & mudanças de vida</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">Saída escolar, puberdade, novos ambientes</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;flex-shrink:0;">👨‍👩‍👧</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Família & relacionamentos</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;margin-top:2px;">Irmãos, co-parentalidade, família extendida</div></div></button>
+      </div>
+    </div>
+    <button onclick="showScreen('demo')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+  </div>
+
+  <!-- SCREEN: DEMO / ALL SAVED -->
+  <div id="ob-demo" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
+    <div style="padding-top:16px;display:flex;align-items:center;justify-content:space-between;">
+      <button onclick="showScreen('topics')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;margin:0 12px;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:100%;"></div></div>
+      <span style="background:#2a2a2a;color:#888;font-size:.65rem;font-weight:800;padding:4px 10px;border-radius:8px;font-family:'Inter',sans-serif;">DEMO</span>
+    </div>
+    <div style="padding-top:28px;padding-bottom:16px;">
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.9rem;font-weight:900;text-align:center;margin-bottom:10px;">Tudo salvo!</h1>
+      <div style="background:#1a1a2e;border-radius:24px;padding:8px 16px;display:inline-flex;align-items:center;gap:6px;margin:0 auto 16px;display:flex;justify-content:center;">
+        <span style="font-size:.9rem;">⚡</span><span style="color:#4fc3f7;font-size:.85rem;font-weight:700;font-family:'Inter',sans-serif;">2 minutos, rápido e fácil!</span>
+      </div>
+      <p style="color:#888;font-size:.88rem;text-align:center;margin-bottom:20px;font-family:'Inter',sans-serif;" id="demo-count">Você registrou 19 eventos esta semana. Continue assim!</p>
+      <!-- Highlights -->
+      <div style="background:#5c6bc0;border-radius:18px;padding:18px;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:1.2rem;">🌟</span><span style="color:white;font-size:.9rem;font-weight:800;font-family:'Inter',sans-serif;">Destaques</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px;" id="demo-highlights">
+          <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;"><span style="font-size:1rem;flex-shrink:0;">💪</span><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">Abraços de pressão ajudaram a se regular após a crise no parque</span></div>
+          <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;"><span style="font-size:1rem;flex-shrink:0;">🔊</span><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">O ruído foi aumentando antes que a transição desencadeasse a crise</span></div>
+          <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;"><span style="font-size:1rem;flex-shrink:0;">🍞</span><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">Aversão à textura com ovos hoje, voltou ao alimento seguro</span></div>
+        </div>
+      </div>
+      <!-- What helped -->
+      <div style="background:#2e7d62;border-radius:18px;padding:18px;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:1.1rem;">💡</span><span style="color:white;font-size:.9rem;font-weight:800;font-family:'Inter',sans-serif;">O que ajudou</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:rgba(255,255,255,.6);flex-shrink:0;">•</span><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">Pressão profunda (abraços) para regulação pós-crise</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start;"><span style="color:rgba(255,255,255,.6);flex-shrink:0;">•</span><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">A rotina de dormir se manteve consistente após um dia difícil</span></div>
+        </div>
+      </div>
+      <!-- Pattern spotted -->
+      <div style="background:#b07d2a;border-radius:18px;padding:18px;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="font-size:1.1rem;">🔍</span><span style="color:white;font-size:.9rem;font-weight:800;font-family:'Inter',sans-serif;">Padrão identificado</span></div>
+        <p style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">Transições mais sobrecarga sensorial parecem ser um gatilho combinado. Vale observar se sair antes do pico de ruído ajuda.</p>
+      </div>
+      <!-- Next steps -->
+      <div style="background:#1565c0;border-radius:18px;padding:18px;margin-bottom:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:1.1rem;">🚀</span><span style="color:white;font-size:.9rem;font-weight:800;font-family:'Inter',sans-serif;">Próximos passos</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:22px;height:22px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:white;flex-shrink:0;">1</div><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">Tente sair do parque antes que os níveis de ruído atinjam o pico</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:22px;height:22px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:white;flex-shrink:0;">2</div><span style="color:white;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.4;">Mantenha os abraços de pressão no toolkit, estão claramente funcionando</span></div>
+        </div>
+      </div>
+    </div>
+    <button onclick="showScreen('celebrate')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Próximo →</button>
+  </div>
+
+  <!-- SCREEN: CELEBRATE -->
+  <div id="ob-celebrate" style="flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:0 32px;background:linear-gradient(160deg,#29b6f6,#0288d1);">
+    <button onclick="showScreen('demo')" style="position:absolute;top:20px;left:20px;background:none;border:none;color:rgba(255,255,255,.7);font-size:1.3rem;cursor:pointer;">‹</button>
+    <div style="font-size:5rem;margin-bottom:24px;animation:bounce2 1s ease infinite;">🎉</div>
+    <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.8rem;font-weight:900;text-align:center;margin-bottom:14px;line-height:1.2;" id="celebrate-title">Você pode se orgulhar.</h1>
+    <p style="color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:.95rem;text-align:center;margin-bottom:40px;line-height:1.5;" id="celebrate-sub">Você está fazendo algo grande para você e seu filho. Vamos mostrar seu Painel Personalizado.</p>
+    <button onclick="generateSnapshot()" style="background:white;border:none;border-radius:50px;padding:18px 32px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar meu painel →</button>
+  </div>
+
+  <!-- SCREEN: AI SNAPSHOT (generated) -->
+  <div id="ob-snapshot" style="flex:1;display:none;flex-direction:column;padding:0;background:#111;overflow-y:auto;">
+    <div style="background:linear-gradient(160deg,#29b6f6,#0288d1);padding:32px 24px 28px;">
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:4px;" id="snap-title">Seu Painel Personalizado</h1>
+      <p style="color:rgba(255,255,255,.8);font-size:.85rem;font-family:'Inter',sans-serif;" id="snap-sub">Gerado com base nas suas respostas</p>
+    </div>
+    <div style="padding:20px 20px 100px;" id="snap-content">
+      <div style="text-align:center;padding:40px 20px;color:#888;font-family:'Inter',sans-serif;">
+        <div style="font-size:2rem;margin-bottom:12px;animation:spin 1s linear infinite;">⚙️</div>
+        <p style="font-size:.9rem;">Gerando seu painel com IA...</p>
+      </div>
+    </div>
+    <div style="position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:0 auto;padding:16px 20px 28px;background:#111;border-top:1px solid #222;">
+      <button onclick="launchApp()" style="background:#4fc3f7;border:none;border-radius:50px;padding:17px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;">Ir para o app →</button>
+    </div>
   </div>
 
 </div>
@@ -954,6 +1139,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .diag-opt:active,.ob-opt:active,.ob-multi:active,.ob-one:active,.bchip:active{opacity:.8;}
 .bchip.sel{background:#4fc3f7 !important;color:#111 !important;}
+@keyframes bounce2{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 </style>
 
 <!-- ══════════════════ MAIN APP ══════════════════ -->
@@ -1321,7 +1508,9 @@ const screens = {
   barriers:'ob-barriers',agerange:'ob-agerange',hardmoments:'ob-hardmoments',
   meltdowns:'ob-meltdowns',diagjourney:'ob-diagjourney',communication:'ob-communication',
   startingpoint:'ob-startingpoint',behaviors:'ob-behaviors',triggers:'ob-triggers',
-  sensory:'ob-sensory',parentblock:'ob-parentblock',timeavail:'ob-timeavail',support:'ob-support'
+  sensory:'ob-sensory',parentblock:'ob-parentblock',timeavail:'ob-timeavail',support:'ob-support',
+  promise:'ob-promise',trackexp:'ob-trackexp',reminder:'ob-reminder',topics:'ob-topics',
+  demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot'
 };
 function showScreen(id) {
   Object.values(screens).forEach(s=>{const el=document.getElementById(s);if(el)el.style.display='none';});
@@ -1347,7 +1536,7 @@ function onChildInput(val) {
     btn.style.opacity='1';btn.style.background='#4fc3f7';btn.style.color='#111';
     ['dobChildName','diagChildName','barriers-child','barriers-child-text',
      'age-child','hard-child','melt-child','diag-child','comm-child',
-     'trig-child','sens-child','beh-child'].forEach(id=>{
+     'trig-child','sens-child','beh-child','promise-child','track-child'].forEach(id=>{
       const el=document.getElementById(id);
       if(el){
         if(id==='barriers-child-text') el.textContent=val.trim()+' resiste a coisas novas';
@@ -1355,6 +1544,89 @@ function onChildInput(val) {
       }
     });
   }else{btn.style.opacity='.5';btn.style.background='#2a2a2a';btn.style.color='white';}
+}
+
+// ══ SNAPSHOT GENERATION ══
+async function generateSnapshot() {
+  const cn = document.getElementById('ob-child-input')?.value.trim() || 'seu filho';
+  const pn = document.getElementById('ob-name-input')?.value.trim() || 'amigo';
+  showScreen('snapshot');
+  document.getElementById('snap-title').textContent = `Painel de ${cn}`;
+  document.getElementById('snap-sub').textContent = `Personalizado para ${pn} com base em todas as respostas`;
+
+  // Collect all answers
+  const goal = [...document.querySelectorAll('.ob-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||'não informado';
+  const diag = [...document.querySelectorAll('.diagjourney-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||'não informado';
+  const age = [...document.querySelectorAll('.agerange-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||'não informado';
+  const comm = [...document.querySelectorAll('.communication-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||'não informado';
+  const melt = [...document.querySelectorAll('.meltdowns-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelectorAll('span,div div')[1]?.textContent||'não informado';
+  const triggers = [...document.querySelectorAll('#ob-triggers .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('div div:first-child')?.textContent||b.querySelector('span:last-child')?.textContent).filter(Boolean).join(', ')||'não informado';
+  const barriers = [...document.querySelectorAll('.parentblock-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('div div:first-child')?.textContent||'não informado';
+  const time = [...document.querySelectorAll('.timeavail-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||'não informado';
+  const behaviors = [...document.querySelectorAll('.bchip.sel')].map(b=>b.textContent.trim()).join(', ')||'não informado';
+  const topics = [...document.querySelectorAll('#ob-topics .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('div div:first-child')?.textContent).filter(Boolean).join(', ')||'não informado';
+  const sensory = [...document.querySelectorAll('.sensory-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||'não informado';
+
+  const prompt = `Você é especialista em desenvolvimento infantil e parentalidade de crianças neuroatípicas. Com base nas respostas do onboarding abaixo, gere um painel personalizado em português brasileiro em HTML simples (use apenas h3, p, ul, div com style inline). Use cores vibrantes nos cards (azul escuro #1565c0, verde escuro #2e7d62, roxo #5c6bc0, âmbar #b07d2a). Fundo de cada card: background com a cor, border-radius:18px, padding:18px, margin-bottom:12px.
+
+DADOS DO USUÁRIO:
+- Nome da criança: ${cn}
+- Responsável: ${pn}
+- Objetivo principal: ${goal}
+- Diagnóstico: ${diag}
+- Faixa etária: ${age} anos
+- Comunicação: ${comm}
+- Crises na última semana: ${melt}
+- Gatilhos identificados: ${triggers}
+- Comportamentos: ${behaviors}
+- Padrão sensorial: ${sensory}
+- Principal obstáculo para o responsável: ${barriers}
+- Tempo disponível por dia: ${time}
+- Tópicos de interesse: ${topics}
+
+Gere exatamente estes 5 cards em HTML:
+1. Card roxo — "📊 Seu perfil de parentalidade" — 3 pontos-chave sobre o perfil desta família baseado nos dados
+2. Card verde — "🎯 Seu objetivo desta semana" — 1 meta concreta e atingível para esta semana, específica para a situação
+3. Card azul — "🔍 Padrões que identificamos" — 2-3 observações sobre gatilhos e comportamentos com base nos dados
+4. Card âmbar — "💡 Estratégias recomendadas" — 3 estratégias específicas e acionáveis para os gatilhos informados
+5. Card azul escuro — "🚀 Próximos 7 dias" — plano de ação dia a dia (resumido) adaptado ao tempo disponível de ${time}
+
+Seja específico, use o nome ${cn} e ${pn}. Linguagem acolhedora e direta. Apenas HTML, sem markdown, sem explicação.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514', max_tokens:2000,
+        system:'Você gera painéis HTML personalizados para pais de crianças neuroatípicas. Retorne APENAS HTML válido, sem markdown, sem texto antes ou depois.',
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    const d = await res.json();
+    const html = d.content?.[0]?.text || '';
+    document.getElementById('snap-content').innerHTML = html || '<p style="color:#888;font-family:Inter,sans-serif;padding:20px">Não foi possível gerar o painel. Tente novamente.</p>';
+  } catch(e) {
+    document.getElementById('snap-content').innerHTML = '<p style="color:#888;font-family:Inter,sans-serif;padding:20px">Sem conexão. Verifique a internet e tente novamente.</p>';
+  }
+}
+
+function launchApp() {
+  const cn = document.getElementById('ob-child-input')?.value.trim() || 'Mateus';
+  const dob = document.getElementById('ob-dob-input')?.value || '';
+  const diag = selectedDiag || 'TEA — Nível 1 (leve)';
+  const age = dob ? calcAge(dob) : 4;
+  document.getElementById('hcsSub').textContent = cn;
+  document.getElementById('insightsChildName').textContent = cn;
+  document.getElementById('accDetail').textContent = `${cn}, ${age} anos`;
+  document.getElementById('accChildName').textContent = `Dados de ${cn}`;
+  document.getElementById('accChildDetail').textContent = `${age} anos • ${diag}`;
+  document.getElementById('accDiag').textContent = diag;
+  if(document.getElementById('ec-name')) document.getElementById('ec-name').value = cn;
+  if(document.getElementById('ec-dob') && dob) document.getElementById('ec-dob').value = dob;
+  document.getElementById('onboarding').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('bottomNav').style.display = 'flex';
+  renderJournal('todos'); renderCharts(); initSpeech();
 }
 function goToChildName(){
   const v=document.getElementById('ob-name-input').value.trim();if(!v)return;
@@ -1364,6 +1636,7 @@ function goToChildName(){
   document.getElementById('childname-ack').textContent='Obrigado, '+v+'!';
   document.getElementById('affirm-name').textContent=v;
   document.getElementById('pb-name').textContent=v;
+  document.getElementById('celebrate-title').textContent='Você pode se orgulhar, '+v+'.';
   showScreen('goals');
 }
 function goToDOB(){const v=document.getElementById('ob-child-input').value.trim();if(!v)return;showScreen('dob');}
@@ -1446,24 +1719,8 @@ function previewPhoto(input) {
   reader.readAsDataURL(input.files[0]);
 }
 
-function finishOnboarding() {
-  const cn=document.getElementById('ob-child-input')?.value.trim()||'Mateus';
-  const dob=document.getElementById('ob-dob-input')?.value||'';
-  const diag=selectedDiag||'TEA — Nível 1 (leve)';
-  const age=dob?calcAge(dob):4;
-  document.getElementById('hcsSub').textContent=cn;
-  document.getElementById('insightsChildName').textContent=cn;
-  document.getElementById('accDetail').textContent=`${cn}, ${age} anos`;
-  document.getElementById('accChildName').textContent=`Dados de ${cn}`;
-  document.getElementById('accChildDetail').textContent=`${age} anos • ${diag}`;
-  document.getElementById('accDiag').textContent=diag;
-  if(document.getElementById('ec-name'))document.getElementById('ec-name').value=cn;
-  if(document.getElementById('ec-dob')&&dob)document.getElementById('ec-dob').value=dob;
-  document.getElementById('onboarding').style.display='none';
-  document.getElementById('app').style.display='block';
-  document.getElementById('bottomNav').style.display='flex';
-  renderJournal('todos');renderCharts();initSpeech();
-}
+// finishOnboarding → alias for launchApp (kept for compatibility)
+function finishOnboarding() { launchApp(); }
 
 // ══ NAVIGATION ══
 function goTo(page, btn) {
