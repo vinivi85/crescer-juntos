@@ -380,6 +380,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
 #install-banner .ib-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;width:26px;height:26px;color:white;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 </style>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <body>
 
 <div id="offline-bar">📵 Sem conexão — registros salvos localmente</div>
@@ -390,9 +391,54 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <button class="ib-close" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
 </div>
 
+<!-- ══════════════════ AUTENTICAÇÃO ══════════════════ -->
+<div id="auth-screen" style="position:fixed;inset:0;z-index:2000;background:#111;display:flex;flex-direction:column;padding:0 24px;">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;max-width:420px;margin:0 auto;width:100%;">
+    <p style="color:#888;font-size:.95rem;text-align:center;margin-bottom:6px;font-family:'Inter',sans-serif;">Bem-vindo ao</p>
+    <h1 style="font-family:'Pacifico',cursive;font-size:2.6rem;color:#4fc3f7;text-align:center;line-height:1.1;margin-bottom:40px;">Crescer<br>Juntos</h1>
+
+    <div id="auth-error" style="display:none;background:#3a1a1a;border:1px solid #c0392b;border-radius:10px;padding:10px 14px;margin-bottom:16px;color:#ff8a80;font-size:.82rem;font-family:'Inter',sans-serif;"></div>
+
+    <div id="auth-login" style="display:flex;flex-direction:column;gap:12px;">
+      <div>
+        <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">E-mail</label>
+        <input id="login-email" type="email" placeholder="seu@email.com" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;">
+      </div>
+      <div>
+        <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Senha</label>
+        <input id="login-password" type="password" placeholder="••••••••" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <button onclick="doLogin()" id="login-btn" style="margin-top:8px;background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;">Entrar</button>
+      <button onclick="showSignup()" style="background:none;border:none;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;padding:10px;margin-top:4px;">Não tem conta? Criar agora</button>
+    </div>
+
+    <div id="auth-signup" style="display:none;flex-direction:column;gap:12px;">
+      <div>
+        <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Seu nome</label>
+        <input id="signup-name" type="text" placeholder="Como devemos te chamar?" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;">
+      </div>
+      <div>
+        <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">E-mail</label>
+        <input id="signup-email" type="email" placeholder="seu@email.com" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;">
+      </div>
+      <div>
+        <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Senha</label>
+        <input id="signup-password" type="password" placeholder="Mínimo 6 caracteres" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;" onkeydown="if(event.key==='Enter')doSignup()">
+      </div>
+      <button onclick="doSignup()" id="signup-btn" style="margin-top:8px;background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;">Criar conta</button>
+      <button onclick="showLogin()" style="background:none;border:none;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;padding:10px;margin-top:4px;">Já tenho conta — entrar</button>
+    </div>
+
+    <div id="auth-loading" style="display:none;text-align:center;padding:20px;">
+      <p style="color:#4fc3f7;font-family:'Inter',sans-serif;font-size:.9rem;">⏳ Carregando...</p>
+    </div>
+  </div>
+  <p style="text-align:center;color:#444;font-size:.7rem;font-family:'Inter',sans-serif;padding-bottom:24px;">Seus dados ficam protegidos e privados 🔒</p>
+</div>
+
 <!-- ══════════════════ ONBOARDING ══════════════════ -->
 <!-- ══════════════════ ONBOARDING ══════════════════ -->
-<div id="onboarding" style="position:fixed;inset:0;z-index:1000;background:#111;display:flex;flex-direction:column;">
+<div id="onboarding" style="position:fixed;inset:0;z-index:1000;background:#111;display:none;flex-direction:column;">
 
   <!-- SCREEN 1: Welcome + Role picker -->
   <div id="ob-welcome" style="flex:1;display:flex;flex-direction:column;padding:0 24px;">
@@ -1330,8 +1376,11 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div class="acc-card">
         <div class="acc-item"><div class="ai-icon ai-green">📤</div><div class="ai-text"><h4>Exportar dados</h4><p>PDF para compartilhar</p></div><span class="ai-arr">›</span></div>
         <div class="acc-item"><div class="ai-icon ai-orange">🔒</div><div class="ai-text"><h4>Privacidade</h4><p>Biometria ativada</p></div><label class="toggle"><input type="checkbox" checked><span class="tslider"></span></label></div>
-        <div class="acc-item"><div class="ai-icon ai-purple">ℹ️</div><div class="ai-text"><h4>Sobre</h4><p>Crescer Juntos v2.0</p></div><span class="ai-arr">›</span></div>
+        <div class="acc-item"><div class="ai-icon ai-purple">ℹ️</div><div class="ai-text"><h4>Sobre</h4><p>Crescer Juntos v2.0 — ☁️ dados na nuvem</p></div><span class="ai-arr">›</span></div>
       </div>
+    </div>
+    <div class="acc-section">
+      <button onclick="confirmLogout()" style="width:100%;background:#2a1a1a;border:1px solid #c0392b;border-radius:16px;padding:14px;color:#ff8a80;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;">🚪 Sair da conta</button>
     </div>
   </div>
 
@@ -1487,6 +1536,219 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
 </div>
 
 <script>
+// ══════════════════ SUPABASE ══════════════════
+const SUPABASE_URL = 'https://sgdnovmcmfcgunpmmfdz.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_bjir6UlFIPaVdwvwwABNRQ_aOeSxqhU';
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let currentUser = null;
+let currentChildId = null;
+
+function cacheGet(key) { try { return JSON.parse(localStorage.getItem('cj_'+key) || 'null'); } catch { return null; } }
+function cacheSet(key, val) { try { localStorage.setItem('cj_'+key, JSON.stringify(val)); } catch {} }
+
+function showLogin() {
+  document.getElementById('auth-login').style.display = 'flex';
+  document.getElementById('auth-signup').style.display = 'none';
+  document.getElementById('auth-error').style.display = 'none';
+}
+function showSignup() {
+  document.getElementById('auth-login').style.display = 'none';
+  document.getElementById('auth-signup').style.display = 'flex';
+  document.getElementById('auth-error').style.display = 'none';
+}
+function showAuthError(msg) {
+  const el = document.getElementById('auth-error');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+async function doSignup() {
+  const name = document.getElementById('signup-name').value.trim();
+  const email = document.getElementById('signup-email').value.trim();
+  const password = document.getElementById('signup-password').value;
+  if (!name || !email || !password) { showAuthError('Preencha todos os campos.'); return; }
+  if (password.length < 6) { showAuthError('A senha precisa ter pelo menos 6 caracteres.'); return; }
+
+  document.getElementById('signup-btn').disabled = true;
+  document.getElementById('signup-btn').textContent = 'Criando...';
+  const { data, error } = await sb.auth.signUp({
+    email, password,
+    options: { data: { parent_name: name } }
+  });
+  document.getElementById('signup-btn').disabled = false;
+  document.getElementById('signup-btn').textContent = 'Criar conta';
+
+  if (error) { showAuthError(traduzErro(error.message)); return; }
+  currentUser = data.user;
+  cacheSet('parent_name', name);
+  await afterAuth();
+}
+
+async function doLogin() {
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!email || !password) { showAuthError('Preencha e-mail e senha.'); return; }
+
+  document.getElementById('login-btn').disabled = true;
+  document.getElementById('login-btn').textContent = 'Entrando...';
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
+  document.getElementById('login-btn').disabled = false;
+  document.getElementById('login-btn').textContent = 'Entrar';
+
+  if (error) { showAuthError(traduzErro(error.message)); return; }
+  currentUser = data.user;
+  await afterAuth();
+}
+
+function traduzErro(msg) {
+  if (msg.includes('Invalid login credentials')) return 'E-mail ou senha incorretos.';
+  if (msg.includes('User already registered')) return 'Esse e-mail já tem uma conta. Tente entrar.';
+  if (msg.includes('Email not confirmed')) return 'Confirme seu e-mail antes de entrar (verifique a caixa de entrada).';
+  if (msg.includes('Password should be')) return 'A senha precisa ter pelo menos 6 caracteres.';
+  return msg;
+}
+
+async function afterAuth() {
+  document.getElementById('auth-screen').style.display = 'none';
+  const { data: children } = await sb.from('children').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: true }).limit(1);
+
+  if (children && children.length > 0) {
+    currentChildId = children[0].id;
+    cacheSet('child', children[0]);
+    cacheSet('child_id', children[0].id);
+    await loadChildDataIntoApp(children[0]);
+    await loadAllLogsFromCloud();
+    document.getElementById('app').style.display = 'block';
+    document.getElementById('bottomNav').style.display = 'flex';
+    renderJournal('todos'); renderCharts(); initSpeech();
+  } else {
+    document.getElementById('onboarding').style.display = 'flex';
+    showScreen('welcome');
+  }
+}
+
+async function checkSession() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) {
+    currentUser = session.user;
+    await afterAuth();
+  } else {
+    document.getElementById('auth-screen').style.display = 'flex';
+  }
+}
+
+function logout() {
+  sb.auth.signOut();
+  localStorage.clear();
+  location.reload();
+}
+function confirmLogout() {
+  if (confirm('Tem certeza que deseja sair? Você vai precisar fazer login novamente.')) {
+    logout();
+  }
+}
+
+async function loadChildDataIntoApp(child) {
+  const age = child.date_of_birth ? calcAge(child.date_of_birth) : '?';
+  document.getElementById('hcsSub').textContent = child.name;
+  document.getElementById('insightsChildName').textContent = child.name;
+  document.getElementById('accDetail').textContent = `${child.name}, ${age} anos`;
+  document.getElementById('accChildName').textContent = `Dados de ${child.name}`;
+  document.getElementById('accChildDetail').textContent = `${age} anos • ${child.diagnosis || 'Sem diagnóstico'}`;
+  document.getElementById('accDiag').textContent = child.diagnosis || 'Nenhum';
+  if (document.getElementById('accMeds')) document.getElementById('accMeds').textContent = child.medications || 'Nenhum cadastrado';
+  if (document.getElementById('ec-name')) document.getElementById('ec-name').value = child.name;
+  if (document.getElementById('ec-dob') && child.date_of_birth) document.getElementById('ec-dob').value = child.date_of_birth;
+  if (document.getElementById('ec-meds')) document.getElementById('ec-meds').value = child.medications || '';
+}
+
+async function saveChildToCloud(childData) {
+  if (!currentUser) return null;
+  const { data, error } = await sb.from('children').insert({ user_id: currentUser.id, ...childData }).select().single();
+  if (error) { console.error('Erro ao salvar criança:', error); return null; }
+  currentChildId = data.id;
+  cacheSet('child', data);
+  cacheSet('child_id', data.id);
+  return data;
+}
+
+async function saveLogToCloud(table, logData) {
+  if (!currentUser || !currentChildId) return null;
+  const { data, error } = await sb.from(table).insert({ user_id: currentUser.id, child_id: currentChildId, ...logData }).select().single();
+  if (error) { console.error(`Erro ao salvar em ${table}:`, error); return null; }
+  return data;
+}
+
+async function loadAllLogsFromCloud() {
+  if (!currentChildId) return;
+  const tables = [
+    { name: 'behavior_logs', type: 'behavior', icon: '🌀' },
+    { name: 'sleep_logs', type: 'sleep', icon: '🌙' },
+    { name: 'food_logs', type: 'food', icon: '🍎' },
+    { name: 'water_logs', type: 'water', icon: '💧' },
+    { name: 'medication_logs', type: 'meds', icon: '💊' },
+    { name: 'health_logs', type: 'health', icon: '🏥' },
+    { name: 'milestones', type: 'milestone', icon: '⭐' },
+  ];
+  entries.length = 0;
+  for (const t of tables) {
+    const { data } = await sb.from(t.name).select('*').eq('child_id', currentChildId).order('occurred_at', { ascending: false }).limit(20);
+    if (data) {
+      data.forEach(row => {
+        entries.push({
+          type: t.type,
+          date: formatDateShort(row.occurred_at || row.created_at),
+          icon: t.icon,
+          title: buildLogTitle(t.type, row),
+          detail: buildLogDetail(t.type, row),
+        });
+      });
+    }
+  }
+  renderHomeLogFromEntries();
+}
+
+function formatDateShort(iso) {
+  if (!iso) return 'Recente';
+  const d = new Date(iso);
+  const today = new Date();
+  const diffDays = Math.floor((today - d) / 86400000);
+  if (diffDays === 0) return 'Hoje';
+  if (diffDays === 1) return 'Ontem';
+  const dias = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  return dias[d.getDay()];
+}
+
+function buildLogTitle(type, row) {
+  if (type === 'behavior') return row.behavior_type || 'Comportamento';
+  if (type === 'sleep') return `Sono: ${row.sleep_time || '?'} → ${row.wake_time || '?'}`;
+  if (type === 'food') return (row.meal_type || 'Refeição') + (row.food_items ? ': ' + row.food_items : '');
+  if (type === 'water') return `Hidratação: ${row.amount_ml || '?'}ml`;
+  if (type === 'meds') return `${row.medication_name || 'Medicamento'} ${row.dose || ''}`;
+  if (type === 'health') return row.log_type || 'Saúde';
+  if (type === 'milestone') return row.description || 'Marco!';
+  return 'Registro';
+}
+function buildLogDetail(type, row) {
+  if (type === 'behavior') return (row.trigger ? 'Gatilho: ' + row.trigger : '') + (row.intensity ? ' • Intensidade: ' + row.intensity + '/5' : '');
+  if (type === 'sleep') return row.quality || row.notes || '';
+  if (type === 'food') return row.reaction || row.new_food || '';
+  if (type === 'water') return row.drink_type || '';
+  if (type === 'meds') return row.effects_observed || '';
+  if (type === 'health') return row.description || '';
+  if (type === 'milestone') return 'Área: ' + (row.area || '');
+  return '';
+}
+function renderHomeLogFromEntries() {
+  const hl = document.getElementById('homeLog');
+  if (!hl) return;
+  const bgm = {behavior:'#fce4ec',sleep:'#e3f2fd',food:'#e8f5e9',water:'#e0f7fa',meds:'#ede9ff',milestone:'#fff8e1',health:'#fff8e1'};
+  hl.innerHTML = entries.slice(0, 10).map(e => `
+    <div class="log-entry"><div class="le-icon" style="background:${bgm[e.type]||'#f5f5f5'}">${e.icon}</div><div class="le-body"><div class="le-title">${e.title}</div><div class="le-detail">${e.detail}</div></div><div class="le-time">${e.date}</div></div>
+  `).join('');
+}
+
 // ══ STATE ══
 let childEmoji = '🦊';
 let intensity = 0;
@@ -1642,11 +1904,50 @@ Seja específico, use o nome ${cn} e ${pn}. Linguagem acolhedora e direta. Apena
   }
 }
 
-function launchApp() {
+async function launchApp() {
   const cn = document.getElementById('ob-child-input')?.value.trim() || 'Mateus';
   const dob = document.getElementById('ob-dob-input')?.value || '';
   const diag = selectedDiag || 'TEA — Nível 1 (leve)';
   const age = dob ? calcAge(dob) : 4;
+
+  // Collect onboarding answers
+  const goal = [...document.querySelectorAll('.ob-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const subGoals = [...document.querySelectorAll('#ob-subgoals .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('span:last-child')?.textContent?.trim()).filter(Boolean);
+  const diagJourney = [...document.querySelectorAll('.diagjourney-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const ageRange = [...document.querySelectorAll('.agerange-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const comm = [...document.querySelectorAll('.communication-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const melt = [...document.querySelectorAll('.meltdowns-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelectorAll('span,div div')[1]?.textContent||null;
+  const hardMoments = [...document.querySelectorAll('#ob-hardmoments .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('span:last-child')?.textContent?.trim()).filter(Boolean);
+  const triggers = [...document.querySelectorAll('#ob-triggers .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('div div:first-child')?.textContent||b.querySelector('span:last-child')?.textContent).filter(Boolean);
+  const sensory = [...document.querySelectorAll('.sensory-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const barriers = [...document.querySelectorAll('.parentblock-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('div div:first-child')?.textContent||null;
+  const timeAvail = [...document.querySelectorAll('.timeavail-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const supportNet = [...document.querySelectorAll('#ob-support .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('span:last-child')?.textContent?.trim()).filter(Boolean);
+  const behaviors = [...document.querySelectorAll('.bchip.sel')].map(b=>b.textContent.trim());
+  const topics = [...document.querySelectorAll('#ob-topics .ob-multi')].filter(b=>b.style.borderColor==='rgb(79, 195, 247)').map(b=>b.querySelector('div div:first-child')?.textContent).filter(Boolean);
+  const trackExp = [...document.querySelectorAll('.trackexp-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const reminder = [...document.querySelectorAll('.reminder-opt')].find(b=>b.style.borderColor==='rgb(79, 195, 247)')?.querySelector('span:last-child')?.textContent||null;
+  const conds = [...document.querySelectorAll('.cond-chip.sel')].map(b=>b.dataset.v).filter(Boolean);
+  const meds = document.getElementById('ec-meds')?.value.trim() || null;
+
+  const childPayload = {
+    name: cn, emoji: '🦊', date_of_birth: dob || null,
+    diagnosis: diag, diagnosis_journey: diagJourney,
+    conditions: conds.length ? conds : null,
+    medications: meds,
+    main_goal: goal, sub_goals: subGoals.length ? subGoals : null,
+    barriers: barriers, hard_moments: hardMoments.length ? hardMoments : null,
+    meltdowns_last_week: melt, communication_level: comm,
+    sensory_pattern: sensory, triggers: triggers.length ? triggers : null,
+    behaviors_to_watch: behaviors.length ? behaviors : null,
+    time_available: timeAvail, support_network: supportNet.length ? supportNet : null,
+    topics_of_interest: topics.length ? topics : null,
+    tracking_experience: trackExp, reminder_time: reminder,
+  };
+
+  // Save to Supabase
+  const saved = await saveChildToCloud(childPayload);
+
   document.getElementById('hcsSub').textContent = cn;
   document.getElementById('insightsChildName').textContent = cn;
   document.getElementById('accDetail').textContent = `${cn}, ${age} anos`;
@@ -1807,18 +2108,59 @@ function updateAddEntryForm() {
 }
 function setInt(btn, val) { intensity=val; btn.closest('.int-row').querySelectorAll('.int-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
 function selEmot(btn) { btn.closest('.emotion-grid').querySelectorAll('.emot-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
-function saveEntry() {
+async function saveEntry() {
   const type = document.getElementById('ae-type').value;
   const icons = {behavior:'🌀',sleep:'🌙',food:'🍎',water:'💧',meds:'💊',health:'🏥',screen:'📱',milestone:'⭐'};
   let title = typeNames[type] + ' registrado', detail = 'Agora mesmo';
-  if(type==='behavior'){ const t=document.getElementById('ae-btype')?.value; const g=document.getElementById('ae-trigger')?.value; title=t||'Comportamento'; detail=(g?'Gatilho: '+g:'')+(intensity?' • Intensidade: '+intensity+'/5':''); }
-  else if(type==='sleep'){ const s=document.getElementById('ae-st')?.value,e=document.getElementById('ae-et')?.value; title=`Sono: ${s} → ${e}`; detail='Registro de sono'; }
-  else if(type==='food'){ const m=document.getElementById('ae-meal')?.value,f=document.getElementById('ae-food')?.value; title=m+(f?': '+f:''); detail=document.getElementById('ae-react')?.value||''; }
-  else if(type==='water'){ const ml=document.getElementById('ae-ml')?.value; title='Hidratação: '+(ml||'?')+'ml'; detail=''; }
-  else if(type==='meds'){ const n=document.getElementById('ae-med')?.value,d=document.getElementById('ae-dose')?.value; title=(n||'Medicamento')+' '+(d||''); detail=''; }
-  else if(type==='milestone'){ const d=document.getElementById('ae-mdesc')?.value; title=d||'Marco!'; detail='Área: '+(document.getElementById('ae-marea')?.value||''); }
+  let cloudPayload = {};
+
+  if(type==='behavior'){
+    const t=document.getElementById('ae-btype')?.value, g=document.getElementById('ae-trigger')?.value;
+    const dur=document.getElementById('ae-dur')?.value, loc=document.getElementById('ae-loc')?.value;
+    title=t||'Comportamento'; detail=(g?'Gatilho: '+g:'')+(intensity?' • Intensidade: '+intensity+'/5':'');
+    cloudPayload = { behavior_type:t, trigger:g||null, intensity:intensity||null, duration_minutes:dur?parseInt(dur):null, location:loc||null };
+    await saveLogToCloud('behavior_logs', cloudPayload);
+  } else if(type==='sleep'){
+    const s=document.getElementById('ae-st')?.value, e=document.getElementById('ae-et')?.value;
+    const obs=document.getElementById('ae-obs')?.value;
+    const qBtn=[...document.querySelectorAll('#ob-step1 .emot-btn.sel,#modal-addentry .emot-btn.sel')][0];
+    title=`Sono: ${s} → ${e}`; detail=obs||'Registro de sono';
+    cloudPayload = { sleep_time:s||null, wake_time:e||null, notes:obs||null };
+    await saveLogToCloud('sleep_logs', cloudPayload);
+  } else if(type==='food'){
+    const m=document.getElementById('ae-meal')?.value, f=document.getElementById('ae-food')?.value;
+    const react=document.getElementById('ae-react')?.value;
+    title=m+(f?': '+f:''); detail=react||'';
+    cloudPayload = { meal_type:m||null, food_items:f||null, reaction:react||null };
+    await saveLogToCloud('food_logs', cloudPayload);
+  } else if(type==='water'){
+    const ml=document.getElementById('ae-ml')?.value;
+    title='Hidratação: '+(ml||'?')+'ml'; detail='';
+    cloudPayload = { amount_ml: ml?parseInt(ml):null };
+    await saveLogToCloud('water_logs', cloudPayload);
+  } else if(type==='meds'){
+    const n=document.getElementById('ae-med')?.value, d=document.getElementById('ae-dose')?.value;
+    title=(n||'Medicamento')+' '+(d||''); detail='';
+    cloudPayload = { medication_name:n||null, dose:d||null };
+    await saveLogToCloud('medication_logs', cloudPayload);
+  } else if(type==='health'){
+    const ht=document.getElementById('ae-htype')?.value, hd=document.getElementById('ae-hdesc')?.value;
+    title=ht||'Saúde'; detail=hd||'';
+    cloudPayload = { log_type:ht||null, description:hd||null };
+    await saveLogToCloud('health_logs', cloudPayload);
+  } else if(type==='screen'){
+    const dev=document.getElementById('ae-dev')?.value, mins=document.getElementById('ae-smin')?.value;
+    title='Tempo de tela: '+(dev||'')+' '+(mins?mins+'min':''); detail='';
+    cloudPayload = { device:dev||null, duration_minutes:mins?parseInt(mins):null };
+    await saveLogToCloud('screen_time_logs', cloudPayload);
+  } else if(type==='milestone'){
+    const d=document.getElementById('ae-mdesc')?.value, area=document.getElementById('ae-marea')?.value;
+    title=d||'Marco!'; detail='Área: '+(area||'');
+    cloudPayload = { description:d||title, area:area||null };
+    await saveLogToCloud('milestones', cloudPayload);
+  }
+
   entries.unshift({type,date:'Agora',icon:icons[type],title,detail});
-  // Add to home log
   const hl=document.getElementById('homeLog');
   const bg=typeColors[type]||'#f5f5f5';
   const item=document.createElement('div'); item.className='log-entry'; item.style.animation='fadeUp .3s ease';
@@ -1830,13 +2172,19 @@ function saveEntry() {
 // ══ CHILD PROFILE ══
 function pickEmoji(btn, e) { document.querySelectorAll('.ep-btn').forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); childEmoji=e; }
 function calcAge(dob) { const b=new Date(dob),n=new Date(); let y=n.getFullYear()-b.getFullYear(); if(n.getMonth()-b.getMonth()<0||(n.getMonth()===b.getMonth()&&n.getDate()<b.getDate()))y--; return y; }
-function saveChild() {
+async function saveChild() {
   const name=document.getElementById('ec-name').value.trim()||'Mateus';
   const dob=document.getElementById('ec-dob').value;
   const diag=document.getElementById('ec-diag').value;
   const meds=document.getElementById('ec-meds').value.trim();
   const age=dob?calcAge(dob):'?';
-  // Update everywhere
+
+  if (currentChildId) {
+    await sb.from('children').update({
+      name, date_of_birth: dob || null, diagnosis: diag || null, medications: meds || null, emoji: childEmoji, updated_at: new Date().toISOString()
+    }).eq('id', currentChildId);
+  }
+
   document.getElementById('hcsAvatar').textContent=childEmoji;
   document.getElementById('hcsName').innerHTML=`Home <span class="hcs-chevron">˅</span>`;
   document.getElementById('hcsSub').textContent=name;
@@ -1979,6 +2327,9 @@ if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serv
   b.style.cssText='position:absolute;top:14px;right:16px;background:rgba(79,195,247,.18);color:#4fc3f7;font-family:Inter,sans-serif;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;pointer-events:none;z-index:99;letter-spacing:.04em;border:1px solid rgba(79,195,247,.3);';
   el.appendChild(b);
 })();
+
+// ══ INICIALIZAÇÃO: verificar sessão de login ══
+checkSession();
 </script>
 </body>
 </html>
