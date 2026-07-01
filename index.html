@@ -586,19 +586,43 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-goals" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('name')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:55%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:15%;"></div></div>
     </div>
-    <div style="padding-top:32px;padding-bottom:16px;">
-      <p style="color:#888;font-size:.9rem;margin-bottom:6px;font-family:'Inter',sans-serif;" id="goals-hi">Oi!</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:28px;">O que mais te ajudaria <span style="color:#4fc3f7;">agora</span>?</h2>
-      <div style="display:flex;flex-direction:column;gap:10px;" id="goalsList">
-        <button onclick="selectGoal(this,'Dias mais calmos com menos crises')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">⛅</span><span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Dias mais calmos com menos crises</span></button>
-        <button onclick="selectGoal(this,'Ajudar meu filho a se expressar e conectar')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">💬</span><span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Ajudar meu filho a se expressar e conectar</span></button>
-        <button onclick="selectGoal(this,'Refeições mais felizes com mais alimentos seguros')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">🍽️</span><span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Refeições mais felizes com mais alimentos seguros</span></button>
-        <button onclick="selectGoal(this,'Mais independência nas rotinas diárias')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">🙌</span><span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Mais independência nas rotinas diárias</span></button>
-        <button onclick="selectGoal(this,'Escola e aprendizado mais tranquilo')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">🎒</span><span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Escola e aprendizado mais tranquilo</span></button>
-        <button onclick="selectGoal(this,'Melhor sono e hora de dormir mais fácil')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">🛏️</span><span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Melhor sono e hora de dormir mais fácil</span></button>
-        <button onclick="selectGoal(this,'Outra coisa / ainda não sei')" class="ob-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.4rem;">✨</span><div><div style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Outra coisa / ainda não sei</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;">Te guiaremos assim mesmo</div></div></button>
+    <div style="padding-top:28px;padding-bottom:16px;">
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="goals-hi">Oi!</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que mais te ajudaria <span style="color:#4fc3f7;">agora</span>?</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;" id="goalsList">
+        <button onclick="selectGoal(this,'Dias mais calmos com menos crises')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">⛅</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Dias mais calmos com menos crises</span>
+        </button>
+        <button onclick="selectGoal(this,'Ajudar meu filho a se expressar e se conectar')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">💬</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Ajudar meu filho a se expressar e se conectar</span>
+        </button>
+        <button onclick="selectGoal(this,'Refeições mais felizes com mais alimentos seguros')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🍽️</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Refeições mais felizes com mais alimentos seguros</span>
+        </button>
+        <button onclick="selectGoal(this,'Mais independência nas rotinas diárias')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🙌</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Mais independência nas rotinas diárias</span>
+        </button>
+        <button onclick="selectGoal(this,'Escola e aprendizado mais tranquilo')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🎒</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Escola e aprendizado mais tranquilo</span>
+        </button>
+        <button onclick="selectGoal(this,'Melhor sono e hora de dormir mais fácil')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🛏️</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Melhor sono e hora de dormir mais fácil</span>
+        </button>
+        <button onclick="selectGoal(this,'Outra coisa / ainda não sei')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">✨</span>
+          <div>
+            <div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Outra coisa / ainda não sei</div>
+            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:2px;">Te guiaremos assim mesmo</div>
+          </div>
+        </button>
       </div>
     </div>
     <div style="height:20px;flex-shrink:0;"></div>
