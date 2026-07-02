@@ -1282,11 +1282,11 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="trackexp-ack">Ótimo! Quase lá.</p>
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Você já tentou rastrear os comportamentos e padrões de <span id="track-child">seu filho</span> antes?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('encourage'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#22c55e;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✅</span>
           <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, estou acostumado</span>
         </button>
-        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('encourage'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.6rem;flex-shrink:0;">😮‍💨</span>
           <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, mas é difícil manter</span>
         </button>
@@ -1298,7 +1298,26 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
   </div>
 
-  <!-- SCREEN: REMINDER TIME -->
+  <!-- SCREEN: ENCOURAGEMENT (after trackexp) -->
+  <div id="ob-encourage" style="flex:1;display:none;flex-direction:column;background:linear-gradient(160deg,#29b6f6,#0288d1,#01579b);position:relative;">
+    <button onclick="showScreen('trackexp')" style="position:absolute;top:20px;left:20px;background:none;border:none;color:rgba(255,255,255,.8);font-size:1.3rem;cursor:pointer;">‹</button>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 28px 40px;">
+      <!-- Sparkles SVG -->
+      <div style="margin-bottom:36px;">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none">
+          <!-- Big star -->
+          <path d="M60 20 L67 45 L92 52 L67 59 L60 84 L53 59 L28 52 L53 45 Z" fill="white"/>
+          <!-- Small star top right -->
+          <path d="M120 15 L124 28 L137 32 L124 36 L120 49 L116 36 L103 32 L116 28 Z" fill="rgba(255,255,255,0.55)" transform="scale(0.65) translate(60, 0)"/>
+          <!-- Small star bottom right -->
+          <path d="M130 75 L133 85 L143 88 L133 91 L130 101 L127 91 L117 88 L127 85 Z" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+      </div>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:16px;" id="encourage-title">Incrível você estar dando esse passo!</h1>
+      <p style="color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:1rem;line-height:1.6;margin-bottom:40px;">Vamos te guiar. Nossos check-ins levam só 2 minutos por dia. Se pular um dia, sem problema. Continuamos de onde parou.</p>
+      <button onclick="showScreen('reminder')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Continuar →</button>
+    </div>
+  </div>
   <div id="ob-reminder" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('trackexp')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
@@ -2010,7 +2029,7 @@ const screens = {
   meltdowns:'ob-meltdowns',diagjourney:'ob-diagjourney',communication:'ob-communication',
   startingpoint:'ob-startingpoint',behaviors:'ob-behaviors',triggers:'ob-triggers',
   sensory:'ob-sensory',parentblock:'ob-parentblock',timeavail:'ob-timeavail',support:'ob-support',
-  promise:'ob-promise',future:'ob-future',trackexp:'ob-trackexp',reminder:'ob-reminder',topics:'ob-topics',
+  promise:'ob-promise',future:'ob-future',trackexp:'ob-trackexp',encourage:'ob-encourage',reminder:'ob-reminder',topics:'ob-topics',
   demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot'
 };
 // ══ SCREEN NUMBERING (versão de teste) ══
@@ -2203,6 +2222,7 @@ function goToChildName(){
   document.getElementById('celebrate-title').textContent='Você pode se orgulhar, '+v+'.';
   document.getElementById('promise-sub').textContent='É enorme ter um parceiro nas trincheiras com você, '+v+'.';
   if(document.getElementById('trackexp-ack')) document.getElementById('trackexp-ack').textContent='Ótimo! Quase lá, '+v+'.';
+  if(document.getElementById('encourage-title')) document.getElementById('encourage-title').textContent='Incrível você estar dando esse passo, '+v+'!';
   showScreen('goals');
 }
 function goToDOB(){const v=document.getElementById('ob-child-input').value.trim();if(!v)return;showScreen('dob');}
