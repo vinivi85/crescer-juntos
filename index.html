@@ -744,20 +744,30 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   </div>
 
   <!-- SCREEN: BARRIERS -->
-  <div id="ob-barriers" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
+  <div id="ob-barriers" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('childname')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:78%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:35%;"></div></div>
     </div>
-    <div style="padding-top:32px;padding-bottom:16px;">
-      <p style="color:#888;font-size:.9rem;margin-bottom:6px;font-family:'Inter',sans-serif;">Entendido.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:28px;">O que torna o progresso mais difícil com <span id="barriers-child">seu filho</span>?</h2>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">⏱️</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho tempo suficiente</span></button>
-        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🔋</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Estou sem energia / esgotado</span></button>
-        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">❓</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Não sei o que funciona</span></button>
-        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">👥</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Não estamos alinhados entre os cuidadores</span></button>
-        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🙅</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;" id="barriers-child-text">Meu filho resiste a coisas novas</span></button>
+    <div style="flex:1;padding-top:28px;padding-bottom:16px;">
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Entendido.</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que torna o progresso mais difícil com <span id="barriers-child" style="color:#4fc3f7;">seu filho</span>?</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">⏱️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho tempo suficiente</span>
+        </button>
+        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🔋</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Estou sem energia / esgotado</span>
+        </button>
+        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">❓</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não sei o que funciona</span>
+        </button>
+        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">👥</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não estamos alinhados entre os cuidadores</span>
+        </button>
+        <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🙅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;" id="barriers-child-text">Meu filho resiste a coisas novas</span>
+        </button>
       </div>
     </div>
     <button onclick="showScreen('agerange')" id="btn-barriers" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;flex-shrink:0;">Continuar →</button>
@@ -767,17 +777,27 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-agerange" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('barriers')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:83%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:42%;"></div></div>
     </div>
-    <div style="flex:1;padding-top:32px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:6px;">Quantos anos tem <span id="age-child">seu filho</span>?</h2>
-      <p style="color:#888;font-size:.85rem;margin-bottom:24px;font-family:'Inter',sans-serif;">A idade nos ajuda a ajustar as estratégias.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">👶</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">0–3</span></button>
-        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🧒</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">4–6</span></button>
-        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">👦</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">7–10</span></button>
-        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🧑</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">11–14</span></button>
-        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🎓</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">15+</span></button>
+    <div style="flex:1;padding-top:28px;">
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quantos anos tem <span id="age-child" style="color:#4fc3f7;">seu filho</span>?</h2>
+      <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">A idade nos ajuda a ajustar as estratégias.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">👶</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">0–3</span>
+        </button>
+        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🧒</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">4–6</span>
+        </button>
+        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">👦</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">7–10</span>
+        </button>
+        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🧑</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">11–14</span>
+        </button>
+        <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🎓</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">15+</span>
+        </button>
       </div>
     </div>
   </div>
@@ -786,22 +806,34 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-hardmoments" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('agerange')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:87%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:50%;"></div></div>
     </div>
-    <div style="padding-top:32px;padding-bottom:16px;">
-      <p style="color:#888;font-size:.9rem;margin-bottom:6px;font-family:'Inter',sans-serif;">Anotado.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:6px;">Quando é mais difícil com <span id="hard-child">seu filho</span>?</h2>
-      <p style="color:#888;font-size:.82rem;margin-bottom:20px;font-family:'Inter',sans-serif;">Vamos focar seus primeiros passos nesses momentos.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌅</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Manhãs</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🏫</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Após a escola</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🍽️</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Refeições</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">📱</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Fim do tempo de tela</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌙</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Hora de dormir</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🚗</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Fins de semana / passeios</span></button>
+    <div style="padding-top:28px;padding-bottom:16px;">
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Anotado.</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quando é mais difícil com <span id="hard-child" style="color:#4fc3f7;">seu filho</span>?</h2>
+      <p style="color:#888;font-size:.95rem;margin-bottom:28px;font-family:'Inter',sans-serif;">Vamos focar seus primeiros passos nesses momentos.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🌅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Manhãs</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🏫</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Após a escola</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🍽️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Refeições</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">📱</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fim do tempo de tela</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🌙</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Hora de dormir</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🚗</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fins de semana / passeios</span>
+        </button>
       </div>
     </div>
-    <button onclick="showScreen('meltdowns')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('meltdowns')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: MELTDOWNS FREQUENCY -->
@@ -2059,11 +2091,20 @@ function goToBarriers(){const v=document.getElementById('ob-child-input').value.
 
 // Single-select option
 function selectOne(btn, group) {
-  document.querySelectorAll('.'+group+'-opt').forEach(b=>b.style.borderColor='transparent');
-  btn.style.borderColor='#4fc3f7';
-  // Enable continue btn if exists
-  const cont=document.getElementById('btn-'+group);
-  if(cont){cont.style.opacity='1';cont.style.background='#4fc3f7';cont.style.color='#111';}
+  document.querySelectorAll('.'+group+'-opt').forEach(b => {
+    b.style.borderColor = 'transparent';
+    b.style.background = '#1e1e1e';
+  });
+  btn.style.borderColor = '#4fc3f7';
+  btn.style.background = '#1a2a3a';
+  // Enable continue button
+  const cont = document.getElementById('btn-'+group);
+  if (cont) {
+    cont.style.opacity = '1';
+    cont.style.background = '#4fc3f7';
+    cont.style.color = '#111';
+    cont.style.fontWeight = '800';
+  }
 }
 // Goal single select → go to subgoals
 function selectGoal(btn, val) {
