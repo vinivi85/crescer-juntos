@@ -730,6 +730,10 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <span style="font-size:1.4rem;">🖼️</span>
         <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Escolher da galeria</span>
       </button>
+      <button onclick="removePhoto();closePhotoOptions()" id="btn-remove-photo" style="width:100%;background:#2a2a2a;border:none;border-radius:16px;padding:18px;display:none;align-items:center;gap:14px;cursor:pointer;margin-bottom:10px;">
+        <span style="font-size:1.4rem;">🗑️</span>
+        <span style="color:#ff6b6b;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Remover foto</span>
+      </button>
       <button onclick="closePhotoOptions()" style="width:100%;background:transparent;border:none;border-radius:16px;padding:16px;cursor:pointer;">
         <span style="color:#888;font-size:.95rem;font-family:'Inter',sans-serif;font-weight:600;">Cancelar</span>
       </button>
@@ -2121,6 +2125,10 @@ function buildStartingPoint() {
 function openPhotoOptions() {
   const el = document.getElementById('photo-options-overlay');
   el.style.display = 'flex';
+  // Show delete only if photo exists
+  const hasPhoto = document.getElementById('childPhotoPreview')?.style.display !== 'none';
+  const del = document.getElementById('btn-remove-photo');
+  if (del) del.style.display = hasPhoto ? 'flex' : 'none';
 }
 function closePhotoOptions() {
   document.getElementById('photo-options-overlay').style.display = 'none';
@@ -2133,16 +2141,43 @@ function handlePhotoFile(input) {
   if (!input.files || !input.files[0]) return;
   const file = input.files[0];
   pendingPhotoFile = file;
-
-  // Preview immediately
   const reader = new FileReader();
   reader.onload = e => {
     const img = document.getElementById('childPhotoPreview');
     img.src = e.target.result;
     img.style.display = 'block';
     document.getElementById('childPhotoIcon').style.display = 'none';
+    // Show delete button
+    const del = document.getElementById('btn-remove-photo');
+    if (del) del.style.display = 'flex';
   };
   reader.readAsDataURL(file);
+}
+
+async function removePhoto() {
+  // Clear preview
+  const img = document.getElementById('childPhotoPreview');
+  img.src = ''; img.style.display = 'none';
+  document.getElementById('childPhotoIcon').style.display = 'block';
+  const del = document.getElementById('btn-remove-photo');
+  if (del) del.style.display = 'none';
+  pendingPhotoFile = null;
+  // Clear inputs
+  document.getElementById('childPhotoCamera').value = '';
+  document.getElementById('childPhotoGallery').value = '';
+  // Delete from Supabase Storage if already saved
+  if (currentChildId && currentUser) {
+    const extensions = ['jpg','jpeg','png','webp','heic'];
+    for (const ext of extensions) {
+      await sb.storage.from('children-photos').remove([`${currentUser.id}/${currentChildId}.${ext}`]);
+    }
+    await sb.from('children').update({ photo_url: null }).eq('id', currentChildId);
+    // Clear avatar in UI
+    const avatar = document.getElementById('hcsAvatar');
+    if (avatar) avatar.innerHTML = childEmoji || '🦊';
+    const accAv = document.getElementById('accAvatar');
+    if (accAv) accAv.innerHTML = childEmoji || '🦊';
+  }
 }
 
 async function uploadChildPhoto(childId) {
