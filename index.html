@@ -840,16 +840,34 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-meltdowns" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('hardmoments')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:91%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:57%;"></div></div>
     </div>
-    <div style="flex:1;padding-top:32px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:28px;line-height:1.3;">Na última semana, quantas crises ou lutas intensas <span id="melt-child">seu filho</span> teve?</h2>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;background:#22c55e;border-radius:8px;padding:3px 6px;">✅</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Nenhuma</span></button>
-        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;background:#3b82f6;border-radius:8px;padding:3px 8px;color:white;font-weight:800;font-size:.85rem;">1</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">1–2 vezes</span></button>
-        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;background:#3b82f6;border-radius:8px;padding:3px 8px;color:white;font-weight:800;font-size:.85rem;">4</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">3–4 vezes</span></button>
-        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🔥</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">5+ vezes</span></button>
-        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌪️</span><div><div style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Frequentemente agitado</div><div style="color:#888;font-size:.75rem;font-family:'Inter',sans-serif;">Não crises completas, mas sempre lutando</div></div></button>
+    <div style="flex:1;padding-top:28px;">
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Na última semana, quantas crises ou lutas intensas <span id="melt-child">seu filho</span> teve?</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="background:#22c55e;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✅</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Nenhuma</span>
+        </button>
+        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">1</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">1–2 vezes</span>
+        </button>
+        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">4</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">3–4 vezes</span>
+        </button>
+        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🔥</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">5+ vezes</span>
+        </button>
+        <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🌪️</span>
+          <div>
+            <div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Frequentemente agitado</div>
+            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:2px;">Não crises completas, mas sempre lutando</div>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -858,15 +876,23 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-diagjourney" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('meltdowns')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:95%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:64%;"></div></div>
     </div>
-    <div style="flex:1;padding-top:32px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:28px;line-height:1.3;">Onde está <span id="diag-child">seu filho</span> na jornada de diagnóstico?</h2>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">📄</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Diagnosticado</span></button>
-        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🕵️</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Suspeito</span></button>
-        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">📅</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Explorando avaliação</span></button>
-        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🙈</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Prefiro não dizer</span></button>
+    <div style="flex:1;padding-top:28px;">
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Onde está <span id="diag-child">seu filho</span> na jornada de diagnóstico?</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">📄</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Diagnosticado</span>
+        </button>
+        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🕵️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Suspeito</span>
+        </button>
+        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">📅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Explorando avaliação</span>
+        </button>
+        <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🙈</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Prefiro não dizer</span>
+        </button>
       </div>
     </div>
   </div>
@@ -875,18 +901,18 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-communication" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('diagjourney')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:98%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:71%;"></div></div>
     </div>
     <div style="padding-top:32px;padding-bottom:16px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:6px;">A comunicação de <span id="comm-child">seu filho</span> é...</h2>
-      <p style="color:#888;font-size:.82rem;margin-bottom:20px;font-family:'Inter',sans-serif;">Escolha o que melhor descreve; vamos ajustar as estratégias.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🙎</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Não-verbal</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🧸</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Algumas palavras</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">💥</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Frases simples</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🎭</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Fluente, desafios sociais/pragmáticos</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">📱</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Usa CAA (imagens/dispositivo)</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🤔</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho certeza</span></button>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">A comunicação de <span id="comm-child">seu filho</span> é...</h2>
+      <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Escolha o que melhor descreve; vamos ajustar as estratégias.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🙎</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não-verbal</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🧸</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Algumas palavras</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">💥</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Frases simples</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🎭</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fluente, desafios sociais/pragmáticos</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">📱</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Usa CAA (imagens/dispositivo)</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🤔</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho certeza</span></button>
       </div>
     </div>
     <div style="height:20px;flex-shrink:0;"></div>
