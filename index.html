@@ -1200,49 +1200,29 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   </div>
 
   <!-- SCREEN: PROMISE (Your future) -->
-  <div id="ob-promise" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
-    <div style="padding-top:16px;">
-      <button onclick="showScreen('support')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-    </div>
-    <div style="padding-top:28px;padding-bottom:16px;">
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.7rem;font-weight:900;margin-bottom:8px;line-height:1.2;">Seu futuro com <span id="promise-child">seu filho</span></h1>
-      <p style="color:#888;font-size:.9rem;margin-bottom:24px;font-family:'Inter',sans-serif;">Com base no que você compartilhou, aqui está o que é possível:</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
-        <div style="background:#1e1e1e;border-radius:16px;padding:16px 18px;display:flex;align-items:flex-start;gap:14px;">
-          <div style="width:44px;height:44px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🧭</div>
-          <div><div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:4px;">Um próximo passo claro</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;">Passos que você pode seguir em vez de adivinhar.</div></div>
-        </div>
-        <div style="background:#1e1e1e;border-radius:16px;padding:16px 18px;display:flex;align-items:flex-start;gap:14px;">
-          <div style="width:44px;height:44px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">⏱️</div>
-          <div><div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:4px;">Mais tempo para você</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;">Uma abordagem que economiza tempo e reduz o estresse diário.</div></div>
-        </div>
-        <div style="background:#1e1e1e;border-radius:16px;padding:16px 18px;display:flex;align-items:flex-start;gap:14px;">
-          <div style="width:44px;height:44px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">😮‍💨</div>
-          <div><div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:4px;">Crises que acontecem menos</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;">Momentos difíceis ficam menos frequentes e mais fáceis de superar.</div></div>
-        </div>
+  <div id="ob-promise" style="flex:1;display:none;flex-direction:column;background:linear-gradient(160deg,#29b6f6,#0288d1,#01579b);position:relative;">
+    <button onclick="showScreen('support')" style="position:absolute;top:20px;left:20px;background:none;border:none;color:rgba(255,255,255,.8);font-size:1.3rem;cursor:pointer;">‹</button>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:60px 28px 40px;">
+      <!-- Heart hands SVG icon -->
+      <div style="margin-bottom:40px;">
+        <svg width="140" height="120" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Heart -->
+          <path d="M70 38 C70 38 55 25 45 32 C35 39 38 52 48 58 L70 75 L92 58 C102 52 105 39 95 32 C85 25 70 38 70 38Z" fill="rgba(255,255,255,0.9)"/>
+          <!-- Left hand/arm -->
+          <path d="M25 110 C25 110 20 90 28 78 C32 72 40 70 48 72 L62 76" stroke="rgba(255,255,255,0.6)" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- Right hand/arm -->
+          <path d="M115 110 C115 110 120 90 112 78 C108 72 100 70 92 72 L78 76" stroke="rgba(255,255,255,0.6)" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- Left palm -->
+          <ellipse cx="35" cy="108" rx="22" ry="10" fill="rgba(255,255,255,0.55)" transform="rotate(-15 35 108)"/>
+          <!-- Right palm -->
+          <ellipse cx="105" cy="108" rx="22" ry="10" fill="rgba(255,255,255,0.55)" transform="rotate(15 105 108)"/>
+        </svg>
       </div>
-      <div style="border-top:1px solid #2a2a2a;padding-top:20px;margin-bottom:16px;">
-        <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;text-align:center;margin-bottom:14px;">Como vamos te levar lá</h2>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="background:#1e1e1e;border-radius:16px;padding:18px;text-align:center;">
-            <div style="font-size:1.6rem;margin-bottom:8px;">🎯</div>
-            <div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">Nós fazemos o trabalho</div>
-            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">Você só faz check-in em 2 minutos por dia. Conectamos os pontos e damos dicas para você curtir o processo.</div>
-          </div>
-          <div style="background:#1e1e1e;border-radius:16px;padding:18px;text-align:center;">
-            <div style="font-size:1.6rem;margin-bottom:8px;">👨‍👩‍👧</div>
-            <div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">1.500+ famílias vendo resultados</div>
-            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">Pais como você encontraram clareza e viram melhorias reais.</div>
-          </div>
-          <div style="background:#1e1e1e;border-radius:16px;padding:18px;text-align:center;">
-            <div style="font-size:1.6rem;margin-bottom:8px;">⚡</div>
-            <div style="color:white;font-size:.95rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">Sinta a diferença em 7 dias</div>
-            <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;line-height:1.5;">A maioria dos pais começa a se sentir mais calma e confiante em uma semana.</div>
-          </div>
-        </div>
-      </div>
+      <p style="color:rgba(255,255,255,.75);font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:12px;line-height:1.5;" id="promise-sub">É enorme ter um parceiro nas trincheiras com você.</p>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:40px;" id="promise-title">É aqui que vamos te levar, você e <span id="promise-child">seu filho</span></h1>
+      <button onclick="showScreen('trackexp')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar! →</button>
     </div>
-    <button onclick="showScreen('trackexp')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Gosto do que ouço →</button>
+  </div>
   </div>
 
   <!-- SCREEN: TRACKING EXPERIENCE -->
@@ -2174,6 +2154,7 @@ function goToChildName(){
   document.getElementById('affirm-name').textContent=v;
   document.getElementById('pb-name').textContent=v;
   document.getElementById('celebrate-title').textContent='Você pode se orgulhar, '+v+'.';
+  document.getElementById('promise-sub').textContent='É enorme ter um parceiro nas trincheiras com você, '+v+'.';
   showScreen('goals');
 }
 function goToDOB(){const v=document.getElementById('ob-child-input').value.trim();if(!v)return;showScreen('dob');}
