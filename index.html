@@ -686,28 +686,33 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     <button onclick="showScreen('childname')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
-  <!-- SCREEN: CHILD NAME + PHOTO (updated with camera) -->
+  <!-- SCREEN: CHILD NAME + PHOTO -->
   <div id="ob-childname" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('affirm')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:72%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:30%;"></div></div>
     </div>
-    <div style="flex:1;padding-top:32px;">
-      <p style="color:#888;font-size:.9rem;margin-bottom:4px;font-family:'Inter',sans-serif;" id="childname-ack">Obrigado!</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px;">Qual é o nome da criança?</h2>
-      <p style="color:#888;font-size:.85rem;margin-bottom:28px;font-family:'Inter',sans-serif;">Primeiro nome ou apelido é perfeito.</p>
-      <!-- Camera/avatar picker -->
-      <div style="text-align:center;margin-bottom:32px;">
-        <div id="childPhotoBtn" onclick="document.getElementById('childPhotoInput').click()" style="width:100px;height:100px;background:#2a2a2a;border-radius:20px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:2rem;margin:0 auto;position:relative;overflow:hidden;" title="Adicionar foto">
-          <span id="childPhotoIcon">📷</span>
+    <div style="flex:1;padding-top:28px;">
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="childname-ack">Obrigado!</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Qual é o nome da criança?</h2>
+      <p style="color:#888;font-size:.95rem;margin-bottom:40px;font-family:'Inter',sans-serif;">Primeiro nome ou apelido é perfeito.</p>
+
+      <!-- Camera button — igual ao original -->
+      <div style="display:flex;justify-content:center;margin-bottom:40px;">
+        <div onclick="document.getElementById('childPhotoInput').click()" style="width:120px;height:120px;background:#2a2a2a;border-radius:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;">
+          <span id="childPhotoIcon" style="font-size:2rem;">📷</span>
           <img id="childPhotoPreview" style="display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
         </div>
         <input type="file" id="childPhotoInput" accept="image/*" style="display:none;" onchange="previewPhoto(this)">
-        <p style="color:#555;font-size:.72rem;margin-top:8px;font-family:'Inter',sans-serif;">Toque para adicionar foto (opcional)</p>
       </div>
-      <div style="border-bottom:1px solid #333;padding-bottom:12px;">
-        <input id="ob-child-input" type="text" placeholder="Digite o nome" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;" oninput="onChildInput(this.value)" onkeydown="if(event.key==='Enter')goToBarriers()">
+
+      <!-- Campo texto — estilo linha embaixo igual ao original -->
+      <div style="border-bottom:1px solid #444;padding-bottom:14px;">
+        <input id="ob-child-input" type="text" placeholder="Digite o nome" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:500;width:100%;caret-color:#4fc3f7;" oninput="onChildInput(this.value)" onkeydown="if(event.key==='Enter')goToBarriers()">
       </div>
+    </div>
+    <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+  </div>
     </div>
     <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
   </div>
