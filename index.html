@@ -1275,24 +1275,24 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   </div>
   <div id="ob-trackexp" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
-      <button onclick="showScreen('promise')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+      <button onclick="showScreen('future')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:94%;"></div></div>
     </div>
-    <div style="flex:1;padding-top:32px;">
-      <p style="color:#888;font-size:.9rem;margin-bottom:6px;font-family:'Inter',sans-serif;">Ótimo! Quase lá.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:28px;line-height:1.3;">Você já tentou rastrear os comportamentos e padrões de <span id="track-child">seu filho</span> antes?</h2>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;">
-          <span style="background:#22c55e;border-radius:8px;padding:4px 7px;font-size:.85rem;">✅</span>
-          <span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, estou acostumado</span>
+    <div style="flex:1;padding-top:28px;">
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="trackexp-ack">Ótimo! Quase lá.</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Você já tentou rastrear os comportamentos e padrões de <span id="track-child">seu filho</span> antes?</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="background:#22c55e;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✅</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, estou acostumado</span>
         </button>
-        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;">
-          <span style="font-size:1.3rem;">😮‍💨</span>
-          <span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, mas é difícil manter</span>
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">😮‍💨</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, mas é difícil manter</span>
         </button>
-        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;">
-          <span style="background:#3b82f6;border-radius:8px;padding:3px 6px;color:white;font-size:.6rem;font-weight:900;">NEW</span>
-          <span style="color:white;font-size:.92rem;font-weight:600;font-family:'Inter',sans-serif;">Não, nunca tentei antes</span>
+        <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+          <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-size:.6rem;font-weight:900;flex-shrink:0;letter-spacing:.02em;">NEW</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não, nunca tentei antes</span>
         </button>
       </div>
     </div>
@@ -1304,10 +1304,10 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <button onclick="showScreen('trackexp')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:96%;"></div></div>
     </div>
-    <div style="flex:1;padding-top:32px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:6px;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
-      <p style="color:#888;font-size:.85rem;margin-bottom:24px;font-family:'Inter',sans-serif;">Escolha um horário que funciona na maioria dos dias.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="flex:1;padding-top:28px;">
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
+      <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Escolha um horário que funciona na maioria dos dias.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌅</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Manhã cedo</span></button>
         <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🍱</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Pausa do almoço</span></button>
         <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌙</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Após a hora de dormir</span></button>
@@ -2202,6 +2202,7 @@ function goToChildName(){
   document.getElementById('pb-name').textContent=v;
   document.getElementById('celebrate-title').textContent='Você pode se orgulhar, '+v+'.';
   document.getElementById('promise-sub').textContent='É enorme ter um parceiro nas trincheiras com você, '+v+'.';
+  if(document.getElementById('trackexp-ack')) document.getElementById('trackexp-ack').textContent='Ótimo! Quase lá, '+v+'.';
   showScreen('goals');
 }
 function goToDOB(){const v=document.getElementById('ob-child-input').value.trim();if(!v)return;showScreen('dob');}
