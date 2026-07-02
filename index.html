@@ -632,22 +632,39 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-subgoals" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('goals')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:62%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:22%;"></div></div>
     </div>
-    <div style="padding-top:32px;padding-bottom:16px;">
-      <p style="color:#888;font-size:.9rem;margin-bottom:6px;font-family:'Inter',sans-serif;" id="subgoals-ack">Entendido.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:6px;">Vamos afinar um pouco. Quais pequenas mudanças ajudariam mais?</h2>
-      <p style="color:#888;font-size:.78rem;margin-bottom:20px;font-family:'Inter',sans-serif;">Pode selecionar mais de um.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">📱</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Reduzir batalhas de tempo de tela</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🎵</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Reduzir sobrecarga sensorial</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">👨‍⚕️</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Coordenar terapias e suportes</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">😊</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Construir confiança e bem-estar</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">📏</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Estabelecer limites com menos conflito</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🔒</span><span style="color:white;font-size:.9rem;font-weight:600;font-family:'Inter',sans-serif;">Melhorar segurança (em casa e fora)</span></button>
+    <div style="padding-top:28px;padding-bottom:16px;">
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="subgoals-ack">Entendido.</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Vamos afinar um pouco. Quais pequenas mudanças ajudariam <span style="color:#4fc3f7;">mais</span>?</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">📱</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Reduzir batalhas de tempo de tela</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🎵</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Reduzir sobrecarga sensorial</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">👨‍⚕️</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Coordenar terapias e suportes</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">😊</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Construir confiança e bem-estar</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">📏</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Estabelecer limites com menos conflito</span>
+        </button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.6rem;flex-shrink:0;">🔒</span>
+          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Melhorar segurança (em casa e fora)</span>
+        </button>
       </div>
     </div>
-    <button onclick="buildAffirmScreen();showScreen('affirm')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="buildAffirmScreen();showScreen('affirm')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: AFFIRMATION -->
