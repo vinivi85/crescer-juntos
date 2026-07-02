@@ -697,21 +697,43 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Qual é o nome da criança?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:40px;font-family:'Inter',sans-serif;">Primeiro nome ou apelido é perfeito.</p>
 
-      <!-- Camera button — igual ao original -->
+      <!-- Camera button -->
       <div style="display:flex;justify-content:center;margin-bottom:40px;">
-        <div onclick="document.getElementById('childPhotoInput').click()" style="width:120px;height:120px;background:#2a2a2a;border-radius:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;">
-          <span id="childPhotoIcon" style="font-size:2rem;">📷</span>
+        <div onclick="openPhotoOptions()" style="width:120px;height:120px;background:#2a2a2a;border-radius:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;" id="childPhotoBtn">
+          <span id="childPhotoIcon" style="font-size:2rem;color:#888;">📷</span>
           <img id="childPhotoPreview" style="display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
         </div>
-        <input type="file" id="childPhotoInput" accept="image/*" style="display:none;" onchange="previewPhoto(this)">
+        <!-- Câmera -->
+        <input type="file" id="childPhotoCamera" accept="image/*" capture="environment" style="display:none;" onchange="handlePhotoFile(this)">
+        <!-- Galeria / arquivos -->
+        <input type="file" id="childPhotoGallery" accept="image/*" style="display:none;" onchange="handlePhotoFile(this)">
       </div>
 
-      <!-- Campo texto — estilo linha embaixo igual ao original -->
+      <!-- Campo texto -->
       <div style="border-bottom:1px solid #444;padding-bottom:14px;">
         <input id="ob-child-input" type="text" placeholder="Digite o nome" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:500;width:100%;caret-color:#4fc3f7;" oninput="onChildInput(this.value)" onkeydown="if(event.key==='Enter')goToBarriers()">
       </div>
     </div>
     <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+  </div>
+
+  <!-- PHOTO OPTIONS SHEET -->
+  <div id="photo-options-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:3000;align-items:flex-end;justify-content:center;" onclick="if(event.target===this)closePhotoOptions()">
+    <div style="background:#1e1e1e;border-radius:24px 24px 0 0;width:100%;max-width:430px;padding:20px 20px 40px;">
+      <div style="width:36px;height:4px;background:#444;border-radius:2px;margin:0 auto 20px;"></div>
+      <p style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;text-align:center;margin-bottom:20px;">Foto da criança</p>
+      <button onclick="document.getElementById('childPhotoCamera').click();closePhotoOptions()" style="width:100%;background:#2a2a2a;border:none;border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;margin-bottom:10px;">
+        <span style="font-size:1.4rem;">📸</span>
+        <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Tirar foto agora</span>
+      </button>
+      <button onclick="document.getElementById('childPhotoGallery').click();closePhotoOptions()" style="width:100%;background:#2a2a2a;border:none;border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;margin-bottom:10px;">
+        <span style="font-size:1.4rem;">🖼️</span>
+        <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Escolher da galeria</span>
+      </button>
+      <button onclick="closePhotoOptions()" style="width:100%;background:transparent;border:none;border-radius:16px;padding:16px;cursor:pointer;">
+        <span style="color:#888;font-size:.95rem;font-family:'Inter',sans-serif;font-weight:600;">Cancelar</span>
+      </button>
+    </div>
   </div>
     </div>
     <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
@@ -1707,6 +1729,13 @@ async function loadChildDataIntoApp(child) {
   if (document.getElementById('ec-name')) document.getElementById('ec-name').value = child.name;
   if (document.getElementById('ec-dob') && child.date_of_birth) document.getElementById('ec-dob').value = child.date_of_birth;
   if (document.getElementById('ec-meds')) document.getElementById('ec-meds').value = child.medications || '';
+  // Load photo into avatar
+  if (child.photo_url) {
+    const avatar = document.getElementById('hcsAvatar');
+    if (avatar) avatar.innerHTML = `<img src="${child.photo_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+    const accAv = document.getElementById('accAvatar');
+    if (accAv) accAv.innerHTML = `<img src="${child.photo_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+  }
 }
 
 async function saveChildToCloud(childData) {
@@ -1993,6 +2022,8 @@ async function launchApp() {
 
   // Save to Supabase
   const saved = await saveChildToCloud(childPayload);
+  // Upload photo if selected
+  if (saved && pendingPhotoFile) await uploadChildPhoto(saved.id);
 
   document.getElementById('hcsSub').textContent = cn;
   document.getElementById('insightsChildName').textContent = cn;
@@ -2086,16 +2117,56 @@ function buildStartingPoint() {
     </div>`).join('');
 }
 
-// Photo preview
-function previewPhoto(input) {
-  if(!input.files||!input.files[0])return;
-  const reader=new FileReader();
-  reader.onload=e=>{
-    const img=document.getElementById('childPhotoPreview');
-    img.src=e.target.result;img.style.display='block';
-    document.getElementById('childPhotoIcon').style.display='none';
+// Photo options sheet
+function openPhotoOptions() {
+  const el = document.getElementById('photo-options-overlay');
+  el.style.display = 'flex';
+}
+function closePhotoOptions() {
+  document.getElementById('photo-options-overlay').style.display = 'none';
+}
+
+// Handle selected photo file — preview + upload to Supabase Storage
+let pendingPhotoFile = null;
+
+function handlePhotoFile(input) {
+  if (!input.files || !input.files[0]) return;
+  const file = input.files[0];
+  pendingPhotoFile = file;
+
+  // Preview immediately
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('childPhotoPreview');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    document.getElementById('childPhotoIcon').style.display = 'none';
   };
-  reader.readAsDataURL(input.files[0]);
+  reader.readAsDataURL(file);
+}
+
+async function uploadChildPhoto(childId) {
+  if (!pendingPhotoFile || !childId) return null;
+  try {
+    const ext = pendingPhotoFile.name.split('.').pop() || 'jpg';
+    const path = `${currentUser.id}/${childId}.${ext}`;
+    const { error } = await sb.storage.from('children-photos').upload(path, pendingPhotoFile, {
+      upsert: true, contentType: pendingPhotoFile.type
+    });
+    if (error) { console.error('Erro upload foto:', error); return null; }
+    const { data } = sb.storage.from('children-photos').getPublicUrl(path);
+    // Update child record with photo URL
+    await sb.from('children').update({ photo_url: data.publicUrl }).eq('id', childId);
+    // Update avatar in app UI
+    const avatar = document.getElementById('hcsAvatar');
+    if (avatar) {
+      avatar.innerHTML = `<img src="${data.publicUrl}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`;
+    }
+    return data.publicUrl;
+  } catch (e) {
+    console.error('Erro ao fazer upload:', e);
+    return null;
+  }
 }
 
 // finishOnboarding → alias for launchApp (kept for compatibility)
