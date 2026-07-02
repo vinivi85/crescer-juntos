@@ -1220,12 +1220,59 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       </div>
       <p style="color:rgba(255,255,255,.75);font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:12px;line-height:1.5;" id="promise-sub">É enorme ter um parceiro nas trincheiras com você.</p>
       <h1 style="color:white;font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:40px;" id="promise-title">É aqui que vamos te levar, você e <span id="promise-child">seu filho</span></h1>
-      <button onclick="showScreen('trackexp')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar! →</button>
+      <button onclick="showScreen('future')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar! →</button>
     </div>
   </div>
   </div>
 
-  <!-- SCREEN: TRACKING EXPERIENCE -->
+  <!-- SCREEN: FUTURE DETAILS (after promise) -->
+  <div id="ob-future" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;background:#111;">
+    <div style="padding-top:16px;">
+      <button onclick="showScreen('promise')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
+    </div>
+    <div style="padding-top:24px;padding-bottom:16px;">
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:8px;line-height:1.2;text-align:center;">Seu futuro com <span id="future-child">seu filho</span></h1>
+      <p style="color:#888;font-size:.92rem;margin-bottom:28px;font-family:'Inter',sans-serif;text-align:center;line-height:1.5;">Com base no que você compartilhou, aqui está o que é possível:</p>
+
+      <!-- 3 promise cards -->
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="background:#1e1e1e;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:48px;height:48px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🧭</div>
+          <div><div style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:5px;">Um próximo passo claro</div><div style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.4;">Passos que você pode seguir em vez de adivinhar.</div></div>
+        </div>
+        <div style="background:#1e1e1e;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:48px;height:48px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">⏱️</div>
+          <div><div style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:5px;">Mais tempo para você</div><div style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.4;">Uma abordagem que economiza tempo e reduz o vai e vem diário.</div></div>
+        </div>
+        <div style="background:#1e1e1e;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:48px;height:48px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">😮‍💨</div>
+          <div><div style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:5px;">Crises que acontecem menos</div><div style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.4;">Momentos difíceis ficam menos frequentes e mais fáceis de superar.</div></div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #222;padding-top:24px;margin-bottom:16px;">
+        <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.2rem;font-weight:800;text-align:center;margin-bottom:16px;">Como vamos te levar lá</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="background:#1e1e1e;border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:10px;">🎯</div>
+            <div style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">Nós fazemos o trabalho</div>
+            <div style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.5;">Você só faz check-in em 2 minutos por dia. Conectamos os pontos e damos dicas para você curtir o processo.</div>
+          </div>
+          <div style="background:#1e1e1e;border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:10px;">👨‍👩‍👧</div>
+            <div style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">1.500+ famílias vendo resultados</div>
+            <div style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.5;">Pais como você encontraram clareza e viram melhorias reais.</div>
+          </div>
+          <div style="background:#1e1e1e;border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:10px;">⚡</div>
+            <div style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;margin-bottom:6px;">Sinta a diferença em 7 dias</div>
+            <div style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.5;">A maioria dos pais começa a se sentir mais calma e confiante em apenas uma semana.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button onclick="showScreen('trackexp')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Gosto do que ouço →</button>
+  </div>
   <div id="ob-trackexp" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('promise')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
@@ -1963,7 +2010,7 @@ const screens = {
   meltdowns:'ob-meltdowns',diagjourney:'ob-diagjourney',communication:'ob-communication',
   startingpoint:'ob-startingpoint',behaviors:'ob-behaviors',triggers:'ob-triggers',
   sensory:'ob-sensory',parentblock:'ob-parentblock',timeavail:'ob-timeavail',support:'ob-support',
-  promise:'ob-promise',trackexp:'ob-trackexp',reminder:'ob-reminder',topics:'ob-topics',
+  promise:'ob-promise',future:'ob-future',trackexp:'ob-trackexp',reminder:'ob-reminder',topics:'ob-topics',
   demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot'
 };
 // ══ SCREEN NUMBERING (versão de teste) ══
@@ -2012,7 +2059,7 @@ function onChildInput(val) {
     btn.style.opacity='1';btn.style.background='#4fc3f7';btn.style.color='#111';
     ['dobChildName','diagChildName','barriers-child','barriers-child-text',
      'age-child','hard-child','melt-child','diag-child','comm-child',
-     'trig-child','sens-child','beh-child','promise-child','track-child'].forEach(id=>{
+     'trig-child','sens-child','beh-child','promise-child','track-child','future-child'].forEach(id=>{
       const el=document.getElementById(id);
       if(el){
         if(id==='barriers-child-text') el.textContent=val.trim()+' resiste a coisas novas';
