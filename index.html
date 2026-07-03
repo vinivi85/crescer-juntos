@@ -803,8 +803,25 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       </div>
 
       <!-- Campo texto -->
-      <div style="border-bottom:1px solid #444;padding-bottom:14px;">
+      <div style="border-bottom:1px solid #444;padding-bottom:14px;margin-bottom:28px;">
         <input id="ob-child-input" type="text" placeholder="Digite o nome" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:500;width:100%;caret-color:#4fc3f7;" oninput="onChildInput(this.value)" onkeydown="if(event.key==='Enter')goToBarriers()">
+      </div>
+
+      <!-- Seleção de gênero -->
+      <p style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-bottom:12px;">Gênero <span style="opacity:.6;">(opcional)</span></p>
+      <div style="display:flex;gap:10px;">
+        <button onclick="selectSex(this,'Menino')" class="sex-opt" style="flex:1;background:#1e1e1e;border:2px solid transparent;border-radius:14px;padding:14px 8px;cursor:pointer;text-align:center;transition:border-color .2s,background .2s;">
+          <div style="font-size:1.4rem;margin-bottom:4px;">👦</div>
+          <div style="color:white;font-size:.82rem;font-weight:600;font-family:'Inter',sans-serif;">Menino</div>
+        </button>
+        <button onclick="selectSex(this,'Menina')" class="sex-opt" style="flex:1;background:#1e1e1e;border:2px solid transparent;border-radius:14px;padding:14px 8px;cursor:pointer;text-align:center;transition:border-color .2s,background .2s;">
+          <div style="font-size:1.4rem;margin-bottom:4px;">👧</div>
+          <div style="color:white;font-size:.82rem;font-weight:600;font-family:'Inter',sans-serif;">Menina</div>
+        </button>
+        <button onclick="selectSex(this,'Outro')" class="sex-opt" style="flex:1;background:#1e1e1e;border:2px solid transparent;border-radius:14px;padding:14px 8px;cursor:pointer;text-align:center;transition:border-color .2s,background .2s;">
+          <div style="font-size:1.4rem;margin-bottom:4px;">🧒</div>
+          <div style="color:white;font-size:.82rem;font-weight:600;font-family:'Inter',sans-serif;">Outro</div>
+        </button>
       </div>
     </div>
     <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
@@ -2359,6 +2376,17 @@ let currentReportType = '';
 let userRole = 'parent';
 let userName = '';
 let selectedDiag = '';
+let childSex = null;
+
+function selectSex(btn, val) {
+  childSex = val;
+  document.querySelectorAll('.sex-opt').forEach(b => {
+    b.style.borderColor = 'transparent';
+    b.style.background = '#1e1e1e';
+  });
+  btn.style.borderColor = '#4fc3f7';
+  btn.style.background = '#1a2a3a';
+}
 
 const entries = [
   {type:'milestone',date:'Hoje',icon:'⭐',title:'Disse "eu te amo" sozinho',detail:'Área: Comunicação espontânea'},
@@ -2547,6 +2575,7 @@ async function launchApp() {
 
   const childPayload = {
     name: cn, emoji: '🦊', date_of_birth: dob || null,
+    sex: childSex || null,
     diagnosis: diag, diagnosis_journey: diagJourney,
     conditions: conds.length ? conds : null,
     medications: meds,
