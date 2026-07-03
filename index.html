@@ -515,7 +515,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('name')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
-        <div style="height:100%;background:#4fc3f7;border-radius:2px;width:25%;"></div>
+        <div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div>
       </div>
     </div>
     <div style="flex:1;padding-top:40px;">
@@ -533,7 +533,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('childname')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
-        <div style="height:100%;background:#4fc3f7;border-radius:2px;width:50%;"></div>
+        <div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div>
       </div>
     </div>
     <div style="flex:1;padding-top:40px;">
@@ -551,7 +551,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('dob')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;">
-        <div style="height:100%;background:#4fc3f7;border-radius:2px;width:75%;"></div>
+        <div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div>
       </div>
     </div>
     <div style="padding-top:40px;padding-bottom:16px;">
@@ -586,7 +586,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-goals" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('name')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:15%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="goals-hi">Oi!</p>
@@ -632,7 +632,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-subgoals" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('goals')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:22%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="subgoals-ack">Entendido.</p>
@@ -690,7 +690,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-childname" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('affirm')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:30%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="childname-ack">Obrigado!</p>
@@ -747,7 +747,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-barriers" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('childname')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:35%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Entendido.</p>
@@ -777,7 +777,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-agerange" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('barriers')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:42%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quantos anos tem <span id="age-child">seu filho</span>?</h2>
@@ -806,7 +806,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-hardmoments" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('agerange')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:50%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Anotado.</p>
@@ -840,7 +840,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-meltdowns" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('hardmoments')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:57%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Na última semana, quantas crises ou lutas intensas <span id="melt-child">seu filho</span> teve?</h2>
@@ -876,7 +876,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-diagjourney" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('meltdowns')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:64%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Onde está <span id="diag-child">seu filho</span> na jornada de diagnóstico?</h2>
@@ -901,7 +901,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-communication" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('diagjourney')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:71%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:32px;padding-bottom:16px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">A comunicação de <span id="comm-child">seu filho</span> é...</h2>
@@ -1039,7 +1039,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-behaviors" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('startingpoint')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:55%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Vamos aprender um pouco mais sobre <span id="beh-child">seu filho</span>.</p>
@@ -1070,7 +1070,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-triggers" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('behaviors')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:62%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que tende a desencadear momentos difíceis com <span id="trig-child">seu filho</span>?</h2>
@@ -1095,7 +1095,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-sensory" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('triggers')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:70%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Padrões sensoriais que você nota com <span id="sens-child">seu filho</span>?</h2>
@@ -1121,7 +1121,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-parentblock" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('sensory')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:78%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que mais está no seu caminho agora, <span id="pb-name">amigo</span>?</h2>
@@ -1152,7 +1152,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-timeavail" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('parentblock')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:85%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Na maioria dos dias, você consegue reservar...</h2>
@@ -1182,7 +1182,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-support" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('timeavail')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:93%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Com que suporte você pode contar agora?</h2>
@@ -1276,7 +1276,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-trackexp" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('future')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:94%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="trackexp-ack">Ótimo! Quase lá.</p>
@@ -1321,7 +1321,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-reminder" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('trackexp')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:96%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
@@ -1339,7 +1339,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-topics" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
       <button onclick="showScreen('reminder')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:98%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Tópicos nos quais quer mais orientação</h2>
@@ -1387,7 +1387,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-demo" style="flex:1;display:none;flex-direction:column;padding:0 24px;overflow-y:auto;">
     <div style="padding-top:16px;display:flex;align-items:center;justify-content:space-between;">
       <button onclick="showScreen('topics')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
-      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;margin:0 12px;"><div style="height:100%;background:#4fc3f7;border-radius:2px;width:100%;"></div></div>
+      <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;margin:0 12px;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
       <span style="background:#2a2a2a;color:#888;font-size:.65rem;font-weight:800;padding:4px 10px;border-radius:8px;font-family:'Inter',sans-serif;">DEMO</span>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
@@ -1582,51 +1582,85 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
   </div>
 
-  <!-- SCREEN: PAYWALL -->
+  <!-- SCREEN: PAYWALL 1 — App showcase -->
   <div id="ob-paywall" style="flex:1;display:none;flex-direction:column;background:#111;overflow-y:auto;">
-    <div style="padding:56px 24px 32px;">
-      <button onclick="showScreen('snapshot')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;margin-bottom:24px;display:block;">‹</button>
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;text-align:center;margin-bottom:32px;line-height:1.3;">Queremos que você experimente o Crescer Juntos <span style="color:#4fc3f7;">de graça</span>.</h1>
+    <div style="padding:48px 24px 32px;">
+      <button onclick="showScreen('snapshot')" style="background:none;border:none;color:#888;font-size:1.3rem;cursor:pointer;margin-bottom:24px;display:block;">‹</button>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;text-align:center;margin-bottom:36px;line-height:1.4;">Queremos que você experimente o <span style="color:white;">Crescer Juntos</span> de graça.</h1>
 
-      <!-- App screenshots mockup -->
-      <div style="position:relative;height:280px;margin-bottom:32px;">
-        <div style="position:absolute;left:0;top:20px;width:45%;background:#1e1e1e;border-radius:14px;padding:12px;transform:rotate(-8deg);border:1px solid #333;">
-          <div style="font-size:.65rem;font-weight:800;color:white;font-family:'Inter',sans-serif;margin-bottom:6px;">Quick Log</div>
-          <div style="font-size:.58rem;color:#888;font-family:'Inter',sans-serif;">🎙️ Fale naturalmente</div>
-          <div style="font-size:.58rem;color:#888;font-family:'Inter',sans-serif;margin-top:4px;">🧠 IA organiza tudo</div>
-          <div style="background:#4fc3f7;border-radius:8px;padding:4px 8px;margin-top:8px;display:inline-block;font-size:.55rem;color:#111;font-weight:800;">✓ Pronto em 2 min</div>
+      <!-- 3-card mockup like original -->
+      <div style="position:relative;height:300px;margin:0 -8px 36px;">
+        <!-- Left card -->
+        <div style="position:absolute;left:0;top:30px;width:42%;background:linear-gradient(135deg,#e8d5f5,#f0e8ff);border-radius:16px;padding:14px;transform:rotate(-8deg);z-index:1;">
+          <div style="font-size:.65rem;font-weight:900;color:#333;font-family:'Inter',sans-serif;margin-bottom:8px;">Registre Tudo. Zero Digitação.</div>
+          <div style="background:white;border-radius:8px;padding:6px 8px;margin-bottom:4px;font-size:.55rem;color:#555;font-family:'Inter',sans-serif;">🎙️ Fale naturalmente</div>
+          <div style="background:rgba(108,92,231,.15);border-radius:8px;padding:6px 8px;margin-bottom:4px;font-size:.55rem;color:#555;font-family:'Inter',sans-serif;">🧠 IA organiza tudo</div>
+          <div style="background:#6c5ce7;border-radius:20px;padding:4px 10px;display:inline-block;margin-top:4px;"><span style="font-size:.52rem;color:white;font-weight:700;">✓ Pronto em 2 min</span></div>
         </div>
-        <div style="position:absolute;left:50%;transform:translateX(-50%);top:0;width:52%;background:#1e1e1e;border-radius:14px;padding:14px;z-index:2;border:2px solid #4fc3f7;box-shadow:0 8px 32px rgba(79,195,247,.2);">
-          <div style="font-size:.7rem;font-weight:800;color:white;font-family:'Inter',sans-serif;margin-bottom:8px;">Entenda os Padrões</div>
-          <div style="background:#1a2a3a;border-radius:8px;padding:8px;margin-bottom:6px;"><div style="color:#4fc3f7;font-size:.6rem;font-weight:700;">Crises ↓ 32% esta semana</div></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
-            <div style="background:#2a2a2a;border-radius:6px;padding:5px;text-align:center;"><div style="color:white;font-size:.65rem;font-weight:800;">7.5h</div><div style="color:#888;font-size:.5rem;">sono</div></div>
-            <div style="background:#2a2a2a;border-radius:6px;padding:5px;text-align:center;"><div style="color:white;font-size:.65rem;font-weight:800;">3</div><div style="color:#888;font-size:.5rem;">crises</div></div>
+
+        <!-- Center card — main, taller -->
+        <div style="position:absolute;left:50%;transform:translateX(-50%);top:0;width:50%;background:linear-gradient(135deg,#d5e8f5,#e8f5ff);border-radius:16px;padding:14px;z-index:3;box-shadow:0 12px 40px rgba(0,0,0,.4);">
+          <div style="font-size:.68rem;font-weight:900;color:#333;font-family:'Inter',sans-serif;margin-bottom:10px;text-align:center;">Entenda os Padrões do Seu Filho</div>
+          <div style="background:white;border-radius:10px;padding:8px;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><div style="width:16px;height:16px;background:#e8d5ff;border-radius:50%;"></div><span style="font-size:.5rem;color:#555;font-family:'Inter',sans-serif;">Crises ↓ 32% esta semana</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="background:#e8f5e9;border-radius:6px;padding:4px;text-align:center;"><div style="font-size:.6rem;font-weight:800;color:#2e7d32;">7.5h</div><div style="font-size:.42rem;color:#888;">sono</div></div>
+              <div style="background:#e3f2fd;border-radius:6px;padding:4px;text-align:center;"><div style="font-size:.6rem;font-weight:800;color:#1565c0;">41oz</div><div style="font-size:.42rem;color:#888;">água</div></div>
+            </div>
           </div>
-          <div style="margin-top:8px;font-size:.55rem;color:#ccc;font-family:'Inter',sans-serif;font-style:italic;">"Mudou minha vida como mãe"</div>
-          <div style="color:#888;font-size:.5rem;font-family:'Inter',sans-serif;">★★★★★ Ana, Brasil</div>
+          <div style="display:flex;justify-content:center;gap:2px;margin-bottom:4px;">★★★★★</div>
+          <div style="font-size:.5rem;color:#555;text-align:center;font-family:'Inter',sans-serif;font-style:italic;">"Eu gostaria de ter tido isso antes."</div>
+          <div style="font-size:.48rem;color:#888;text-align:center;font-family:'Inter',sans-serif;">Ana, Brasil</div>
         </div>
-        <div style="position:absolute;right:0;top:20px;width:45%;background:#1e1e1e;border-radius:14px;padding:12px;transform:rotate(8deg);border:1px solid #333;">
-          <div style="font-size:.65rem;font-weight:800;color:white;font-family:'Inter',sans-serif;margin-bottom:6px;">Insights</div>
-          <div style="font-size:.58rem;color:#888;font-family:'Inter',sans-serif;">📊 Relatório IEP</div>
-          <div style="font-size:.58rem;color:#888;font-family:'Inter',sans-serif;margin-top:4px;">👨‍⚕️ Visita médica</div>
-          <div style="font-size:.58rem;color:#888;font-family:'Inter',sans-serif;margin-top:4px;">📋 Plano 504</div>
+
+        <!-- Right card -->
+        <div style="position:absolute;right:0;top:30px;width:42%;background:linear-gradient(135deg,#d5f5e8,#e8fff5);border-radius:16px;padding:14px;transform:rotate(8deg);z-index:1;">
+          <div style="font-size:.65rem;font-weight:900;color:#333;font-family:'Inter',sans-serif;margin-bottom:8px;">Entre Preparado em Cada Consulta</div>
+          <div style="background:white;border-radius:8px;padding:5px 7px;margin-bottom:3px;font-size:.52rem;color:#555;font-family:'Inter',sans-serif;">🎓 Reunião IEP</div>
+          <div style="background:rgba(231,76,60,.1);border-radius:8px;padding:5px 7px;margin-bottom:3px;font-size:.52rem;color:#555;font-family:'Inter',sans-serif;">👨‍⚕️ Visita médica</div>
+          <div style="background:rgba(241,196,15,.15);border-radius:8px;padding:5px 7px;font-size:.52rem;color:#555;font-family:'Inter',sans-serif;">📋 Plano 504</div>
         </div>
       </div>
 
       <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;">
-        <span style="color:#27ae60;font-size:1rem;">✓</span>
-        <span style="color:white;font-size:.95rem;font-weight:700;font-family:'Inter',sans-serif;">Sem pagamento agora</span>
+        <span style="color:#27ae60;font-size:1.1rem;font-weight:900;">✓</span>
+        <span style="color:white;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;">Sem Pagamento Agora</span>
       </div>
-      <button onclick="launchApp()" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar Grátis →</button>
-      <p style="color:#555;font-size:.78rem;text-align:center;font-family:'Inter',sans-serif;">Sem compromisso, cancele quando quiser.</p>
-      <div style="display:flex;justify-content:center;gap:20px;margin-top:16px;">
-        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;">Privacidade</span>
-        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;">•</span>
-        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;">Restaurar</span>
-        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;">•</span>
-        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;">Termos</span>
+
+      <button onclick="showScreen('paywall2')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar por R$ 0,00</button>
+      <p style="color:#555;font-size:.78rem;text-align:center;font-family:'Inter',sans-serif;margin-bottom:16px;">Sem compromisso, cancele quando quiser.</p>
+      <div style="display:flex;justify-content:center;gap:20px;">
+        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:underline;">Privacidade</span>
+        <span style="color:#444;font-size:.72rem;">•</span>
+        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:underline;">Restaurar</span>
+        <span style="color:#444;font-size:.72rem;">•</span>
+        <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:underline;">Termos</span>
       </div>
+    </div>
+  </div>
+
+  <!-- SCREEN: PAYWALL 2 — Bell / reminder -->
+  <div id="ob-paywall2" style="flex:1;display:none;flex-direction:column;background:#111;justify-content:space-between;">
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px 0;">
+      <button onclick="showScreen('paywall')" style="position:absolute;top:20px;left:20px;background:none;border:none;color:#888;font-size:1.3rem;cursor:pointer;">‹</button>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;text-align:center;margin-bottom:48px;line-height:1.3;">Vamos te avisar antes do seu período gratuito terminar</h1>
+
+      <!-- Bell icon — like original 3D bell -->
+      <div style="position:relative;margin-bottom:48px;">
+        <div style="font-size:7rem;filter:drop-shadow(0 8px 24px rgba(255,180,0,.3));">🔔</div>
+        <div style="position:absolute;top:-4px;right:-4px;width:36px;height:36px;background:#e74c3c;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #111;">
+          <span style="color:white;font-size:1rem;font-weight:900;font-family:'Inter',sans-serif;">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 24px 40px;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;">
+        <span style="color:#27ae60;font-size:1.1rem;font-weight:900;">✓</span>
+        <span style="color:white;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;">Sem Pagamento Agora</span>
+      </div>
+      <button onclick="launchApp()" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar por R$ 0,00</button>
+      <p style="color:#555;font-size:.78rem;text-align:center;font-family:'Inter',sans-serif;">7 dias GRÁTIS, depois apenas R$ 49,90 por mês</p>
     </div>
   </div>
 
@@ -2233,30 +2267,39 @@ const screens = {
   demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot',paywall:'ob-paywall'
 };
 // ══ SCREEN NUMBERING (versão de teste) ══
+// Ordem das telas para cálculo de progresso
 const SCREEN_ORDER = [
   'welcome','collab','name','goals','subgoals','affirm',
   'childname','dob','diag','barriers','agerange','hardmoments',
   'meltdowns','diagjourney','communication','startingpoint',
   'behaviors','triggers','sensory','parentblock','timeavail',
-  'support','promise','trackexp','reminder','topics','demo',
-  'celebrate','snapshot'
+  'support','promise','future','trackexp','encourage','reminder',
+  'topics','demo','celebrate','snapshot','paywall','paywall2'
 ];
+
+// Telas sem barra de progresso (fundo azul ou telas especiais)
+const NO_PROGRESS_BAR = new Set(['welcome','collab','promise','encourage','celebrate','paywall','paywall2']);
 
 function showScreen(id) {
   Object.values(screens).forEach(s=>{const el=document.getElementById(s);if(el)el.style.display='none';});
   const t=document.getElementById(screens[id]);if(!t)return;t.style.display='flex';
-  // Remove any existing badge
-  const old=t.querySelector('.screen-badge');if(old)old.remove();
-  // Add number badge
-  const num=SCREEN_ORDER.indexOf(id)+1;
-  if(num>0){
-    const badge=document.createElement('div');
-    badge.className='screen-badge';
-    badge.textContent=num;
-    badge.style.cssText='position:absolute;top:14px;right:16px;background:rgba(79,195,247,.18);color:#4fc3f7;font-family:Inter,sans-serif;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;pointer-events:none;z-index:99;letter-spacing:.04em;border:1px solid rgba(79,195,247,.3);';
-    t.style.position='relative';
-    t.appendChild(badge);
+
+  // Update all progress bars in this screen
+  if(!NO_PROGRESS_BAR.has(id)){
+    const idx = SCREEN_ORDER.indexOf(id);
+    const total = SCREEN_ORDER.length - 1;
+    const pct = idx >= 0 ? Math.round((idx / total) * 100) : 0;
+    // Update all progress bar fills inside this screen
+    t.querySelectorAll('[data-progress]').forEach(bar => {
+      bar.style.width = pct + '%';
+    });
+    // Also update inline progress bars (the divs with fixed % width in HTML)
+    // Replace inline width on all inner progress fill divs
+    t.querySelectorAll('.ob-progress-fill').forEach(bar => {
+      bar.style.width = pct + '%';
+    });
   }
+
   window.scrollTo(0,0);
 }
 function selectRole(role) {
@@ -2859,17 +2902,6 @@ function chkOnline(){document.getElementById('offline-bar').style.display=naviga
 window.addEventListener('online',chkOnline);window.addEventListener('offline',chkOnline);chkOnline();
 
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-
-// Badge on welcome screen (shown by default, not via showScreen)
-(function(){
-  const el=document.getElementById('ob-welcome');
-  if(!el)return;
-  el.style.position='relative';
-  const b=document.createElement('div');
-  b.className='screen-badge';b.textContent='1';
-  b.style.cssText='position:absolute;top:14px;right:16px;background:rgba(79,195,247,.18);color:#4fc3f7;font-family:Inter,sans-serif;font-size:.65rem;font-weight:900;padding:3px 9px;border-radius:20px;pointer-events:none;z-index:99;letter-spacing:.04em;border:1px solid rgba(79,195,247,.3);';
-  el.appendChild(b);
-})();
 
 // ══ INICIALIZAÇÃO: verificar sessão de login ══
 checkSession();
