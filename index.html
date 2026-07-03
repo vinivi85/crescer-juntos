@@ -2558,6 +2558,7 @@ async function launchApp() {
     time_available: timeAvail, support_network: supportNet.length ? supportNet : null,
     topics_of_interest: topics.length ? topics : null,
     tracking_experience: trackExp, reminder_time: reminder,
+    notes: ageRange ? `Faixa etária: ${ageRange}` : null,
   };
 
   // Save to Supabase
