@@ -1433,10 +1433,10 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Escolha um horário que funciona na maioria dos dias.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌅</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Manhã cedo</span></button>
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🍱</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Pausa do almoço</span></button>
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🌙</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Após a hora de dormir</span></button>
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#2a2a2a;border:2px solid transparent;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;"><span style="font-size:1.3rem;">🚫</span><span style="color:white;font-size:.95rem;font-weight:600;font-family:'Inter',sans-serif;">Sem lembretes por enquanto</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🌅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Manhã cedo</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🍱</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Pausa do almoço</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🌙</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Após a hora de dormir</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🚫</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sem lembretes por enquanto</span></button>
       </div>
     </div>
   </div>
@@ -1486,7 +1486,40 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </button>
       </div>
     </div>
-    <button onclick="showScreen('demo')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('signup')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+  </div>
+
+  <!-- SCREEN: CADASTRO (após questionário) -->
+  <div id="ob-signup" style="flex:1;display:none;flex-direction:column;background:#111;">
+    <div style="padding:56px 24px 0;">
+      <button onclick="showScreen('topics')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;margin-bottom:28px;display:block;">‹</button>
+      <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="signup-ob-ack">Quase lá!</p>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Crie sua conta para salvar tudo</h2>
+      <p style="color:#888;font-size:.9rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Seus dados ficam seguros e acessíveis em qualquer dispositivo.</p>
+
+      <div id="ob-signup-error" style="display:none;background:#3a1a1a;border:1px solid #c0392b;border-radius:10px;padding:10px 14px;margin-bottom:16px;color:#ff8a80;font-size:.82rem;font-family:'Inter',sans-serif;"></div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">E-mail</label>
+          <input id="ob-signup-email" type="email" placeholder="seu@email.com" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box;">
+        </div>
+        <div>
+          <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Senha</label>
+          <input id="ob-signup-password" type="password" placeholder="Mínimo 6 caracteres" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box;" onkeydown="if(event.key==='Enter')doObSignup()">
+        </div>
+        <button onclick="doObSignup()" id="ob-signup-btn" style="background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;margin-top:8px;">Criar conta e ver meu painel →</button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;margin:24px 0;">
+        <div style="flex:1;height:1px;background:#2a2a2a;"></div>
+        <span style="color:#555;font-size:.78rem;font-family:'Inter',sans-serif;">ou</span>
+        <div style="flex:1;height:1px;background:#2a2a2a;"></div>
+      </div>
+
+      <p style="color:#888;font-size:.82rem;text-align:center;font-family:'Inter',sans-serif;">Já tem uma conta? <button onclick="showLoginFromOnboarding()" style="background:none;border:none;color:#4fc3f7;font-size:.82rem;font-weight:700;cursor:pointer;padding:0;">Entrar</button></p>
+      <p style="color:#444;font-size:.72rem;text-align:center;font-family:'Inter',sans-serif;margin-top:16px;line-height:1.5;">Ao criar uma conta você concorda com nossos Termos de Uso e Política de Privacidade.</p>
+    </div>
   </div>
 
   <!-- SCREEN: DEMO / ALL SAVED -->
@@ -2128,7 +2161,44 @@ let currentChildId = null;
 function cacheGet(key) { try { return JSON.parse(localStorage.getItem('cj_'+key) || 'null'); } catch { return null; } }
 function cacheSet(key, val) { try { localStorage.setItem('cj_'+key, JSON.stringify(val)); } catch {} }
 
-// ── SPLASH NAVIGATION ──
+// ── SIGNUP DO ONBOARDING (após questionário) ──
+async function doObSignup() {
+  const email = document.getElementById('ob-signup-email').value.trim();
+  const password = document.getElementById('ob-signup-password').value;
+  const errEl = document.getElementById('ob-signup-error');
+  const btn = document.getElementById('ob-signup-btn');
+
+  errEl.style.display = 'none';
+  if (!email || !password) { errEl.textContent = 'Preencha e-mail e senha.'; errEl.style.display = 'block'; return; }
+  if (password.length < 6) { errEl.textContent = 'A senha precisa ter pelo menos 6 caracteres.'; errEl.style.display = 'block'; return; }
+
+  btn.textContent = 'Criando conta...'; btn.disabled = true;
+
+  const { data, error } = await sb.auth.signUp({ email, password });
+  if (error) {
+    errEl.textContent = error.message === 'User already registered' ? 'E-mail já cadastrado. Tente entrar.' : error.message;
+    errEl.style.display = 'block';
+    btn.textContent = 'Criar conta e ver meu painel →'; btn.disabled = false;
+    return;
+  }
+
+  currentUser = data.user;
+  // Atualiza perfil com nome do responsável
+  const pName = document.getElementById('ob-name-input')?.value.trim();
+  if (pName) await sb.from('profiles').upsert({ id: currentUser.id, full_name: pName }, { onConflict: 'id' });
+
+  btn.textContent = 'Criar conta e ver meu painel →'; btn.disabled = false;
+  showScreen('demo');
+}
+
+function showLoginFromOnboarding() {
+  // Guarda o estado do onboarding e vai para login
+  document.getElementById('ob-signup').style.display = 'none';
+  document.getElementById('auth-screen').style.display = 'flex';
+  showLogin();
+}
+
+
 function startOnboarding() {
   // "Começar" — vai direto pro onboarding sem criar conta ainda
   document.getElementById('splash-screen').style.display = 'none';
@@ -2405,7 +2475,7 @@ const screens = {
   startingpoint:'ob-startingpoint',behaviors:'ob-behaviors',triggers:'ob-triggers',
   sensory:'ob-sensory',parentblock:'ob-parentblock',timeavail:'ob-timeavail',support:'ob-support',
   promise:'ob-promise',future:'ob-future',trackexp:'ob-trackexp',encourage:'ob-encourage',reminder:'ob-reminder',topics:'ob-topics',
-  demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot',paywall:'ob-paywall'
+  signup:'ob-signup',demo:'ob-demo',celebrate:'ob-celebrate',snapshot:'ob-snapshot',paywall:'ob-paywall',paywall2:'ob-paywall2'
 };
 // ══ SCREEN NUMBERING (versão de teste) ══
 // Ordem das telas para cálculo de progresso
@@ -2415,7 +2485,7 @@ const SCREEN_ORDER = [
   'meltdowns','diagjourney','communication','startingpoint',
   'behaviors','triggers','sensory','parentblock','timeavail',
   'support','promise','future','trackexp','encourage','reminder',
-  'topics','demo','celebrate','snapshot','paywall','paywall2'
+  'topics','signup','demo','celebrate','snapshot','paywall','paywall2'
 ];
 
 // Telas sem barra de progresso (fundo azul ou telas especiais)
