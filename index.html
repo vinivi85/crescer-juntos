@@ -2,23 +2,37 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111111">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- PWA — abre como app nativo sem barra do navegador -->
+<meta name="theme-color" content="#29b6f6">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Crescer Juntos">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="Crescer Juntos">
-<meta name="msapplication-TileColor" content="#111111">
+<meta name="msapplication-TileColor" content="#29b6f6">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Manifest -->
 <link rel="manifest" href="manifest.json">
+
+<!-- Ícones iOS -->
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
 <link rel="apple-touch-icon" sizes="167x167" href="icons/icon-167.png">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<!-- iOS Splash screens -->
+
+<!-- Splash screens iOS (tela azul enquanto carrega) -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+  /* Garante que o app ocupe toda a tela no iOS standalone */
+  body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+</style>
+
 <title>Crescer Juntos</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
