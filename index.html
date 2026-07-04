@@ -2232,14 +2232,14 @@ function showSignup() {
 async function checkSession() {
   const { data: { session } } = await sb.auth.getSession();
   if (session) {
-    // Usuário já logado — vai direto pro app
     currentUser = session.user;
     await afterAuth();
   } else {
-    // Primeira vez — mostra splash
     document.getElementById('splash-screen').style.display = 'flex';
   }
 }
+
+function showAuthError(msg) {
   const el = document.getElementById('auth-error');
   el.textContent = msg;
   el.style.display = 'block';
