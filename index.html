@@ -75,7 +75,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
 .ob-s3{background:linear-gradient(160deg,#fff8e1 0%,#fce4ec 50%,#f3e5f5 100%);}
 .ob-s4{background:linear-gradient(160deg,#e8eaf6 0%,#e3f2fd 50%,#e8f5e9 100%);}
 
-.ob-title{font-size:2rem;font-weight:900;color:var(--text);text-align:center;line-height:1.15;margin-bottom:10px;z-index:1;}
+.ob-title{font-size:1.5rem;font-weight:700;color:var(--text);text-align:center;line-height:1.15;margin-bottom:10px;z-index:1;}
 .ob-sub{font-size:.95rem;color:var(--text2);text-align:center;font-weight:500;margin-bottom:32px;line-height:1.5;z-index:1;}
 .ob-phone{width:200px;height:340px;background:white;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.15);overflow:hidden;position:relative;z-index:1;margin-bottom:28px;flex-shrink:0;}
 .ob-phone-inner{padding:16px 12px;}
@@ -491,13 +491,13 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
 
   <!-- Tagline -->
   <div style="padding:0 32px;text-align:center;margin-bottom:40px;">
-    <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:10px;line-height:1.3;">Suporte à Parentalidade Que Realmente Ajuda</h2>
+    <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:10px;line-height:1.3;">Suporte à Parentalidade Que Realmente Ajuda</h2>
     <p style="color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.5;">Entenda os padrões do seu filho.<br>Celebre cada conquista.</p>
   </div>
 
   <!-- Buttons -->
   <div style="width:100%;padding:0 24px 48px;display:flex;flex-direction:column;gap:12px;">
-    <button onclick="startOnboarding()" style="background:white;border:none;border-radius:50px;padding:18px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 4px 20px rgba(0,0,0,.15);">Começar</button>
+    <button onclick="startOnboarding()" style="background:white;border:none;border-radius:50px;padding:18px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;width:100%;box-shadow:0 4px 20px rgba(0,0,0,.15);">Começar</button>
     <button onclick="showLoginFromSplash()" style="background:transparent;border:none;color:rgba(255,255,255,.9);font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;padding:10px;text-align:center;">Já tenho uma conta? <strong>Entrar.</strong></button>
   </div>
 </div>
@@ -519,7 +519,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Senha</label>
         <input id="login-password" type="password" placeholder="••••••••" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;" onkeydown="if(event.key==='Enter')doLogin()">
       </div>
-      <button onclick="doLogin()" id="login-btn" style="margin-top:8px;background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;">Entrar</button>
+      <button onclick="doLogin()" id="login-btn" style="margin-top:8px;background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;">Entrar</button>
       <button onclick="showSignup()" style="background:none;border:none;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;padding:10px;margin-top:4px;">Não tem conta? Criar agora</button>
     </div>
 
@@ -536,7 +536,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Senha</label>
         <input id="signup-password" type="password" placeholder="Mínimo 6 caracteres" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;" onkeydown="if(event.key==='Enter')doSignup()">
       </div>
-      <button onclick="doSignup()" id="signup-btn" style="margin-top:8px;background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;">Criar conta</button>
+      <button onclick="doSignup()" id="signup-btn" style="margin-top:8px;background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;">Criar conta</button>
       <button onclick="showLogin()" style="background:none;border:none;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;padding:10px;margin-top:4px;">Já tenho conta — entrar</button>
     </div>
 
@@ -575,7 +575,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       </button>
     </div>
     <div style="flex:1;"></div>
-    <button onclick="proceedFromRole()" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;">Continuar →</button>
+    <button onclick="proceedFromRole()" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;">Continuar →</button>
   </div>
 
   <!-- SCREEN 2: Collaborator info -->
@@ -600,7 +600,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </div>
       </div>
     </div>
-    <button onclick="showScreen('name')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;">Entendi</button>
+    <button onclick="showScreen('name')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:#4fc3f7;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;">Entendi</button>
   </div>
 
   <!-- SCREEN 3: What's your name (with progress bar) -->
@@ -618,7 +618,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <input id="ob-name-input" type="text" placeholder="Digite seu nome" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;" oninput="onNameInput(this.value)" onkeydown="if(event.key==='Enter')goToChildName()">
       </div>
     </div>
-    <button onclick="goToChildName()" id="btn-name-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+    <button onclick="goToChildName()" id="btn-name-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
   </div>
 
   <!-- SCREEN 4: Child's name -->
@@ -636,7 +636,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <input id="ob-child-input" type="text" placeholder="Nome da criança" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;" oninput="onChildInput(this.value)" onkeydown="if(event.key==='Enter')goToDOB()">
       </div>
     </div>
-    <button onclick="goToDOB()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+    <button onclick="goToDOB()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
   </div>
 
   <!-- SCREEN 5: Child DOB -->
@@ -654,7 +654,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <input id="ob-dob-input" type="date" style="background:transparent;border:none;outline:none;color:white;font-family:'Inter',sans-serif;font-size:1.1rem;width:100%;caret-color:#4fc3f7;color-scheme:dark;" onchange="document.getElementById('btn-dob-continue').style.opacity='1';document.getElementById('btn-dob-continue').style.background='#4fc3f7';document.getElementById('btn-dob-continue').style.color='#111';">
       </div>
     </div>
-    <button onclick="goToDiagnosis()" id="btn-dob-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+    <button onclick="goToDiagnosis()" id="btn-dob-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
   </div>
 
   <!-- SCREEN 6: Diagnosis -->
@@ -667,30 +667,30 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="flex:1;padding-top:28px;padding-bottom:16px;overflow-y:auto;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Quase lá,</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Diagnóstico de <span id="diagChildName">seu filho</span></h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Diagnóstico de <span id="diagChildName">seu filho</span></h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:28px;font-family:'Inter',sans-serif;">Selecione o que melhor descreve a situação atual.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectDiag(this,'TEA — Nível 1 (leve)')" class="diag-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🧩</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">TEA — Nível 1 (leve)</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🧩</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">TEA — Nível 1 (leve)</span>
         </button>
         <button onclick="selectDiag(this,'TEA — Nível 2 (moderado)')" class="diag-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🧩</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">TEA — Nível 2 (moderado)</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🧩</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">TEA — Nível 2 (moderado)</span>
         </button>
         <button onclick="selectDiag(this,'TEA — Nível 3 (grave)')" class="diag-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🧩</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">TEA — Nível 3 (grave)</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🧩</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">TEA — Nível 3 (grave)</span>
         </button>
         <button onclick="selectDiag(this,'Possivelmente autista / aguardando diagnóstico')" class="diag-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🔍</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Possivelmente autista / aguardando diagnóstico</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🔍</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Possivelmente autista / aguardando diagnóstico</span>
         </button>
         <button onclick="selectDiag(this,'TDAH')" class="diag-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">⚡</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">TDAH</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">⚡</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">TDAH</span>
         </button>
         <button onclick="selectDiag(this,'Outro / prefiro não informar')" class="diag-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">💬</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Outro / prefiro não informar</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">💬</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Outro / prefiro não informar</span>
         </button>
       </div>
     </div>
-    <button onclick="showScreen('barriers')" id="btn-diag-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('barriers')" id="btn-diag-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: GOALS -->
@@ -701,36 +701,36 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="goals-hi">Oi!</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que mais te ajudaria <span style="color:#4fc3f7;">agora</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">O que mais te ajudaria <span style="color:#4fc3f7;">agora</span>?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;" id="goalsList">
         <button onclick="selectGoal(this,'Dias mais calmos com menos crises')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">⛅</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Dias mais calmos com menos crises</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">⛅</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Dias mais calmos com menos crises</span>
         </button>
         <button onclick="selectGoal(this,'Ajudar meu filho a se expressar e se conectar')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">💬</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Ajudar meu filho a se expressar e se conectar</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">💬</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Ajudar meu filho a se expressar e se conectar</span>
         </button>
         <button onclick="selectGoal(this,'Refeições mais felizes com mais alimentos seguros')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🍽️</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Refeições mais felizes com mais alimentos seguros</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🍽️</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Refeições mais felizes com mais alimentos seguros</span>
         </button>
         <button onclick="selectGoal(this,'Mais independência nas rotinas diárias')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🙌</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Mais independência nas rotinas diárias</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🙌</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Mais independência nas rotinas diárias</span>
         </button>
         <button onclick="selectGoal(this,'Escola e aprendizado mais tranquilo')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎒</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Escola e aprendizado mais tranquilo</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎒</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Escola e aprendizado mais tranquilo</span>
         </button>
         <button onclick="selectGoal(this,'Melhor sono e hora de dormir mais fácil')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🛏️</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Melhor sono e hora de dormir mais fácil</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🛏️</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Melhor sono e hora de dormir mais fácil</span>
         </button>
         <button onclick="selectGoal(this,'Outra coisa / ainda não sei')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">✨</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">✨</span>
           <div>
-            <div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Outra coisa / ainda não sei</div>
+            <div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Outra coisa / ainda não sei</div>
             <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:2px;">Te guiaremos assim mesmo</div>
           </div>
         </button>
@@ -747,35 +747,35 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="subgoals-ack">Entendido.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Vamos afinar um pouco. Quais pequenas mudanças ajudariam <span style="color:#4fc3f7;">mais</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">Vamos afinar um pouco. Quais pequenas mudanças ajudariam <span style="color:#4fc3f7;">mais</span>?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">📱</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Reduzir batalhas de tempo de tela</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">📱</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Reduzir batalhas de tempo de tela</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎵</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Reduzir sobrecarga sensorial</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎵</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Reduzir sobrecarga sensorial</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">👨‍⚕️</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Coordenar terapias e suportes</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">👨‍⚕️</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Coordenar terapias e suportes</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">😊</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Construir confiança e bem-estar</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">😊</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Construir confiança e bem-estar</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">📏</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Estabelecer limites com menos conflito</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">📏</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Estabelecer limites com menos conflito</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🔒</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Melhorar segurança (em casa e fora)</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🔒</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Melhorar segurança (em casa e fora)</span>
         </button>
       </div>
     </div>
-    <button onclick="buildAffirmScreen();showScreen('affirm')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="buildAffirmScreen();showScreen('affirm')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: AFFIRMATION -->
@@ -794,7 +794,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       </div>
       <p style="color:#555;font-size:.8rem;text-align:center;margin-top:16px;font-family:'Inter',sans-serif;">Mais de 1.500 famílias usam o Crescer Juntos para encontrar clareza e fazer progresso real.</p>
     </div>
-    <button onclick="showScreen('childname')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('childname')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: CHILD NAME + PHOTO -->
@@ -805,7 +805,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="flex:1;padding-top:28px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="childname-ack">Obrigado!</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Qual é o nome da criança?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Qual é o nome da criança?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:40px;font-family:'Inter',sans-serif;">Primeiro nome ou apelido é perfeito.</p>
 
       <!-- Camera button -->
@@ -838,7 +838,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </button>
       </div>
     </div>
-    <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+    <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
   </div>
 
   <!-- PHOTO OPTIONS SHEET -->
@@ -848,15 +848,15 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <p style="color:white;font-size:1rem;font-weight:800;font-family:'Inter',sans-serif;text-align:center;margin-bottom:20px;">Foto da criança</p>
       <button onclick="document.getElementById('childPhotoCamera').click();closePhotoOptions()" style="width:100%;background:#2a2a2a;border:none;border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;margin-bottom:10px;">
         <span style="font-size:1.4rem;">📸</span>
-        <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Tirar foto agora</span>
+        <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Tirar foto agora</span>
       </button>
       <button onclick="document.getElementById('childPhotoGallery').click();closePhotoOptions()" style="width:100%;background:#2a2a2a;border:none;border-radius:16px;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;margin-bottom:10px;">
         <span style="font-size:1.4rem;">🖼️</span>
-        <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Escolher da galeria</span>
+        <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Escolher da galeria</span>
       </button>
       <button onclick="removePhoto();closePhotoOptions()" id="btn-remove-photo" style="width:100%;background:#2a2a2a;border:none;border-radius:16px;padding:18px;display:none;align-items:center;gap:14px;cursor:pointer;margin-bottom:10px;">
         <span style="font-size:1.4rem;">🗑️</span>
-        <span style="color:#ff6b6b;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Remover foto</span>
+        <span style="color:#ff6b6b;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Remover foto</span>
       </button>
       <button onclick="closePhotoOptions()" style="width:100%;background:transparent;border:none;border-radius:16px;padding:16px;cursor:pointer;">
         <span style="color:#888;font-size:.95rem;font-family:'Inter',sans-serif;font-weight:600;">Cancelar</span>
@@ -864,7 +864,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
   </div>
     </div>
-    <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
+    <button onclick="goToBarriers()" id="btn-child-continue" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;">Continuar →</button>
   </div>
 
   <!-- SCREEN: BARRIERS -->
@@ -875,26 +875,26 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="flex:1;padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Entendido.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que torna o progresso mais difícil com <span id="barriers-child" style="color:#4fc3f7;">seu filho</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">O que torna o progresso mais difícil com <span id="barriers-child" style="color:#4fc3f7;">seu filho</span>?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">⏱️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho tempo suficiente</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">⏱️</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não tenho tempo suficiente</span>
         </button>
         <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🔋</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Estou sem energia / esgotado</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🔋</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Estou sem energia / esgotado</span>
         </button>
         <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">❓</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não sei o que funciona</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">❓</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não sei o que funciona</span>
         </button>
         <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">👥</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não estamos alinhados entre os cuidadores</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">👥</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não estamos alinhados entre os cuidadores</span>
         </button>
         <button onclick="selectOne(this,'barriers')" class="ob-one barriers-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🙅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;" id="barriers-child-text">Meu filho resiste a coisas novas</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🙅</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;" id="barriers-child-text">Meu filho resiste a coisas novas</span>
         </button>
       </div>
     </div>
-    <button onclick="showScreen('agerange')" id="btn-barriers" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('agerange')" id="btn-barriers" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;opacity:.5;transition:opacity .2s,background .2s;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: AGE RANGE -->
@@ -904,23 +904,23 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quantos anos tem <span id="age-child">seu filho</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Quantos anos tem <span id="age-child">seu filho</span>?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">A idade nos ajuda a afinar as estratégias.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">👶</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">0–3</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">👶</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">0–3</span>
         </button>
         <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🧒</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">4–6</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🧒</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">4–6</span>
         </button>
         <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">👦</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">7–10</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">👦</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">7–10</span>
         </button>
         <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🧑</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">11–14</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🧑</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">11–14</span>
         </button>
         <button onclick="selectOne(this,'agerange');setTimeout(()=>showScreen('hardmoments'),300)" class="ob-one agerange-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎓</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">15+</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎓</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">15+</span>
         </button>
       </div>
     </div>
@@ -934,30 +934,30 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="flex:1;padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Anotado.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quando é mais difícil com <span id="hard-child">seu filho</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Quando é mais difícil com <span id="hard-child">seu filho</span>?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Vamos focar seus primeiros passos nesses momentos.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🌅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Manhãs</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🌅</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Manhãs</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🏫</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Após a escola</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🏫</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Após a escola</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🍽️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Refeições</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🍽️</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Refeições</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">📱</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fim do tempo de tela</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">📱</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Fim do tempo de tela</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🌙</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Hora de dormir</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🌙</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Hora de dormir</span>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🚗</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fins de semana / passeios</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🚗</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Fins de semana / passeios</span>
         </button>
       </div>
     </div>
-    <button onclick="showScreen('meltdowns')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('meltdowns')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: MELTDOWNS FREQUENCY -->
@@ -967,28 +967,28 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Na última semana, quantas crises ou lutas intensas <span id="melt-child">seu filho</span> teve?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">Na última semana, quantas crises ou lutas intensas <span id="melt-child">seu filho</span> teve?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#22c55e;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✅</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Nenhuma</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Nenhuma</span>
         </button>
         <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">1</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">1–2 vezes</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">1–2 vezes</span>
         </button>
         <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">4</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">3–4 vezes</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">3–4 vezes</span>
         </button>
         <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🔥</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">5+ vezes</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🔥</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">5+ vezes</span>
         </button>
         <button onclick="selectOne(this,'meltdowns');setTimeout(()=>showScreen('diagjourney'),300)" class="ob-one meltdowns-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🌪️</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🌪️</span>
           <div>
-            <div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Frequentemente agitado</div>
+            <div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Frequentemente agitado</div>
             <div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:2px;">Não crises completas, mas sempre lutando</div>
           </div>
         </button>
@@ -1003,19 +1003,19 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Onde está <span id="diag-child">seu filho</span> na jornada de diagnóstico?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">Onde está <span id="diag-child">seu filho</span> na jornada de diagnóstico?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">📄</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Diagnosticado</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">📄</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Diagnosticado</span>
         </button>
         <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🕵️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Suspeito</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🕵️</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Suspeito</span>
         </button>
         <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">📅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Explorando avaliação</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">📅</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Explorando avaliação</span>
         </button>
         <button onclick="selectOne(this,'diagjourney');setTimeout(()=>showScreen('communication'),300)" class="ob-one diagjourney-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🙈</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Prefiro não dizer</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🙈</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Prefiro não dizer</span>
         </button>
       </div>
     </div>
@@ -1028,15 +1028,15 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:32px;padding-bottom:16px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">A comunicação de <span id="comm-child">seu filho</span> é...</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">A comunicação de <span id="comm-child">seu filho</span> é...</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Escolha o que melhor descreve; vamos ajustar as estratégias.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🙎</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não-verbal</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🧸</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Algumas palavras</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">💥</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Frases simples</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🎭</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fluente, desafios sociais/pragmáticos</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">📱</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Usa CAA (imagens/dispositivo)</span></button>
-        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🤔</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho certeza</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🙎</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não-verbal</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🧸</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Algumas palavras</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">💥</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Frases simples</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🎭</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Fluente, desafios sociais/pragmáticos</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">📱</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Usa CAA (imagens/dispositivo)</span></button>
+        <button onclick="selectOne(this,'communication');setTimeout(()=>showScreen('startingpoint'),300)" class="ob-one communication-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🤔</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não tenho certeza</span></button>
       </div>
     </div>
     <div style="height:20px;flex-shrink:0;"></div>
@@ -1049,25 +1049,25 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="padding-top:20px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="sp-hi">Aqui está o quadro até agora.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:24px;line-height:1.2;">Seu ponto de partida</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:24px;line-height:1.2;">Seu ponto de partida</h2>
 
       <!-- 3 metric cards -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
         <div style="background:#1e1e1e;border-radius:16px;padding:16px 10px;text-align:center;">
           <div style="font-size:1.6rem;margin-bottom:8px;">🔥</div>
-          <div style="color:white;font-size:1.4rem;font-weight:900;font-family:'Inter',sans-serif;">77%</div>
+          <div style="color:white;font-size:1.25rem;font-weight:700;font-family:'Inter',sans-serif;">77%</div>
           <div style="color:#888;font-size:.68rem;font-family:'Inter',sans-serif;margin-top:3px;">Intensidade</div>
           <div style="color:#4fc3f7;font-size:.6rem;font-family:'Inter',sans-serif;margin-top:5px;">Toque p/ detalhes</div>
         </div>
         <div style="background:#1e1e1e;border-radius:16px;padding:16px 10px;text-align:center;">
           <div style="font-size:1.6rem;margin-bottom:8px;">🧭</div>
-          <div style="color:white;font-size:1.4rem;font-weight:900;font-family:'Inter',sans-serif;">56%</div>
+          <div style="color:white;font-size:1.25rem;font-weight:700;font-family:'Inter',sans-serif;">56%</div>
           <div style="color:#888;font-size:.68rem;font-family:'Inter',sans-serif;margin-top:3px;">Clareza</div>
           <div style="color:#4fc3f7;font-size:.6rem;font-family:'Inter',sans-serif;margin-top:5px;">Toque p/ detalhes</div>
         </div>
         <div style="background:#1e1e1e;border-radius:16px;padding:16px 10px;text-align:center;">
           <div style="font-size:1.6rem;margin-bottom:8px;">🔋</div>
-          <div style="color:white;font-size:1.4rem;font-weight:900;font-family:'Inter',sans-serif;">57%</div>
+          <div style="color:white;font-size:1.25rem;font-weight:700;font-family:'Inter',sans-serif;">57%</div>
           <div style="color:#888;font-size:.68rem;font-family:'Inter',sans-serif;margin-top:3px;">Capacidade</div>
           <div style="color:#4fc3f7;font-size:.6rem;font-family:'Inter',sans-serif;margin-top:5px;">Toque p/ detalhes</div>
         </div>
@@ -1156,7 +1156,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </div>
       </div>
     </div>
-    <button onclick="buildStartingPoint();showScreen('behaviors')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="buildStartingPoint();showScreen('behaviors')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: BEHAVIORS -->
@@ -1167,7 +1167,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;">Vamos aprender um pouco mais sobre <span id="beh-child">seu filho</span>.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:24px;line-height:1.2;">Quais comportamentos devemos acompanhar?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:24px;line-height:1.2;">Quais comportamentos devemos acompanhar?</h2>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;" id="behaviorChips">
         <button onclick="toggleChip(this)" class="bchip" style="background:transparent;border:2px solid #4fc3f7;border-radius:24px;padding:10px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;color:#4fc3f7;transition:all .2s;">😤 Crise / Meltdown</button>
         <button onclick="toggleChip(this)" class="bchip" style="background:transparent;border:2px solid #4fc3f7;border-radius:24px;padding:10px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;color:#4fc3f7;transition:all .2s;">😶 Shutdown</button>
@@ -1187,7 +1187,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       </div>
       <p style="color:#888;font-size:.85rem;font-family:'Inter',sans-serif;line-height:1.5;">Se não ver um comportamento aqui, você pode adicioná-lo depois no app.</p>
     </div>
-    <button onclick="showScreen('triggers')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('triggers')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: TRIGGERS -->
@@ -1197,22 +1197,22 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que tende a desencadear momentos difíceis com <span id="trig-child">seu filho</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">O que tende a desencadear momentos difíceis com <span id="trig-child">seu filho</span>?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🎵</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sobrecarga sensorial</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Ruído / luzes / texturas / roupa</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🔄</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Transições / mudanças</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">📝</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Demandas / tarefas não preferidas</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">💬</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Frustração de comunicação</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Difícil se expressar / ser entendido</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">⏳</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Espera</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Aguardar vez / transição</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🚫</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Item / atividade preferida negada</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🍽️</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Fome / sede</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">😴</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Cansaço</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🤒</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Dor / doença</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Doente, dentição, dor de cabeça, etc.</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">👥</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Demandas sociais</div></div></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🤷</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Ainda não sei</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🎵</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Sobrecarga sensorial</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Ruído / luzes / texturas / roupa</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🔄</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Transições / mudanças</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">📝</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Demandas / tarefas não preferidas</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">💬</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Frustração de comunicação</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Difícil se expressar / ser entendido</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">⏳</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Espera</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Aguardar vez / transição</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🚫</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Item / atividade preferida negada</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🍽️</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Fome / sede</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">😴</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Cansaço</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🤒</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Dor / doença</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Doente, dentição, dor de cabeça, etc.</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">👥</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Demandas sociais</div></div></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🤷</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Ainda não sei</div></div></button>
       </div>
     </div>
-    <button onclick="showScreen('sensory')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('sensory')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: SENSORY PATTERNS -->
@@ -1222,20 +1222,20 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Padrões sensoriais que você nota com <span id="sens-child">seu filho</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Padrões sensoriais que você nota com <span id="sens-child">seu filho</span>?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Escolha o que mais se aproxima.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'sensory');setTimeout(()=>showScreen('parentblock'),300)" class="ob-one sensory-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🤸</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Busca muito estímulo sensorial</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🤸</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Busca muito estímulo sensorial</span>
         </button>
         <button onclick="selectOne(this,'sensory');setTimeout(()=>showScreen('parentblock'),300)" class="ob-one sensory-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🙈</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Evita certas sensações</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🙈</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Evita certas sensações</span>
         </button>
         <button onclick="selectOne(this,'sensory');setTimeout(()=>showScreen('parentblock'),300)" class="ob-one sensory-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎛️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Uma mistura dos dois</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎛️</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Uma mistura dos dois</span>
         </button>
         <button onclick="selectOne(this,'sensory');setTimeout(()=>showScreen('parentblock'),300)" class="ob-one sensory-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">❓</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não tenho certeza</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">❓</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não tenho certeza</span>
         </button>
       </div>
     </div>
@@ -1248,25 +1248,25 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">O que mais está no seu caminho agora, <span id="pb-name">amigo</span>?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">O que mais está no seu caminho agora, <span id="pb-name">amigo</span>?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'parentblock');setTimeout(()=>showScreen('timeavail'),300)" class="ob-one parentblock-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">⏰</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Tempo (estou no limite)</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Muitas demandas, difícil encaixar novos passos</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">⏰</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Tempo (estou no limite)</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Muitas demandas, difícil encaixar novos passos</div></div>
         </button>
         <button onclick="selectOne(this,'parentblock');setTimeout(()=>showScreen('timeavail'),300)" class="ob-one parentblock-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🔋</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Energia / esgotamento</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Quero fazer mais, mas estou no limite</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🔋</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Energia / esgotamento</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Quero fazer mais, mas estou no limite</div></div>
         </button>
         <button onclick="selectOne(this,'parentblock');setTimeout(()=>showScreen('timeavail'),300)" class="ob-one parentblock-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">❓</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não sei o que realmente ajuda</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Tantos conselhos, difícil saber o que tentar</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">❓</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não sei o que realmente ajuda</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Tantos conselhos, difícil saber o que tentar</div></div>
         </button>
         <button onclick="selectOne(this,'parentblock');setTimeout(()=>showScreen('timeavail'),300)" class="ob-one parentblock-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🚧</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Parceiro / escola não está na mesma página</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Difícil ser consistente entre os adultos</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🚧</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Parceiro / escola não está na mesma página</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Difícil ser consistente entre os adultos</div></div>
         </button>
         <button onclick="selectOne(this,'parentblock');setTimeout(()=>showScreen('timeavail'),300)" class="ob-one parentblock-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🙅</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Meu filho resiste a coisas novas</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Novas rotinas podem parecer uma batalha</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🙅</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Meu filho resiste a coisas novas</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Novas rotinas podem parecer uma batalha</div></div>
         </button>
         <button onclick="selectOne(this,'parentblock');setTimeout(()=>showScreen('timeavail'),300)" class="ob-one parentblock-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">💸</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Custo / acesso a suporte</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Serviços difíceis de encontrar, pagar ou agendar</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">💸</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Custo / acesso a suporte</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Serviços difíceis de encontrar, pagar ou agendar</div></div>
         </button>
       </div>
     </div>
@@ -1279,24 +1279,24 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Na maioria dos dias, você consegue reservar...</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Na maioria dos dias, você consegue reservar...</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Vamos ajustar os passos ao seu ritmo.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'timeavail');setTimeout(()=>showScreen('support'),300)" class="ob-one timeavail-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">2</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Cerca de 2 minutos</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Cerca de 2 minutos</span>
         </button>
         <button onclick="selectOne(this,'timeavail');setTimeout(()=>showScreen('support'),300)" class="ob-one timeavail-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">5</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Cerca de 5 minutos</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Cerca de 5 minutos</span>
         </button>
         <button onclick="selectOne(this,'timeavail');setTimeout(()=>showScreen('support'),300)" class="ob-one timeavail-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.1rem;font-family:'Inter',sans-serif;flex-shrink:0;">10</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Cerca de 10 minutos</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Cerca de 10 minutos</span>
         </button>
         <button onclick="selectOne(this,'timeavail');setTimeout(()=>showScreen('support'),300)" class="ob-one timeavail-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎲</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Varia de dia para dia</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎲</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Varia de dia para dia</span>
         </button>
       </div>
     </div>
@@ -1309,18 +1309,18 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Com que suporte você pode contar agora?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Com que suporte você pode contar agora?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Selecione todos que se aplicam.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">👨‍👩‍👧</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Co-responsável</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">👥</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Família / amigos</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">👨‍⚕️</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Equipe de terapia</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🏫</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Equipe escolar</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🌐</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Grupo online de pais</span></button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🧍</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Nenhum agora</span></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">👨‍👩‍👧</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Co-responsável</span></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">👥</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Família / amigos</span></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">👨‍⚕️</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Equipe de terapia</span></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🏫</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Equipe escolar</span></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🌐</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Grupo online de pais</span></button>
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🧍</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Nenhum agora</span></button>
       </div>
     </div>
-    <button onclick="showScreen('promise')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('promise')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: PROMISE (Your future) -->
@@ -1343,8 +1343,8 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </svg>
       </div>
       <p style="color:rgba(255,255,255,.75);font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:12px;line-height:1.5;" id="promise-sub">É enorme ter um parceiro nas trincheiras com você.</p>
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:40px;" id="promise-title">É aqui que vamos te levar, você e <span id="promise-child">seu filho</span></h1>
-      <button onclick="showScreen('future')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar! →</button>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:40px;" id="promise-title">É aqui que vamos te levar, você e <span id="promise-child">seu filho</span></h1>
+      <button onclick="showScreen('future')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar! →</button>
     </div>
   </div>
   </div>
@@ -1355,7 +1355,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <button onclick="showScreen('promise')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:0;">‹</button>
     </div>
     <div style="padding-top:24px;padding-bottom:16px;">
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:8px;line-height:1.2;text-align:center;">Seu futuro com <span id="future-child">seu filho</span></h1>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;line-height:1.2;text-align:center;">Seu futuro com <span id="future-child">seu filho</span></h1>
       <p style="color:#888;font-size:.92rem;margin-bottom:28px;font-family:'Inter',sans-serif;text-align:center;line-height:1.5;">Com base no que você compartilhou, aqui está o que é possível:</p>
 
       <!-- 3 promise cards -->
@@ -1395,7 +1395,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </div>
       </div>
     </div>
-    <button onclick="showScreen('trackexp')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Gosto do que ouço →</button>
+    <button onclick="showScreen('trackexp')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Gosto do que ouço →</button>
   </div>
   <div id="ob-trackexp" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
     <div style="padding-top:16px;display:flex;align-items:center;gap:14px;">
@@ -1404,19 +1404,19 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     </div>
     <div style="flex:1;padding-top:28px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="trackexp-ack">Ótimo! Quase lá.</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:32px;line-height:1.2;">Você já tentou rastrear os comportamentos e padrões de <span id="track-child">seu filho</span> antes?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">Você já tentou rastrear os comportamentos e padrões de <span id="track-child">seu filho</span> antes?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('encourage'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#22c55e;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✅</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, estou acostumado</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Sim, estou acostumado</span>
         </button>
         <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('encourage'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">😮‍💨</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sim, mas é difícil manter</span>
+          <span style="font-size:1.4rem;flex-shrink:0;">😮‍💨</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Sim, mas é difícil manter</span>
         </button>
         <button onclick="selectOne(this,'trackexp');setTimeout(()=>showScreen('reminder'),300)" class="ob-one trackexp-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="background:#3b82f6;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:white;font-size:.6rem;font-weight:900;flex-shrink:0;letter-spacing:.02em;">NEW</span>
-          <span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Não, nunca tentei antes</span>
+          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Não, nunca tentei antes</span>
         </button>
       </div>
     </div>
@@ -1437,9 +1437,9 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
           <path d="M130 75 L133 85 L143 88 L133 91 L130 101 L127 91 L117 88 L127 85 Z" fill="rgba(255,255,255,0.5)"/>
         </svg>
       </div>
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;line-height:1.2;margin-bottom:16px;" id="encourage-title">Incrível você estar dando esse passo!</h1>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;line-height:1.2;margin-bottom:16px;" id="encourage-title">Incrível você estar dando esse passo!</h1>
       <p style="color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:1rem;line-height:1.6;margin-bottom:40px;">Vamos te guiar. Nossos check-ins levam só 2 minutos por dia. Se pular um dia, sem problema. Continuamos de onde parou.</p>
-      <button onclick="showScreen('reminder')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Continuar →</button>
+      <button onclick="showScreen('reminder')" style="background:white;border:none;border-radius:50px;padding:18px 28px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Continuar →</button>
     </div>
   </div>
   <div id="ob-reminder" style="flex:1;display:none;flex-direction:column;padding:0 24px;">
@@ -1448,13 +1448,13 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="flex:1;padding-top:28px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Quando devemos te lembrar de um check-in rápido de 2 minutos?</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Escolha um horário que funciona na maioria dos dias.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🌅</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Manhã cedo</span></button>
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🍱</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Pausa do almoço</span></button>
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🌙</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Após a hora de dormir</span></button>
-        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.6rem;flex-shrink:0;">🚫</span><span style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Sem lembretes por enquanto</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🌅</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Manhã cedo</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🍱</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Pausa do almoço</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🌙</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Após a hora de dormir</span></button>
+        <button onclick="selectOne(this,'reminder');setTimeout(()=>showScreen('topics'),300)" class="ob-one reminder-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;"><span style="font-size:1.4rem;flex-shrink:0;">🚫</span><span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Sem lembretes por enquanto</span></button>
       </div>
     </div>
   </div>
@@ -1466,45 +1466,45 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <div style="flex:1;height:4px;background:#2a2a2a;border-radius:2px;overflow:hidden;"><div class="ob-progress-fill" style="height:100%;background:#4fc3f7;border-radius:2px;width:3%;transition:width .4s ease;"></div></div>
     </div>
     <div style="padding-top:28px;padding-bottom:16px;">
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Tópicos nos quais quer mais orientação</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Tópicos nos quais quer mais orientação</h2>
       <p style="color:#888;font-size:.95rem;margin-bottom:24px;font-family:'Inter',sans-serif;">Selecione todos que se aplicam.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">❤️</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Suporte ao cuidador & burnout</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Bem-estar, estresse, resiliência do pai/mãe</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">❤️</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Suporte ao cuidador & burnout</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Bem-estar, estresse, resiliência do pai/mãe</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🌪️</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Comportamento & crises</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Padrões de comportamento, gatilhos, desescalada</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🌪️</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Comportamento & crises</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Padrões de comportamento, gatilhos, desescalada</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🏠</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Rotinas diárias & hábitos</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Sono, higiene, passeios, dicas do dia a dia</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🏠</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Rotinas diárias & hábitos</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Sono, higiene, passeios, dicas do dia a dia</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">💬</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Comunicação & habilidades sociais</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Histórias sociais, ferramentas de comunicação</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">💬</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Comunicação & habilidades sociais</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Histórias sociais, ferramentas de comunicação</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎒</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Escola & advocacia</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">IEP/504, estratégias de sala de aula, reuniões</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎒</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Escola & advocacia</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">IEP/504, estratégias de sala de aula, reuniões</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">👨‍⚕️</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Terapias & progresso</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">ABA, fala, DIR/Floortime, monitorar progresso</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">👨‍⚕️</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Terapias & progresso</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">ABA, fala, DIR/Floortime, monitorar progresso</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🍽️</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Alimentação, nutrição & saúde</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Estratégias alimentares, dietas, medicamentos</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🍽️</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Alimentação, nutrição & saúde</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Estratégias alimentares, dietas, medicamentos</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🎵</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Ferramentas & estratégias sensoriais</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Regulação sensorial, ambientes, ferramentas</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🎵</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Ferramentas & estratégias sensoriais</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Regulação sensorial, ambientes, ferramentas</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">📖</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Básicos do autismo & sinais</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Info básica, sinais precoces, avaliações</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">📖</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Básicos do autismo & sinais</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Info básica, sinais precoces, avaliações</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">🔄</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Transições & mudanças de vida</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Saída escolar, puberdade, novos ambientes</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">🔄</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Transições & mudanças de vida</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Saída escolar, puberdade, novos ambientes</div></div>
         </button>
         <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:flex-start;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.6rem;flex-shrink:0;">👨‍👩‍👧</span><div><div style="color:white;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;">Família & relacionamentos</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Irmãos, co-parentalidade, família extendida</div></div>
+          <span style="font-size:1.4rem;flex-shrink:0;">👨‍👩‍👧</span><div><div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Família & relacionamentos</div><div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">Irmãos, co-parentalidade, família extendida</div></div>
         </button>
       </div>
     </div>
-    <button onclick="showScreen('signup')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
+    <button onclick="showScreen('signup')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
 
   <!-- SCREEN: CADASTRO (após questionário) -->
@@ -1512,7 +1512,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     <div style="padding:56px 24px 0;">
       <button onclick="showScreen('topics')" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;margin-bottom:28px;display:block;">‹</button>
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="signup-ob-ack">Quase lá!</p>
-      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:900;margin-bottom:6px;line-height:1.2;">Crie sua conta para salvar tudo</h2>
+      <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2;">Crie sua conta para salvar tudo</h2>
       <p style="color:#888;font-size:.9rem;margin-bottom:32px;font-family:'Inter',sans-serif;">Seus dados ficam seguros e acessíveis em qualquer dispositivo.</p>
 
       <div id="ob-signup-error" style="display:none;background:#3a1a1a;border:1px solid #c0392b;border-radius:10px;padding:10px 14px;margin-bottom:16px;color:#ff8a80;font-size:.82rem;font-family:'Inter',sans-serif;"></div>
@@ -1526,7 +1526,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
           <label style="color:#888;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-family:'Inter',sans-serif;display:block;margin-bottom:6px;">Senha</label>
           <input id="ob-signup-password" type="password" placeholder="Mínimo 6 caracteres" style="width:100%;background:#1e1e1e;border:2px solid #2a2a2a;border-radius:12px;padding:14px 16px;color:white;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box;" onkeydown="if(event.key==='Enter')doObSignup()">
         </div>
-        <button onclick="doObSignup()" id="ob-signup-btn" style="background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;margin-top:8px;">Criar conta e ver meu painel →</button>
+        <button onclick="doObSignup()" id="ob-signup-btn" style="background:#4fc3f7;border:none;border-radius:50px;padding:16px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-top:8px;">Criar conta e ver meu painel →</button>
       </div>
 
       <div style="display:flex;align-items:center;gap:12px;margin:24px 0;">
@@ -1584,16 +1584,16 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         </div>
       </div>
     </div>
-    <button onclick="showScreen('celebrate')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Próximo →</button>
+    <button onclick="showScreen('celebrate')" style="background:#4fc3f7;border:none;border-radius:50px;padding:18px;color:#111;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Próximo →</button>
   </div>
 
   <!-- SCREEN: CELEBRATE -->
   <div id="ob-celebrate" style="flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;padding:0 32px;background:linear-gradient(160deg,#29b6f6,#0288d1);">
     <button onclick="showScreen('demo')" style="position:absolute;top:20px;left:20px;background:none;border:none;color:rgba(255,255,255,.7);font-size:1.3rem;cursor:pointer;">‹</button>
     <div style="font-size:5rem;margin-bottom:24px;animation:bounce2 1s ease infinite;">🎉</div>
-    <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.8rem;font-weight:900;text-align:center;margin-bottom:14px;line-height:1.2;" id="celebrate-title">Você pode se orgulhar.</h1>
+    <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;text-align:center;margin-bottom:14px;line-height:1.2;" id="celebrate-title">Você pode se orgulhar.</h1>
     <p style="color:rgba(255,255,255,.85);font-family:'Inter',sans-serif;font-size:.95rem;text-align:center;margin-bottom:40px;line-height:1.5;" id="celebrate-sub">Você está fazendo algo grande para você e seu filho. Vamos mostrar seu Painel Personalizado.</p>
-    <button onclick="generateSnapshot()" style="background:white;border:none;border-radius:50px;padding:18px 32px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar meu painel →</button>
+    <button onclick="generateSnapshot()" style="background:white;border:none;border-radius:50px;padding:18px 32px;color:#0288d1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(0,0,0,.2);">Me mostrar meu painel →</button>
   </div>
 
   <!-- SCREEN: PARENTING SNAPSHOT (structured) -->
@@ -1607,7 +1607,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
 
       <!-- Main snapshot card -->
       <div style="background:#1a1a2e;border-radius:20px;padding:24px;margin-bottom:24px;border:1px solid rgba(79,195,247,.15);">
-        <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:20px;line-height:1.2;">Seu Painel de Parentalidade</h1>
+        <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:20px;line-height:1.2;">Seu Painel de Parentalidade</h1>
 
         <!-- Focus first -->
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
@@ -1743,7 +1743,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-paywall" style="flex:1;display:none;flex-direction:column;background:#111;overflow-y:auto;">
     <div style="padding:48px 24px 32px;">
       <button onclick="showScreen('snapshot')" style="background:none;border:none;color:#888;font-size:1.3rem;cursor:pointer;margin-bottom:24px;display:block;">‹</button>
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:900;text-align:center;margin-bottom:36px;line-height:1.4;">Queremos que você experimente o <span style="color:white;">Crescer Juntos</span> de graça.</h1>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;text-align:center;margin-bottom:36px;line-height:1.4;">Queremos que você experimente o <span style="color:white;">Crescer Juntos</span> de graça.</h1>
 
       <!-- 3-card mockup like original -->
       <div style="position:relative;height:300px;margin:0 -8px 36px;">
@@ -1784,7 +1784,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <span style="color:white;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;">Sem Pagamento Agora</span>
       </div>
 
-      <button onclick="showScreen('paywall2')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar por R$ 0,00</button>
+      <button onclick="showScreen('paywall2')" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:600;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar por R$ 0,00</button>
       <p style="color:#555;font-size:.78rem;text-align:center;font-family:'Inter',sans-serif;margin-bottom:16px;">Sem compromisso, cancele quando quiser.</p>
       <div style="display:flex;justify-content:center;gap:20px;">
         <span style="color:#444;font-size:.72rem;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:underline;">Privacidade</span>
@@ -1800,7 +1800,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
   <div id="ob-paywall2" style="flex:1;display:none;flex-direction:column;background:#111;justify-content:space-between;">
     <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px 0;">
       <button onclick="showScreen('paywall')" style="position:absolute;top:20px;left:20px;background:none;border:none;color:#888;font-size:1.3rem;cursor:pointer;">‹</button>
-      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;text-align:center;margin-bottom:48px;line-height:1.3;">Vamos te avisar antes do seu período gratuito terminar</h1>
+      <h1 style="color:white;font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:700;text-align:center;margin-bottom:48px;line-height:1.3;">Vamos te avisar antes do seu período gratuito terminar</h1>
 
       <!-- Bell icon — like original 3D bell -->
       <div style="position:relative;margin-bottom:48px;">
@@ -1816,7 +1816,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
         <span style="color:#27ae60;font-size:1.1rem;font-weight:900;">✓</span>
         <span style="color:white;font-size:1rem;font-weight:700;font-family:'Inter',sans-serif;">Sem Pagamento Agora</span>
       </div>
-      <button onclick="launchApp()" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:900;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar por R$ 0,00</button>
+      <button onclick="launchApp()" style="background:linear-gradient(135deg,#29b6f6,#0288d1);border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:600;cursor:pointer;width:100%;box-shadow:0 6px 24px rgba(41,182,246,.3);margin-bottom:12px;">Experimentar por R$ 0,00</button>
       <p style="color:#555;font-size:.78rem;text-align:center;font-family:'Inter',sans-serif;">7 dias GRÁTIS, depois apenas R$ 49,90 por mês</p>
     </div>
   </div>
