@@ -505,7 +505,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       </button>
     </div>
     <div style="flex:1;"></div>
-    <button onclick="proceedFromRole()" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;">Continuar →</button>
+    <button id="btn-role-continue" onclick="proceedFromRole()" disabled style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;opacity:.5;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;transition:background .2s,opacity .2s;">Continuar →</button>
   </div>
 
   <!-- SCREEN 2: Collaborator info -->
@@ -2465,6 +2465,8 @@ function selectRole(role) {
   userRole=role;
   document.querySelectorAll('#ob-welcome button[id^="role-"]').forEach(b=>b.style.borderColor='transparent');
   const btn=document.getElementById('role-'+role);if(btn)btn.style.borderColor='#4fc3f7';
+  const continueBtn=document.getElementById('btn-role-continue');
+  if(continueBtn){continueBtn.disabled=false;continueBtn.style.opacity='1';continueBtn.style.background='#4fc3f7';continueBtn.style.color='#111';}
 }
 function proceedFromRole() {
   if(userRole==='collab'){showScreen('collab');}else{showScreen('name');setTimeout(()=>document.getElementById('ob-name-input').focus(),100);}
