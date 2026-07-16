@@ -483,7 +483,8 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
 
   <!-- SCREEN 1: Welcome + Role picker -->
   <div id="ob-welcome" style="flex:1;display:flex;flex-direction:column;padding:0 24px;">
-    <div style="padding-top:56px;">
+    <button onclick="backToSplashFromOnboarding()" style="background:none;border:none;color:#4fc3f7;font-size:1.3rem;cursor:pointer;padding:16px 0 0;text-align:left;">‹</button>
+    <div style="padding-top:24px;">
       <p style="color:#888;font-size:.95rem;text-align:center;margin-bottom:6px;">Bem-vindo ao</p>
       <h1 style="font-family:'Pacifico',cursive;font-size:2.6rem;color:#4fc3f7;text-align:center;line-height:1.1;margin-bottom:8px;">Crescer<br>Juntos</h1>
       <p style="color:#888;font-size:.95rem;text-align:center;margin-bottom:44px;">Diga-nos como você vai usar o app.</p>
@@ -2163,6 +2164,11 @@ function showLoginFromSplash() {
 
 function backToSplash() {
   document.getElementById('auth-screen').style.display = 'none';
+  document.getElementById('splash-screen').style.display = 'flex';
+}
+
+function backToSplashFromOnboarding() {
+  document.getElementById('onboarding').style.display = 'none';
   document.getElementById('splash-screen').style.display = 'flex';
 }
 
