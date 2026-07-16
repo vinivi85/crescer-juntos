@@ -634,31 +634,31 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="goals-hi">Oi!</p>
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">O que mais te ajudaria <span style="color:#4fc3f7;">agora</span>?</h2>
       <div style="display:flex;flex-direction:column;gap:12px;" id="goalsList">
-        <button onclick="selectGoal(this,'Dias mais calmos com menos crises')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'calm','Dias mais calmos com menos crises')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">⛅</span>
           <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Dias mais calmos com menos crises</span>
         </button>
-        <button onclick="selectGoal(this,'Ajudar meu filho a se expressar e se conectar')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'communication','Ajudar meu filho a se expressar e se conectar')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">💬</span>
           <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Ajudar meu filho a se expressar e se conectar</span>
         </button>
-        <button onclick="selectGoal(this,'Refeições mais felizes com mais alimentos seguros')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'feeding','Refeições mais felizes com mais alimentos seguros')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">🍽️</span>
           <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Refeições mais felizes com mais alimentos seguros</span>
         </button>
-        <button onclick="selectGoal(this,'Mais independência nas rotinas diárias')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'independence','Mais independência nas rotinas diárias')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">🙌</span>
           <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Mais independência nas rotinas diárias</span>
         </button>
-        <button onclick="selectGoal(this,'Escola e aprendizado mais tranquilo')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'school','Escola e aprendizado mais tranquilo')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">🎒</span>
           <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Escola e aprendizado mais tranquilo</span>
         </button>
-        <button onclick="selectGoal(this,'Melhor sono e hora de dormir mais fácil')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'sleep','Melhor sono e hora de dormir mais fácil')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">🛏️</span>
           <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Melhor sono e hora de dormir mais fácil</span>
         </button>
-        <button onclick="selectGoal(this,'Outra coisa / ainda não sei')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
+        <button onclick="selectGoal(this,'other','Outra coisa / ainda não sei')" class="ob-opt" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s;">
           <span style="font-size:1.4rem;flex-shrink:0;">✨</span>
           <div>
             <div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Outra coisa / ainda não sei</div>
@@ -679,32 +679,7 @@ body{font-family:'Inter',sans-serif;background:#111;color:var(--text);min-height
     <div style="padding-top:28px;padding-bottom:16px;">
       <p style="color:#888;font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:500;" id="subgoals-ack">Entendido.</p>
       <h2 style="color:white;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:32px;line-height:1.2;">Vamos afinar um pouco. Quais pequenas mudanças ajudariam <span style="color:#4fc3f7;">mais</span>?</h2>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.4rem;flex-shrink:0;">📱</span>
-          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Reduzir batalhas de tempo de tela</span>
-        </button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.4rem;flex-shrink:0;">🎵</span>
-          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Reduzir sobrecarga sensorial</span>
-        </button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.4rem;flex-shrink:0;">👨‍⚕️</span>
-          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Coordenar terapias e suportes</span>
-        </button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.4rem;flex-shrink:0;">😊</span>
-          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Construir confiança e bem-estar</span>
-        </button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.4rem;flex-shrink:0;">📏</span>
-          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Estabelecer limites com menos conflito</span>
-        </button>
-        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
-          <span style="font-size:1.4rem;flex-shrink:0;">🔒</span>
-          <span style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">Melhorar segurança (em casa e fora)</span>
-        </button>
-      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;" id="subgoalsList"></div>
     </div>
     <button onclick="buildAffirmScreen();showScreen('affirm')" style="background:#2a2a2a;border:none;border-radius:50px;padding:18px;color:white;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:32px;width:100%;flex-shrink:0;">Continuar →</button>
   </div>
@@ -2394,6 +2369,81 @@ let recognition = null;
 let speechOK = false;
 let currentReportType = '';
 let userRole = 'parent';
+let selectedGoalKey = 'calm';
+
+// Subgoals específicos por objetivo (igual ao padrão do app original: ícone + título + subtítulo opcional)
+const subgoalsData = {
+  calm: [
+    {icon:'🧯', title:'Prevenir crises', sub:'Perceber e suavizar sinais iniciais'},
+    {icon:'💨', title:'Usar ferramentas para se acalmar', sub:'Ferramentas que usam juntos'},
+    {icon:'🔄', title:'Tornar transições mais suaves', sub:'Agendas visuais, temporizadores, avisos'},
+    {icon:'✋', title:'Melhorar segurança durante comportamentos', sub:'Bater / chutar / fuga'},
+    {icon:'📏', title:'Estabelecer limites com menos conflito', sub:"Aceitar 'não', tolerar pequenas esperas"},
+    {icon:'🎧', title:'Reduzir sobrecarga sensorial'},
+    {icon:'📱', title:'Reduzir batalhas de tempo de tela', sub:'Limites sem batalhas'}
+  ],
+  communication: [
+    {icon:'🗣️', title:'Aumentar palavras funcionais', sub:'Novas palavras ou frases no dia a dia'},
+    {icon:'📱', title:'Introduzir ou fortalecer CAA', sub:'Imagens, PECS, dispositivo de fala'},
+    {icon:'👀', title:'Melhorar contato visual e atenção compartilhada'},
+    {icon:'🤝', title:'Fortalecer brincadeira social', sub:'Brincar junto, revezar'},
+    {icon:'😊', title:'Reduzir frustração de comunicação', sub:'Menos crises por não ser entendido'},
+    {icon:'👨‍👩‍👧', title:'Conectar-se mais como família'}
+  ],
+  feeding: [
+    {icon:'🥦', title:'Aumentar alimentos aceitos', sub:'Introduzir novos alimentos aos poucos'},
+    {icon:'🍽️', title:'Reduzir estresse na hora da refeição', sub:'Menos luta ou choro à mesa'},
+    {icon:'🧠', title:'Entender seletividade sensorial', sub:'Textura, cheiro, temperatura'},
+    {icon:'🪑', title:'Melhorar rotina e ambiente da refeição'},
+    {icon:'💊', title:'Cuidar de questões nutricionais', sub:'Suplementos, vitaminas'},
+    {icon:'👨‍👩‍👧', title:'Comer em família com mais tranquilidade'}
+  ],
+  independence: [
+    {icon:'🪥', title:'Rotina de higiene mais independente', sub:'Escovar dentes, banho, vestir-se'},
+    {icon:'🛌', title:'Rotina de dormir mais independente'},
+    {icon:'🧦', title:'Vestir-se sozinho'},
+    {icon:'🚽', title:'Treino de toalete'},
+    {icon:'📋', title:'Seguir rotinas com menos lembretes', sub:'Agendas visuais, checklists'},
+    {icon:'🍽️', title:'Independência nas refeições', sub:'Comer sozinho'}
+  ],
+  school: [
+    {icon:'🎒', title:'Transição mais tranquila para a escola'},
+    {icon:'📚', title:'Apoiar aprendizado e foco', sub:'Atenção, organização'},
+    {icon:'🧑‍🏫', title:'Comunicação com a equipe escolar'},
+    {icon:'🧑‍🤝‍🧑', title:'Interação social na escola', sub:'Amizades, recreio'},
+    {icon:'😣', title:'Reduzir ansiedade escolar'},
+    {icon:'📄', title:'Apoiar plano de educação especial', sub:'IEP / PEI / plano 504'}
+  ],
+  sleep: [
+    {icon:'🛏️', title:'Rotina de dormir mais tranquila', sub:'Menos resistência na hora de dormir'},
+    {icon:'🌙', title:'Melhorar qualidade do sono', sub:'Menos despertares noturnos'},
+    {icon:'⏰', title:'Ajustar horário de sono'},
+    {icon:'😴', title:'Reduzir ansiedade noturna', sub:'Medos, necessidade de companhia'},
+    {icon:'📵', title:'Reduzir tela antes de dormir'},
+    {icon:'🛌', title:'Dormir no próprio quarto ou cama'}
+  ],
+  other: [
+    {icon:'📱', title:'Reduzir batalhas de tempo de tela'},
+    {icon:'🎧', title:'Reduzir sobrecarga sensorial'},
+    {icon:'👨‍⚕️', title:'Coordenar terapias e suportes'},
+    {icon:'😊', title:'Construir confiança e bem-estar'},
+    {icon:'📏', title:'Estabelecer limites com menos conflito'},
+    {icon:'🔒', title:'Melhorar segurança (em casa e fora)'}
+  ]
+};
+
+function renderSubgoals(key) {
+  const list = subgoalsData[key] || subgoalsData.other;
+  const container = document.getElementById('subgoalsList');
+  container.innerHTML = list.map(item => `
+        <button onclick="toggleSubgoal(this)" class="ob-multi" style="background:#1e1e1e;border:2px solid transparent;border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;width:100%;transition:border-color .2s,background .2s;">
+          <span style="font-size:1.4rem;flex-shrink:0;">${item.icon}</span>
+          <div>
+            <div style="color:white;font-size:1rem;font-weight:500;font-family:'Inter',sans-serif;">${item.title}</div>
+            ${item.sub ? `<div style="color:#888;font-size:.82rem;font-family:'Inter',sans-serif;margin-top:3px;">${item.sub}</div>` : ''}
+          </div>
+        </button>`).join('');
+}
 let userName = '';
 let selectedDiag = '';
 let childSex = null;
@@ -2667,9 +2717,11 @@ function selectOne(btn, group) {
   }
 }
 // Goal single select → go to subgoals
-function selectGoal(btn, val) {
+function selectGoal(btn, key, val) {
   document.querySelectorAll('.ob-opt').forEach(b=>b.style.borderColor='transparent');
   btn.style.borderColor='#4fc3f7';
+  selectedGoalKey = key;
+  renderSubgoals(key);
   setTimeout(()=>showScreen('subgoals'),300);
 }
 // Multi-select toggle
